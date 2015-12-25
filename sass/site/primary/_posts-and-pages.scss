@@ -22,6 +22,16 @@
 	margin: 1.5em 0 0;
 }
 
+.entry-meta {
+    font-style: italic;
+    color: $color__gray-light;
+
+    a,
+    .date {
+        color: $color__base;
+    }
+}
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
