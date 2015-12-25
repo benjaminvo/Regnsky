@@ -59,12 +59,28 @@
 	a {
 		display: block;
 		text-decoration: none;
+		text-transform: uppercase;
+		margin-left: 20px;
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+	}
+
+	/* Color menu items */
+	#menu-item-16179 a {
+		color: $color__brand-1; 
+	}
+	#menu-item-16181 a {
+		color: $color__brand-2;
+	}
+	#menu-item-16182 a {
+		color: $color__brand-3;
+	}
+	#menu-item-16180 a {
+		color: $color__brand-4;
 	}
 }
 
