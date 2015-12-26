@@ -3,3 +3,9 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600; // Medium
     clear: both;
 }
+
+h4 {
+    @include font-size(0.75); // 12px
+    text-transform: uppercase;
+    letter-spacing: 2;
+}

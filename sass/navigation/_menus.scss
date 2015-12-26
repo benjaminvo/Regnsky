@@ -62,6 +62,10 @@
 		text-transform: uppercase;
 		margin-left: 20px;
 		color: $color__base;
+		
+		@include font-size(0.75); // 12px
+		font-weight: bold;
+    	letter-spacing: 2px;
 	}
 
 	.current_page_item > a,
