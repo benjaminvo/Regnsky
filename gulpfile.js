@@ -27,7 +27,7 @@ gulp.task('sass', function() {
 
 // WATCH
 gulp.task('watch', function() {
-  gulp.watch('./*.php', ['bs-reload']) // Watch php files and reload browsers
+  gulp.watch('./**/*.php', ['bs-reload']) // Watch php files and reload browsers
   gulp.watch('./sass/**/*.scss', ['sass']) // Watch .scss files and call sass task
 
   // When there is a change, display what file was changed, only showing the path after the 'sass folder'
