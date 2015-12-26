@@ -22,6 +22,18 @@
 	margin: 1.5em 0 0;
 }
 
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+}
+
+.entry-category a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .entry-meta {
     font-style: italic;
     color: $color__gray-light;
@@ -32,24 +44,19 @@
     }
 }
 
+/* Tags */ 
 .entry-footer {
     .tags-links a {
-        padding: 3px 10px;
+        padding: 4px 10px;
         margin-right: 10px;
         margin-bottom: 10px;
         line-height: 31px;
-        border-radius: 10px;
-
-        @include font-size(0.75); // 12px
-        font-style: italic;
+        border-radius: 15px;
+        font-family: $font__headers;
+        @include font-size(0.75); // 12px - evt. lav 14px (0.875 rem) ved højere skærmstørrelser
         text-decoration: none;
         
         color: $color__base;
-        background-color: $color__gray-lightest;
-
-        &:hover {
-            background-color: darken($color__gray-lightest, 10%);
-        }
 
         &:last-child {
             margin-right: 0;
@@ -57,7 +64,58 @@
     }
 }
 
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+/* Category specific styles */ 
+
+.category-musik {
+    .entry-category a {
+        color: $color__brand-1;
+    }
+
+    .entry-footer .tags-links a {
+        border: 1px solid $color__brand-1_2;
+        background-color: $color__brand-1_3;
+
+        &:hover {
+            background-color: $color__brand-1_2;
+        }
+    }
+}
+.category-nyheder {
+    .entry-category a {
+        color: $color__brand-2;
+    }
+    .entry-footer .tags-links a {
+        border: 1px solid $color__brand-2_2;
+        background-color: $color__brand-2_3;
+
+        &:hover {
+            background-color: $color__brand-2_2;
+        }
+    }
+}
+.category-anmeldelse {
+    .entry-category a {
+        color: $color__brand-3;
+    }
+    .entry-footer .tags-links a {
+        border: 1px solid $color__brand-3_2;
+        background-color: $color__brand-3_3;
+
+        &:hover {
+            background-color: $color__brand-3_2;
+        }
+    }
+}
+.category-livestemning {
+    .entry-category a {
+        color: $color__brand-4;
+    }
+    .entry-footer .tags-links a {
+        border: 1px solid $color__brand-4_2;
+        background-color: $color__brand-4_3;
+
+        &:hover {
+            background-color: $color__brand-4_2;
+        }
+    }
 }
