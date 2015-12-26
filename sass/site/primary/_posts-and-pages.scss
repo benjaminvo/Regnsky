@@ -32,6 +32,31 @@
     }
 }
 
+.entry-footer {
+    .tags-links a {
+        padding: 3px 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        line-height: 31px;
+        border-radius: 10px;
+
+        @include font-size(0.75); // 12px
+        font-style: italic;
+        text-decoration: none;
+        
+        color: $color__base;
+        background-color: $color__gray-lightest;
+
+        &:hover {
+            background-color: darken($color__gray-lightest, 10%);
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
