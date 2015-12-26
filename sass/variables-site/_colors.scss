@@ -1,12 +1,28 @@
 $color__base: #222;
 $color__gray-dark: #4a4a4a;
 $color__gray-light: #9b9b9b; // lighten($color__base, 61%); hvor color__base = 0
-$color__gray-lightest: #dadada;
+$color__gray-lighter: #dadada;
+$color__gray-lightest: #f2f2f2;
 
 $color__brand-1: #f22424; // rød
+$color__brand-1_1: #F56565;
+$color__brand-1_2: #FBBDBD;
+$color__brand-1_3: #FDE9E9;
+
 $color__brand-2: #1dc495; // grøn
+$color__brand-2_1: #60D5B4;
+$color__brand-2_2: #BBEDDF;
+$color__brand-2_3: #E8F9F4;
+
 $color__brand-3: #2199de; // blå
+$color__brand-3_1: #63B7E7;
+$color__brand-3_2: #BCE0F5;
+$color__brand-3_3: #E9F5FB;
+
 $color__brand-4: #8724f0; // lilla 
+$color__brand-4_1: lighten($color__brand-4, 14%);
+$color__brand-4_2: lighten($color__brand-4, 32%);
+$color__brand-4_3: lighten($color__brand-4, 41%);
 
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
