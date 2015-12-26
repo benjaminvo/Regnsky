@@ -12,7 +12,21 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-			if ( is_single() ) {
+			if ( is_single() ) { ?>
+
+				<?php
+				$category_array = get_the_category();
+				$category 		= $category_array[0];
+				$category_name 	= $category->cat_name;
+				$category_id 	= $category->cat_ID;
+				$category_link 	= get_category_link( $category_id );
+				?>
+				
+				<h4 class="entry-category">
+					<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category_name; ?>"><?php echo $category_name; ?></a>
+				</h4>
+				
+				<?php 
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			} else {
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
@@ -38,7 +52,6 @@
 			} else {
 				the_excerpt();
 			}
-
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'regnsky' ),
