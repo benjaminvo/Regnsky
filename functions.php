@@ -160,3 +160,20 @@ function new_excerpt_more( $more ) {
 	return '<span class="read-more"> [...] ' . '<a class="read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Læs indlæg', 'your-text-domain' ) . '</a></span>';
 }
 add_filter( 'excerpt_more', 'new_excerpt_more' );
+
+/**
+ * Add category class to body
+ */
+
+add_filter('body_class','add_category_to_single');
+function add_category_to_single($classes, $class) {
+	if (is_single() ) {
+		global $post;
+		foreach((get_the_category($post->ID)) as $category) {
+			// add category slug to the $classes array
+			$classes[] = 'category-' . $category->category_nicename;
+		}
+	}
+	// return the $classes array
+	return $classes;
+}
