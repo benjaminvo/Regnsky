@@ -1,5 +1,9 @@
 @import "fontface";
 
+html {
+    font-size: 16px;
+}
+
 body,
 button,
 input,
@@ -9,6 +13,13 @@ textarea {
 	font-family: $font__main;
 	@include font-size(1); // 16px
 	line-height: $font__line-height-body;
+}
+
+p,
+h1, h2, h3, h4, h5, h6,
+a {
+    padding: 0;
+    margin: 0;
 }
 
 @import "headings";
