@@ -20,6 +20,7 @@
 <script type="application/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/fastClick.js"></script>
 
 <script>
+	// Remove 300ms delay on touch screens
 	if ('addEventListener' in document) {
 	    document.addEventListener('DOMContentLoaded', function() {
 	        FastClick.attach(document.body);
