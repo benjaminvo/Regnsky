@@ -39,7 +39,7 @@ input[type="submit"] {
 		color: $color__brand-1;
 		background-color: $color__brand-1_3;
 		border-color: $color__brand-1_2;
-		box-shadow: rgba(24,166,125,0.15);
+		box-shadow: 0px 1px 2px 0px rgba(242,40,35,0.15);
 
 		&:hover {
 			border-color: $color__brand-1_1;
@@ -55,7 +55,7 @@ input[type="submit"] {
 		color: $color__brand-2;
 		background-color: $color__brand-2_3;
 		border-color: $color__brand-2_2;
-		box-shadow: rgba(24,166,125,0.15);
+		box-shadow: 0px 1px 2px 0px rgba(24,166,125,0.15);
 
 		&:hover {
 			border-color: $color__brand-2_1;
@@ -71,7 +71,7 @@ input[type="submit"] {
 		color: $color__brand-3;
 		background-color: $color__brand-3_3;
 		border-color: $color__brand-3_2;
-		box-shadow: rgba(28,130,188,0.15);
+		box-shadow: 0px 1px 2px 0px rgba(28,130,188,0.15);
 		
 		&:hover {
 			border-color: $color__brand-3_1;
@@ -87,7 +87,7 @@ input[type="submit"] {
 		color: $color__brand-4;
 		background-color: $color__brand-4_3;
 		border-color: $color__brand-4_2;
-		box-shadow: rgba(135,35,240,0.15);
+		box-shadow: 0px 1px 2px 0px rgba(135,35,240,0.15);
 
 		&:hover {
 			border-color: $color__brand-4_1;
