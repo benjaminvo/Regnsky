@@ -60,7 +60,14 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php regnsky_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php
+	if ( is_single() ) { ?>
+	
+		<footer class="entry-footer">
+			<?php regnsky_entry_footer(); ?>
+		</footer><!-- .entry-footer -->
+	
+	<?php 
+	} ?>
+
 </article><!-- #post-## -->
