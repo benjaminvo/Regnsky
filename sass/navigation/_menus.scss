@@ -2,7 +2,7 @@
 	clear: both;
 	display: block;
 	width: 260px;
-	margin: 20px auto 0;
+	margin: 20px auto;
 
 	// opacity: 0;
 	// transform: translateY(-100%);
@@ -133,7 +133,7 @@
     	margin: 0 auto 3px;
     	border-radius: 10px;
     	opacity: 1;
-    	background: $color__brand-4;
+    	background: $color__base;
 
     	-webkit-transition: background .2s ease-in;
     			transition: background .2s ease-in;
@@ -141,6 +141,20 @@
     	-webkit-transition: all .2s cubic-bezier(0.4, 0, 0.35, 1.5);
     			transition: all .2s cubic-bezier(0.4, 0, 0.35, 1.5);
 	}
+}
+
+// Color burger menu according to category
+.category-musik .menu-toggle span {
+	background: $color__brand-1;
+}
+.category-nyheder .menu-toggle span {
+	background: $color__brand-2;
+}
+.category-anmeldelse .menu-toggle span {
+	background: $color__brand-3;
+}
+.category-livestemning .menu-toggle span {
+	background: $color__brand-4;
 }
 
 .menu-toggle[aria-expanded="true"] {
@@ -171,7 +185,7 @@
 	transform: translateY(0px);
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 600px) {
 	.menu-toggle {
 		display: none;
 	}
