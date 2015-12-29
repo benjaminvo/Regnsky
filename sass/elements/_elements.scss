@@ -28,6 +28,13 @@ hr {
 	margin-bottom: 1.5em;
 }
 
+a,
+button,
+input,
+textarea {
+	touch-action: none; /* Disable double click detection on IE11 and Microsoft Edge on desktop, as well as IE11 on Windows Phone 8.1 */
+}
+
 @import "lists";
 
 // img {
