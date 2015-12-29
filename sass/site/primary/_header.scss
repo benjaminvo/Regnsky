@@ -1,3 +1,44 @@
-p.site-description {
-    font-style: italic;
+.site-header-top {
+    position: relative;
+    width: 100%;
+    height: 68px;
+    background: lighten(red, 40%);
+    overflow: hidden;
+
+    .header-regnsky {
+        position: absolute;
+        top: 0;
+        left: -80px;
+        width: (1440px / 2);
+    }
+
+    .header-border {
+        position: absolute;
+        top: 0;
+        right: -100px;
+        width: 720px;
+    }
 }
+
+.logo {
+    width: 100px;
+}
+
+.site-branding {
+    width: 100%;
+    padding: 20px;
+
+    .logo {
+        float: left;
+        margin-right: 20px;
+    }
+
+    .site-description {
+        float: left;
+        margin-top: 8px;
+        @include font-size(0.75);
+        line-height: 1.4;
+        font-style: italic;
+    }
+}
+
