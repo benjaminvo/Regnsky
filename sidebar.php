@@ -29,5 +29,12 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
         <div class="fb-like" data-href="https://www.facebook.com/regnsky.dk/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
     </div>
 
+    <div class="social-buttons">
+        <a href="#" onclick="return false;"><img class="social-btn social-btn-rss" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-rss_black.png" alt="RSS Feed"></a>
+        <a href="#" onclick="return false;"><img class="social-btn social-btn-fb" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-fb_black.png" alt="Regnsky on Facebook"></a>
+        <a href="#" onclick="return false;"><img class="social-btn social-btn-twitter" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-twitter_black.png" alt="Regnsky on twitter"></a>
+        <a href="#" onclick="return false;"><img class="social-btn social-btn-hypem" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-hypem_black.png" alt="Regnsky on Hype Machine"></a>
+    </div>
+
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->
