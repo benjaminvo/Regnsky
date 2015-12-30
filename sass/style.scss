@@ -111,6 +111,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import "media/media";
 
+/*--------------------------------------------------------------
+# Bumpy borders
+--------------------------------------------------------------*/
+@import "layout/bumpy-borders";
+
+
 /* Dev */ 
 #__bs_notify__ {
     display: none !important;
