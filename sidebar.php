@@ -39,7 +39,10 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
     <p class="sidebar-site-description">Regnsky er en lille, dansk musikblog, der har eksisteret siden 2008. Her skriver unge skribenter om nyt musik gennem nyheder, anmeldelser og livereportager. <a class="h4" href="<?php echo esc_url( home_url( '/om-regnsky/' ) ); ?>">Læs mere</a></p>
 
-    <p class="text-sub">Like Regnsky på Facebook: </p>
+    <div class="sidebar-fb">
+        <span class="fb-follow-text text-sub">Følg Regnsky på Facebook:</span>
+        <div class="fb-like" data-href="https://www.facebook.com/regnsky.dk/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+    </div>
 
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

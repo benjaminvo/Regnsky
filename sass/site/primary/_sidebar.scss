@@ -2,7 +2,6 @@
     position: relative;
     background-color: $color__gray-lightest;
     padding: 30px 20px;
-    //text-align: left;
 
     .kant-sidebar-top {
         position: absolute;
@@ -28,6 +27,24 @@
 }
 .category-livestemning .sidebar {
     background-color: $color__brand-4-3;
+}
+
+.sidebar-site-description {
+    margin-bottom: 30px;
+}
+
+.sidebar-fb {
+    margin: 0 auto 40px;
+    text-align: center;
+
+    .fb-follow-text {
+        margin-right: 10px;
+    }
+
+    .fb-like {
+        width: 85px;
+        height: 24px;
+    }
 }
 
 .widget {
