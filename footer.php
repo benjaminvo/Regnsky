@@ -14,7 +14,9 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info container">
+		<img class="site-footer-kant" src="<?php echo get_stylesheet_directory_uri(); ?>/img/kant-footer.svg" alt="Footer kant">
+
+        <div class="site-info container">
 			<!-- 
             <a href="<?php //echo esc_url( __( 'https://wordpress.org/', 'regnsky' ) ); ?>"><?php //printf( esc_html__( 'Proudly powered by %s', 'regnsky' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
