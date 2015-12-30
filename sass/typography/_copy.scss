@@ -5,12 +5,6 @@ p {
 	// -webkit-margin-after: 1.5em;
 }
 
-p.text-sub {
-	@include font-size(0.75);
-	font-style: italic;
-	color: $color__gray-light;
-}
-
 dfn, cite, em, i {
 	font-style: italic;
 }
@@ -51,4 +45,34 @@ mark, ins {
 
 big {
 	font-size: 125%;
+}
+
+.read-more {
+	color: $color__gray-light;
+}
+
+.read-more-link {
+	color: $color__base;
+}
+.category-musik .read-more-link {
+    color: $color__brand-1;
+}
+.category-nyheder .read-more-link {
+    color: $color__brand-2;
+}
+.category-anmeldelse .read-more-link {
+    color: $color__brand-3;
+}
+.category-livestemning .read-more-link {
+    color: $color__brand-4;
+}
+
+/* Helper classes */ 
+.text-sub {
+	@include font-size(0.75);
+	font-style: italic;
+}
+
+.text-mute {
+	color: $color__gray-light;
 }
