@@ -1,7 +1,8 @@
-.main-navigation {
+.main-navigation,
+.footer-navigation {
 	clear: both;
 	display: block;
-	width: 260px;
+	width: 250px;
 	margin: 20px auto;
 
 	// opacity: 0;
@@ -11,10 +12,9 @@
     // 		transition: all .2s cubic-bezier(0.4, 0, 0.35, 1.5);
 
 	ul {
-		display: none;
 		list-style: none;
 		margin: 0;
-		margin-left: -30px;
+		margin-left: -25px;
 		padding-left: 0;
 		text-align: center;
 
@@ -107,6 +107,10 @@
 	#menu-item-16180 a {
 		color: $color__brand-4;
 	}
+}
+
+.main-navigation ul {
+	display: none;
 }
 
 /* Small menu. */

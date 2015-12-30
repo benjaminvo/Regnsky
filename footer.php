@@ -17,11 +17,10 @@
 		<img class="bumpy-top_on-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/kant-footer.svg" alt="Footer kant">
 
         <div class="site-info container">
-			<!-- 
-            <a href="<?php //echo esc_url( __( 'https://wordpress.org/', 'regnsky' ) ); ?>"><?php //printf( esc_html__( 'Proudly powered by %s', 'regnsky' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php //printf( esc_html__( 'Theme: %1$s by %2$s.', 'regnsky' ), 'regnsky', '<a href="http://underscores.me/" rel="designer">Benjamin Ottensten</a>' ); ?>
-             -->
+
+            <nav class="footer-navigation" role="navigation">
+                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+            </nav>
     
             <p class="text-sub text-mute">
                 Copyright © Regnsky-skribenterne 2016<br>
