@@ -14,10 +14,18 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'regnsky' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'regnsky' ), 'WordPress' ); ?></a>
+		<div class="site-info container">
+			<!-- 
+            <a href="<?php //echo esc_url( __( 'https://wordpress.org/', 'regnsky' ) ); ?>"><?php //printf( esc_html__( 'Proudly powered by %s', 'regnsky' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'regnsky' ), 'regnsky', '<a href="http://underscores.me/" rel="designer">Benjamin Ottensten</a>' ); ?>
+			<?php //printf( esc_html__( 'Theme: %1$s by %2$s.', 'regnsky' ), 'regnsky', '<a href="http://underscores.me/" rel="designer">Benjamin Ottensten</a>' ); ?>
+             -->
+    
+            <p class="text-sub text-mute">
+                Copyright © Regnsky-skribenterne 2016<br>
+                Hjemmeside af <a href="ungtriumf.dk">Benjamin Vedel Ottensten</a><br>
+                Illustration af Nan Na Hvass
+            </p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
