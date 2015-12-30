@@ -28,6 +28,10 @@
     width: 100%;
     padding: 0 1.25rem 1.25rem 1.25rem;
 
+    div {
+        margin: 0 auto;
+    }
+
     .logo {
         float: left;
         margin-right: 20px;
@@ -35,7 +39,7 @@
 
     .site-description {
         float: left;
-        margin-top: 8px;
+        margin-top: 5px;
         @include font-size(0.75);
         line-height: 1.4;
         font-style: italic;
