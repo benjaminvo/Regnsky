@@ -79,10 +79,7 @@
 }
 
 .entry-meta {
-    // @include font-size(0.75);
-    // font-style: italic;
     text-align: center;
-    //color: $color__gray-light;
 
     a,
     .date {
@@ -91,6 +88,9 @@
 }
 
 /* Entry content */ 
+.single .entry-content {
+    margin-bottom: 10px; // To get 30px down to the tags
+}
 
 .entry-content img {
     height: auto; /* Make sure images are scaled correctly. */

@@ -1,14 +1,11 @@
 .entry-footer {
     .tags-links a {
-        padding: 4px 10px;
+        display: inline-block;
+        padding: 3px 10px 2px;
         margin-right: 10px;
         margin-bottom: 10px;
-        line-height: 31px;
         border-radius: 15px;
         border: 1px solid transparent;
-        // font-family: $font__headers;
-        // @include font-size(0.75); // 12px - evt. lav 14px (0.875 rem) ved højere skærmstørrelser
-        // font-weight: 300;
         text-decoration: none;
         
         color: $color__base;
@@ -23,7 +20,6 @@
         background-color: $color__brand-1_3;
 
         &:hover {
-            // background-color: $color__brand-1_2;
             border: 1px solid $color__brand-1_2;
         }
     }
@@ -33,7 +29,6 @@
         background-color: $color__brand-2_3;
 
         &:hover {
-            // background-color: $color__brand-2_2;
             border: 1px solid $color__brand-2_2;
         }
     }
@@ -43,7 +38,6 @@
         background-color: $color__brand-3_3;
 
         &:hover {
-            // background-color: $color__brand-3_2;
             border: 1px solid $color__brand-3_2;
         }
     }
@@ -53,7 +47,6 @@
         background-color: $color__brand-4_3;
 
         &:hover {
-            // background-color: $color__brand-4_2;
             border: 1px solid $color__brand-4_2;
         }
     }

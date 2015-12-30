@@ -56,7 +56,7 @@ function regnsky_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( '', 'regnsky' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links h6">' . esc_html__( '%1$s', 'regnsky' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<div class="tags-links h6">' . esc_html__( '%1$s', 'regnsky' ) . '</div>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
