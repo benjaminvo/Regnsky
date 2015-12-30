@@ -1,5 +1,7 @@
 .wp-caption {
-	margin-bottom: 1.5em;
+	@extend .h6;
+
+    margin-bottom: 1.25rem;
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
@@ -7,10 +9,23 @@
 	}
 
 	.wp-caption-text {
-		margin: 0.8075em 0;
+		margin: 10px 0 0;
+        text-align: left;
 	}
 }
 
-.wp-caption-text {
-	text-align: center;
+.category-musik .wp-caption {
+    color: $color__brand-1;
+}
+
+.category-nyheder .wp-caption {
+    color: $color__brand-2;
+}
+
+.category-anmeldelse .wp-caption {
+    color: $color__brand-3;
+}
+
+.category-livestemning .wp-caption {
+    color: $color__brand-4;
 }
