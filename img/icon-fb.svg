@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15855) - http://www.bohemiancoding.com/sketch -->
+    <title>FB logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artikel" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artikel---Kategori-1" sketch:type="MSArtboardGroup" transform="translate(-81.000000, -1290.000000)">
+            <g id="Main" sketch:type="MSLayerGroup" transform="translate(-24.000000, 123.000000)">
+                <g id="Del-og-kommentér" transform="translate(44.000000, 1101.000000)" sketch:type="MSShapeGroup">
+                    <g id="Social-buttons" transform="translate(61.000000, 66.000000)">
+                        <g id="Facebook">
+                            <g id="FB-logo">
+                                <path d="M18.8886142,19.9921348 C19.4979026,19.9921348 19.991985,19.4980524 19.991985,18.888764 L19.991985,1.10344569 C19.991985,0.493932584 19.4979026,0 18.8886142,0 L1.10344569,0 C0.493857678,0 0,0.493932584 0,1.10344569 L0,18.888764 C0,19.4981273 0.493857678,19.9921348 1.10344569,19.9921348 L18.8886142,19.9921348 L18.8886142,19.9921348 Z" id="BG" fill="#3B5998"></path>
+                                <path d="M13.7940824,19.9921348 L13.7940824,12.2501124 L16.392809,12.2501124 L16.7818727,9.2328839 L13.7940824,9.2328839 L13.7940824,7.30659176 C13.7940824,6.43303371 14.0366292,5.83775281 15.2893633,5.83775281 L16.8871161,5.83700375 L16.8871161,3.13835206 C16.6107116,3.10164794 15.6623221,3.01947566 14.5589513,3.01947566 C12.2554307,3.01947566 10.6783521,4.42554307 10.6783521,7.00779026 L10.6783521,9.2328839 L8.07303371,9.2328839 L8.07303371,12.2501124 L10.6783521,12.2501124 L10.6783521,19.9920599 L13.7940824,19.9920599 L13.7940824,19.9921348 Z" id="F" fill="#FFFFFF"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -5,6 +5,12 @@ p {
 	// -webkit-margin-after: 1.5em;
 }
 
+p.text-sub {
+	@include font-size(0.75);
+	font-style: italic;
+	color: $color__gray-light;
+}
+
 dfn, cite, em, i {
 	font-style: italic;
 }
