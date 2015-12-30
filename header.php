@@ -47,9 +47,9 @@
 
 		<div class="site-header-top">
 			
-			<img class="header-regnsky" src="<?php echo get_stylesheet_directory_uri(); ?>/img/header-regnsky.png" alt="">
+			<img class="header-regnsky" src="<?php echo get_stylesheet_directory_uri(); ?>/img/header-regnsky.png" alt="Header">
 
-			<!-- <img src="<?php //echo get_stylesheet_directory_uri(); ?>/img/header-kant.svg" alt="" class="header-border"> -->
+			<!-- <img src="<?php //echo get_stylesheet_directory_uri(); ?>/img/kant-header.svg" alt="" class="header-border"> -->
 
 			<svg class="header-border" viewBox="0 0 1440 138" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
 			    <!-- Generator: Sketch 3.4.2 (15855) - http://www.bohemiancoding.com/sketch -->
