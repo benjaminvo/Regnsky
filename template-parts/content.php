@@ -33,7 +33,7 @@
 			}
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
+		<div class="entry-meta text-sub text-mute">
 			<?php regnsky_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php

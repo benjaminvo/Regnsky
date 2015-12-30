@@ -40,7 +40,7 @@ get_header(); ?>
 			if ( comments_open() || get_comments_number() ) : ?>
 				
 				<div class="no-comments-yet">
-					<p class="text-sub">Ingen kommentarer til dette indlæg endnu.<br>Men måske du vil være den første?</p>
+					<p class="text-sub text-mute">Ingen kommentarer til dette indlæg endnu.<br>Men måske du vil være den første?</p>
 
 					<button class="btn-neutral">Skriv kommentar</button>
 				</div>
