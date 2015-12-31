@@ -11,7 +11,8 @@
 
 ?>
 
-	</div><!-- #content -->
+	   </div> <!-- .row -->
+    </div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<img class="bumpy-top_on-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/kant-footer.svg" alt="Footer kant">

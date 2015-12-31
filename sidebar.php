@@ -12,7 +12,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="sidebar widget-area" role="complementary">
+<aside id="secondary" class="sidebar widget-area col-sm-12 col-md-3 col-md-offset-1" role="complementary">
     <img class="bumpy-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/kant-sidebar-top.svg" alt="">
 
     <div class="site-branding">

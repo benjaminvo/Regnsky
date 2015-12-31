@@ -91,7 +91,7 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 		
-		<div class="site-branding">
+		<div class="site-branding site-branding-header">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-regnsky_transparent.gif" alt="logo">
 			</a>
@@ -110,3 +110,4 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content container">
+		<div class="row">
