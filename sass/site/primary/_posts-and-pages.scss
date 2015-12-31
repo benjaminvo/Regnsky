@@ -87,6 +87,13 @@
     }
 }
 
+@media (min-width: $screen-sm-min) {
+   .entry-title,
+   .entry-meta {
+    text-align: left;
+   } 
+}
+
 /* Entry content */ 
 .single .entry-content {
     margin-bottom: 10px; // To get 30px down to the tags
