@@ -6,17 +6,6 @@
  */
 ( function() {
 
-	// Hide and display comment area if no comments
-	var btn_comment, no_comments, comments;
-    btn_comment = document.getElementById( 'btn-comment' );
-    no_comments = document.getElementById( 'no-comments' );
-    comments = document.getElementById( 'comments' );
-
-    btn_comment.onclick = function() {
-        no_comments.style.display = "none";
-        comments.style.display = "block";
-    };
-
     // Toggle navigation menu
 	var container, button, menu, links, subMenus;
 
@@ -88,4 +77,16 @@
 			self = self.parentElement;
 		}
 	}
+
+	// Hide and display comment area if no comments
+	var btn_comment, no_comments, comments;
+    btn_comment = document.getElementById( 'btn-comment' );
+    no_comments = document.getElementById( 'no-comments' );
+    comments = document.getElementById( 'comments' );
+
+    btn_comment.onclick = function() {
+        no_comments.style.display = "none";
+        comments.style.display = "block";
+    };
+
 } )();
