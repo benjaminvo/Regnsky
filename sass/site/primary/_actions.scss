@@ -1,10 +1,49 @@
+.entry-actions-header {
+
+    @media(min-width: $screen-sm-min) {
+        text-align: left;
+    }
+    
+    &:before {
+        content: " ";
+        display: block;
+        width: 60px;
+        height: 1px;
+        background-color: $color__base;
+        margin: 0 auto 20px;
+
+        @media(min-width: $screen-sm-min) {
+            margin-left: 0;
+        }
+    }
+}
+.category-musik .entry-actions-header:before {
+    background-color: $color__brand-1;
+}
+.category-nyheder .entry-actions-header:before {
+    background-color: $color__brand-2;
+}
+.category-anmeldelse .entry-actions-header:before {
+    background-color: $color__brand-3;
+}
+.category-livestemning .entry-actions-header:before {
+    background-color: $color__brand-4;
+}
+
 /*--------------------------------------------------------------
 ## Share post
 */
 
-.share-post {
+.entry-share {
+    margin-bottom: 30px;
+}
+
+.share-buttons {
     text-align: center;
-    margin-bottom: 1.875rem;
+
+    @media(min-width: $screen-sm-min) {
+        text-align: left;
+    }
 
     a {
         text-decoration: none;
@@ -19,6 +58,10 @@
         display: inline-block;
         margin-right: 20px;
 
+        @media(min-width: $screen-sm-min) {
+            margin-bottom: 10px;
+        }
+        
         &:last-child {
             margin-right: 0;
         }
@@ -39,14 +82,32 @@
 ## Comment post
 */
 
+.entry-comment {
+    margin-bottom: 40px;
+}
+
 .no-comments-yet {
-    margin-bottom: 2.5rem;
     text-align: center;
 
     @media (min-width: 768px) {
-        //text-align: left;
+        text-align: left;
+    }
+}
+
+.comments-area {
+    display: none;
+
+    .comment-reply-title {
+        display: none; // Hide title "Skriv et svar"
     }
 
+    textarea {
+        height: 120px;
+    }
+
+    .comment-form-url {
+        margin-bottom: 30px;
+    }
 }
 
 .comment-content a {
@@ -57,8 +118,14 @@
 }
 
 .form-submit {
+    margin-bottom: 0;
     text-align: center;
+
+    @media (min-width: 768px) {
+        text-align: left;
+    }
 }
+
 
 /*--------------------------------------------------------------
 ## Read related posts

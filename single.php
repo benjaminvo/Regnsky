@@ -18,14 +18,15 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', get_post_format() ); ?>
 
 			<!-- Bottom of entry - Share, comment and read more -->
-			<div class="entry-actions entry-social row">
-				<div class="col-sm-3">
-					<hr>
+			<div class="entry-actions row">
+				
+				<!-- Share -->
+				<div class="entry-share col-sm-3">
 					<!-- Display first header on extra small screens, second header on larger -->
 					<h4 class="entry-actions-header visible-xs">Del og kommentér</h4>
 					<h4 class="entry-actions-header hidden-xs">Del</h4>
 
-					<div class="share-post">
+					<div class="share-buttons">
 						<div class="fb">
 							<a href="#" onclick="return false;">
 								<img class="icon-fb" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-fb.svg" alt="Facebook share"><span class="h6">Del (12)</span>
@@ -40,29 +41,28 @@ get_header(); ?>
 					</div>
 				</div>
 
-				<div class="col-sm-9">
-					<!-- Do not display header elements on extra small screens -->
-					<hr class="hidden-xs">
-					<h4 class="hidden-xs entry-section-header">Kommentér</h4>
+				<!-- Comment -->
+				<div class="entry-comment col-sm-9">
+					<!-- Do not display this header on extra small screens -->
+					<h4 class="entry-actions-header hidden-xs">Kommentér</h4>
 					
 					<?php 
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) : ?>
 						
-						<div class="no-comments-yet">
+						<div id="no-comments" class="no-comments-yet">
 							<p class="text-sub text-mute">Ingen kommentarer til dette indlæg endnu.<br>Men måske du vil være den første?</p>
 
-							<button class="btn-neutral">Skriv kommentar</button>
+							<button id="btn-comment" class="btn-neutral">Skriv kommentar</button>
 						</div>
 
-						<?php //comments_template();
+						<?php comments_template();
 					endif; ?>
 				</div>
 			</div>
 
 			<div class="entry-actions entry-related row">
 				<div class="col-sm-12">
-					<hr>
 					<h4 class="entry-actions-header">Læs relateret indlæg</h4>
 
 					<div class="row">
