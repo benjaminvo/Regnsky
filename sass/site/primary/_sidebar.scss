@@ -22,9 +22,22 @@
 }
 
 .sidebar-site-description {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
+.social-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+
+    .social-btn {
+        height: 20px;
+        margin-right: 30px;
+    }
+    
+    .social-btn-hypem {
+        margin-right: 0;
+    }
+}
 .sidebar-fb {
     margin: 0 auto 40px;
     text-align: center;
@@ -39,25 +52,38 @@
     }
 }
 
-.social-buttons {
-    text-align: center;
-    margin-bottom: 30px;
-
-    .social-btn {
-        height: 20px;
-        margin-right: 30px;
-    }
-    
-    .social-btn-hypem {
-        margin-right: 0;
-    }
-}
-
 .widget {
-    margin: 0 0 1.5em;
+    margin: 0;
 
     /* Make sure select elements fit in widgets. */
     select {
         max-width: 100%;
+    }
+
+    ul, li {
+        margin: 0;
+        padding: 0;
+        list-style: none; 
+    }
+    li {
+        margin-bottom: 10px;
+
+        // &:last-child {
+        //     margin-bottom: 0;
+        // }
+    }
+}
+
+.widget_recent_comments {
+
+    .comment-author-link {
+        a {
+            // @include font-size(0.75);
+            // font-weight: bold;
+            // text-transform: uppercase;
+            // letter-spacing: 2px;
+            text-decoration: none;
+            
+        }
     }
 }
