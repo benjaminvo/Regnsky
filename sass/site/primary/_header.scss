@@ -4,20 +4,20 @@
     height: 68px;
     background: lighten(red, 40%);
     overflow: hidden;
+}
 
-    .header-regnsky {
-        position: absolute;
-        top: 0;
-        left: -80px;
-        width: (1440px / 2);
-    }
+.header-regnsky {
+    position: absolute;
+    top: 0;
+    left: -80px;
+    width: (1440px / 2);
+}
 
-    .header-border {
-        position: absolute;
-        top: 0;
-        right: -100px;
-        width: 720px;
-    }
+.header-border {
+    position: absolute;
+    top: -35px;
+    right: -100px;
+    width: (1880px / 2);
 }
 
 .logo {
@@ -48,3 +48,35 @@
     @include clearfix();
 }
 
+@media screen and (min-width: 600px) {
+    .site-header-top {
+        height: 136px;
+        margin-bottom: 40px;
+    }
+
+    .header-regnsky {
+        left: 0;
+        width: 1440px;
+    }
+
+    .header-border {
+        top: 0;
+        right: -20px;
+        width: 1880px;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .main-navigation {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        margin: 0;
+    }
+
+    .site-branding {
+        display: none;
+    }
+}

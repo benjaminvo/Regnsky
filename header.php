@@ -45,25 +45,17 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'regnsky' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<!-- <div class="site-blabla">
-			<?php
-			//if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php //else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			//endif; ?>
-		</div> -->
 
 		<div class="site-header-top">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<img class="header-regnsky" src="<?php echo get_stylesheet_directory_uri(); ?>/img/header-regnsky.png" alt="Header">
+			</a>
 			
-			<img class="header-regnsky" src="<?php echo get_stylesheet_directory_uri(); ?>/img/header-regnsky.png" alt="Header">
-
 			<!-- <img src="<?php //echo get_stylesheet_directory_uri(); ?>/img/kant-header.svg" alt="" class="header-border"> -->
 
-			<svg class="header-border" viewBox="0 0 1440 138" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+			<!-- <svg class="header-border" viewBox="0 0 1440 138" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
 			    <!-- Generator: Sketch 3.4.2 (15855) - http://www.bohemiancoding.com/sketch -->
-			    <title>Hvid kant</title>
+			    <!-- <title>Hvid kant</title>
 			    <desc>Created with Sketch.</desc>
 			    <defs></defs>
 			    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
@@ -75,6 +67,15 @@
 			                    </g>
 			                </g>
 			            </g>
+			        </g>
+			    </g>
+			</svg> -->
+
+			<svg class="header-border" width="1880px" height="138px" viewBox="0 0 1880 138" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+			    <defs></defs>
+			    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+			        <g id="Artboard-5" sketch:type="MSArtboardGroup" fill="#FFFFFF">
+			            <path d="M1628,2.01027248e-08 C1525.50361,1.51522318e-07 1473.7922,116.826114 1432.6832,125.695159 C1422,128.000001 1417,131.000001 1372,131.000001 C1299,131.000001 1244.48131,124.039666 1160,123 C1101.96951,122.285851 1016.98075,128 971,128 C939.279805,128 910,134 770,125.69516 C720.582574,122.763704 664.052811,119.675769 615,120.23169 C574.063902,120.695623 513.569987,126.473006 464.353028,129.424532 C453.644431,130.066723 402.113132,132.457732 337.011577,132.693051 C290.826991,132.859991 237.812739,128.713861 187.69904,128.449569 C91.527128,127.942371 6.03750525,131 0,131 L0,138.000001 L1880,138 L1880,4.44627169e-07 C1866,4.44627169e-07 1730.49639,-1.11316865e-07 1628,2.01027248e-08 Z" id="Hvid-kant" sketch:type="MSShapeGroup"></path>
 			        </g>
 			    </g>
 			</svg>

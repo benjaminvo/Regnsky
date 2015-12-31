@@ -49,14 +49,6 @@
 			a {
 				width: 200px;
 			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
 		}
 
 		li:hover > ul,
@@ -67,10 +59,6 @@
 	li {
 		position: relative;
 		margin-bottom: 10px;
-
-		&:hover > a,
-		&.focus > a {
-		}
 	}
 	a {
 		display: block;
@@ -147,7 +135,7 @@
 	}
 }
 
-// Color burger menu according to category
+/* Color burger menu according to category */
 .category-musik .menu-toggle span {
 	background: $color__brand-1;
 }
@@ -189,6 +177,8 @@
 	transform: translateY(0px);
 }
 
+/* Main navigation on bigger screens */
+
 @media screen and (min-width: 600px) {
 	.menu-toggle {
 		display: none;
@@ -198,12 +188,14 @@
 	}
 }
 
+/* Navigation */
+
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
 
 	.site-main & {
-		margin: 0 0 1.5em;
+		margin: 0 0 30px;
 		overflow: hidden;
 	}
 
