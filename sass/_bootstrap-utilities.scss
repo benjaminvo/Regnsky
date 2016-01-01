@@ -18,7 +18,7 @@
 .visible-lg-inline-block {
   display: none !important;
 }
-@media (max-width: 767px) {
+@media (max-width: ($screen-sm-min - 1)) {
   .visible-xs {
     display: block !important;
   }
@@ -33,22 +33,22 @@
     display: table-cell !important;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: ($screen-sm-min - 1)) {
   .visible-xs-block {
     display: block !important;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: ($screen-sm-min - 1)) {
   .visible-xs-inline {
     display: inline !important;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: ($screen-sm-min - 1)) {
   .visible-xs-inline-block {
     display: inline-block !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: $screen-sm-min) and (max-width: ($screen-md-min - 1)) {
   .visible-sm {
     display: block !important;
   }
@@ -63,22 +63,22 @@
     display: table-cell !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: $screen-sm-min) and (max-width: ($screen-md-min - 1)) {
   .visible-sm-block {
     display: block !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: $screen-sm-min) and (max-width: ($screen-md-min - 1)) {
   .visible-sm-inline {
     display: inline !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: $screen-sm-min) and (max-width: ($screen-md-min - 1)) {
   .visible-sm-inline-block {
     display: inline-block !important;
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: $screen-md-min) and (max-width: ($screen-lg-min - 1)) {
   .visible-md {
     display: block !important;
   }
@@ -93,22 +93,22 @@
     display: table-cell !important;
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: $screen-md-min) and (max-width: ($screen-lg-min - 1)) {
   .visible-md-block {
     display: block !important;
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: $screen-md-min) and (max-width: ($screen-lg-min - 1)) {
   .visible-md-inline {
     display: inline !important;
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: $screen-md-min) and (max-width: ($screen-lg-min - 1)) {
   .visible-md-inline-block {
     display: inline-block !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .visible-lg {
     display: block !important;
   }
@@ -123,37 +123,37 @@
     display: table-cell !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .visible-lg-block {
     display: block !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .visible-lg-inline {
     display: inline !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .visible-lg-inline-block {
     display: inline-block !important;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: ($screen-sm-min - 1)) {
   .hidden-xs {
     display: none !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: $screen-sm-min) and (max-width: ($screen-md-min - 1)) {
   .hidden-sm {
     display: none !important;
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: $screen-md-min) and (max-width: ($screen-lg-min - 1)) {
   .hidden-md {
     display: none !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .hidden-lg {
     display: none !important;
   }
