@@ -6,6 +6,7 @@ var gulp        = require('gulp'),
 // Setup static server
 gulp.task('browser-sync', function() {
     browserSync.init({
+        browser: "google chrome",
         proxy: "regnsky:8888" // Ændr i forhold til den Mamp-host, der kører projektet
     });
 });
