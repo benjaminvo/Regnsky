@@ -42,10 +42,19 @@ function regnsky_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu().
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'regnsky' ),
+		'menu-pages' => esc_html__( 'Menu - Pages', 'regnsky' ),
+		'menu-categories' => esc_html__( 'Menu - Categories', 'regnsky' ),
 	) );
+
+	// Add "Home" as a page in the menu generator
+	function home_page_menu_args( $args ) {
+		$args['show_home'] = true;
+		return $args;
+		}
+	add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
