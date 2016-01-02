@@ -1,5 +1,9 @@
 .entry-actions-header {
 
+    @media(min-width: $screen-sm-min) {
+        text-align: left;
+    }
+
     &:before {
         content: " ";
         display: block;
@@ -8,7 +12,7 @@
         background-color: $color__base;
         margin: 0 auto 20px;
 
-        @media(min-width: $screen-md-min) {
+        @media(min-width: $screen-sm-min) {
             margin-left: 0;
         }
     }
@@ -37,7 +41,7 @@
 .share-buttons {
     text-align: center;
 
-    @media(min-width: $screen-md-min) {
+    @media(min-width: $screen-sm-min) {
         text-align: left;
     }
 
@@ -54,7 +58,7 @@
         display: inline-block;
         margin-right: 20px;
 
-        @media(min-width: $screen-md-min) {
+        @media(min-width: $screen-sm-min) {
             margin-bottom: 10px;
         }
         
@@ -85,7 +89,7 @@
 .no-comments-yet {
     text-align: center;
 
-    @media (min-width: $screen-md-min) {
+    @media (min-width: $screen-sm-min) {
         text-align: left;
     }
 }
@@ -97,9 +101,11 @@
         display: none; // Hide title "Skriv et svar"
     }
 
-    p {
-        font-size: 16px;
-    }
+    font-size: 16px;
+
+    // p {
+    //     font-size: 16px;
+    // }
 
     textarea {
         height: 120px;
@@ -107,6 +113,17 @@
 
     .comment-form-url {
         margin-bottom: 30px;
+    }
+
+    // Comments
+    ul, ol, li {
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .comments-title {
+        display: none;
     }
 }
 
@@ -121,7 +138,7 @@
     margin-bottom: 0;
     text-align: center;
 
-    @media (min-width: $screen-md-min) {
+    @media (min-width: $screen-sm-min) {
         text-align: left;
     }
 }
@@ -133,6 +150,8 @@
 
 .entry-related {
     margin-bottom: 60px;
+
+    font-size: 16px; // Fjern når der kommer indhold (Lad p { ... } gælde)
 
     p {
         font-size: 16px;

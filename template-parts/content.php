@@ -40,7 +40,7 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content col-md-10 col-md-offset-2">
+	<div class="entry-content col-md-12">
 		<?php
 			
 			if ( is_single() ) {
@@ -63,7 +63,7 @@
 	<?php
 	if ( is_single() ) { ?>
 	
-	<footer class="entry-footer col-md-9 col-md-offset-2">
+	<footer class="entry-footer col-md-12">
 		<?php regnsky_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 	

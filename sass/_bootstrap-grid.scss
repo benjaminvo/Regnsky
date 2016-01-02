@@ -37,21 +37,45 @@
   padding-left: 20px;
   padding-right: 20px;
 
-  @media (min-width: $screen-sm-min) {
+  @media (min-width: 500px) {
     margin-right: 20px;
     margin-left: 20px;
   }
 
-  @media (min-width: $screen-md-min) { // Eller omkring ca. 760px
+  @media (min-width: 700px) {
     margin-right: 40px;
     margin-left: 40px;
   }
 
+  @media (min-width: $screen-md-min) { 
+    margin-right: 80px;
+    margin-left: 80px;
+  }
+
+  @media (min-width: 960px) {
+    margin-right: 160px;
+    margin-left: 160px;
+  }
+
   @media (min-width: $screen-lg-min) {
-    margin-right: 60px;
-    margin-left: 60px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+  @media (min-width: 1280px) {
+    margin-right: 80px;
+    margin-left: 80px;
+  }
+  @media (min-width: 1360px) {
+    margin-right: 120px;
+    margin-left: 120px;
   }
 }
+
 .row {
   margin-left: -20px;
   margin-right: -20px;
