@@ -155,7 +155,7 @@ require get_template_directory() . '/inc/jetpack.php';
  * Excerpt
  */
 
-// Indsæt "Read more" link
+/* Indsæt "Read more" link */
 function new_excerpt_more( $more ) {
 	return '<span class="read-more h4 text-mute"> [...] ' . '<a class="read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Læs indlæg', 'your-text-domain' ) . '</a></span>';
 }
@@ -164,7 +164,6 @@ add_filter( 'excerpt_more', 'new_excerpt_more' );
 /**
  * Add category class to body
  */
-
 add_filter('body_class','add_category_to_single');
 function add_category_to_single($classes, $class) {
 	if (is_single() ) {
@@ -177,3 +176,47 @@ function add_category_to_single($classes, $class) {
 	// return the $classes array
 	return $classes;
 }
+
+add_filter('img_caption_shortcode', 'my_img_caption_shortcode_filter',10,3);
+
+/**
+ * Filter to replace the [caption] shortcode text with HTML5 compliant code
+ *
+ * @return text HTML content describing embedded figure
+ *
+ * From: http://wordpress.stackexchange.com/questions/107358/make-wordpress-image-captions-responsive
+ **/
+function my_img_caption_shortcode_filter($val, $attr, $content = null)
+{
+    extract(shortcode_atts(array(
+        'id'    => '',
+        'align' => '',
+        'width' => '',
+        'caption' => ''
+    ), $attr));
+
+    if ( 1 > (int) $width || empty($caption) )
+        return $val;
+
+    $capid = '';
+    if ( $id ) {
+        $id = esc_attr($id);
+        $capid = 'id="figcaption_'. $id . '" ';
+        $id = 'id="' . $id . '" aria-labelledby="figcaption_' . $id . '" ';
+    }
+
+    return '<figure ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >'
+    . do_shortcode( $content ) . '<figcaption ' . $capid 
+    . 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
+}
+
+/**
+ * Remove empty lines from posts
+ * http://wordpress.stackexchange.com/questions/137738/remove-empty-lines-nbsp-when-author-updates-their-post
+ */
+function remove_empty_lines( $content ){
+  $content = preg_replace("/&nbsp;/", "", $content);
+
+  return $content;
+}
+add_action('content_save_pre', 'remove_empty_lines');
