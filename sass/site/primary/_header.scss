@@ -16,8 +16,8 @@
 .header-border {
     position: absolute;
     top: -35px;
-    right: -100px;
-    width: (1880px / 2);
+    right: -260px;
+    width: (2200px / 2);
 }
 
 .logo {
@@ -48,7 +48,7 @@
     @include clearfix();
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: $screen-sm-min) {
     .site-header-top {
         height: 136px;
         margin-bottom: 40px;
@@ -61,8 +61,8 @@
 
     .header-border {
         top: 0;
-        right: -20px;
-        width: 1880px;
+        right: -340px;
+        width: 2200px;
     }
 
     .menu-toggle {
@@ -78,5 +78,15 @@
 
     .site-branding-header {
         display: none;
+    }
+}
+
+@media screen and (min-width: $screen-md-min) {
+    .header-border {
+        right: -270px;
+    }
+
+    .main-navigation {
+        right: 80px;
     }
 }
