@@ -3,6 +3,14 @@
     background-color: $color__gray-lightest;
     padding: 30px 20px;
 
+    @media (min-width: $screen-md-min) {
+        padding: 30px;
+    }   
+
+    p, li {
+        font-size: 16px;
+    }
+
     .site-branding {
         padding: 0 0 20px;
     }

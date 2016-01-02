@@ -1,12 +1,16 @@
+.site-content {
+    margin-bottom: 0;
+
+    @media (min-width: $screen-xs-min) {
+        margin-bottom: 40px;
+    }
+    @media (min-width: $screen-lg-min) {
+        margin-bottom: 60px;
+    }
+}
+
 .content-area {
-    padding-left: 20px;
-    padding-right: 20px;
-
     overflow: hidden;
-
-    @media (min-width: 768px) {
-        padding: 0;
-  }
 }
 
 .sticky {
@@ -74,12 +78,21 @@
     }
 }
 
-.entry-title {
+// Center titles on single posts and pages
+.entry-title,
+.entry-meta,
+.page-title {
     text-align: center;
 }
 
+.blog .entry-title,
+.blog .entry-meta,
+.archive .entry-title,
+.archive .entry-meta {
+    text-align: left;
+}
+
 .entry-meta {
-    text-align: center;
 
     a,
     .date {
@@ -87,12 +100,19 @@
     }
 }
 
-@media (min-width: $screen-sm-min) {
-   .entry-title,
-   .entry-meta {
-    text-align: left;
-   } 
+@media (min-width: $screen-md-min) {
+    .entry-title,
+    .entry-meta,
+    .page-title {
+        text-align: left;
+    } 
 }
+
+// @media (min-width: $screen-lg-min) {
+//     .page-title {
+//         text-align: left;
+//     } 
+// }
 
 /* Entry content */ 
 .single .entry-content {
@@ -101,5 +121,5 @@
 
 .entry-content img {
     height: auto; /* Make sure images are scaled correctly. */
-    max-width: 100%; /* Adhere to container width. */
+    width: 100%; /* Adhere to container width. */
 }

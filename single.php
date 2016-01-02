@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area col-md-8">
+	<div id="primary" class="content-area col-lg-8">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -21,10 +21,10 @@ get_header(); ?>
 			<div class="entry-actions row">
 				
 				<!-- Share -->
-				<div class="entry-share col-sm-3">
+				<div class="entry-share col-md-3">
 					<!-- Display first header on extra small screens, second header on larger -->
-					<h4 class="entry-actions-header visible-xs">Del og kommentér</h4>
-					<h4 class="entry-actions-header hidden-xs">Del</h4>
+					<h4 class="entry-actions-header visible-xs visible-sm">Del og kommentér</h4>
+					<h4 class="entry-actions-header hidden-xs hidden-sm">Del</h4>
 
 					<div class="share-buttons">
 						<div class="fb">
@@ -42,9 +42,9 @@ get_header(); ?>
 				</div>
 
 				<!-- Comment -->
-				<div class="entry-comment col-sm-9">
+				<div class="entry-comment col-md-9">
 					<!-- Do not display this header on extra small screens -->
-					<h4 class="entry-actions-header hidden-xs">Kommentér</h4>
+					<h4 class="entry-actions-header hidden-xs hidden-sm">Kommentér</h4>
 					
 					<?php 
 					// If comments are open or we have at least one comment, load up the comment template.

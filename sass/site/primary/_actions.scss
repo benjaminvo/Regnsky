@@ -83,13 +83,13 @@
 */
 
 .entry-comment {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .no-comments-yet {
     text-align: center;
 
-    @media (min-width: 768px) {
+    @media (min-width: $screen-sm-min) {
         text-align: left;
     }
 }
@@ -99,6 +99,10 @@
 
     .comment-reply-title {
         display: none; // Hide title "Skriv et svar"
+    }
+
+    p {
+        font-size: 16px;
     }
 
     textarea {
@@ -121,7 +125,7 @@
     margin-bottom: 0;
     text-align: center;
 
-    @media (min-width: 768px) {
+    @media (min-width: $screen-sm-min) {
         text-align: left;
     }
 }
@@ -133,4 +137,8 @@
 
 .entry-related {
     margin-bottom: 60px;
+
+    p {
+        font-size: 16px;
+    }
 }
