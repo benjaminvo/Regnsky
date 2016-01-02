@@ -12,7 +12,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="sidebar widget-area col-sm-12 col-md-8 col-lg-3 col-lg-offset-0" role="complementary">
+<aside id="secondary" class="sidebar widget-area col-sm-12 col-md-8 col-lg-3 col-lg-offset-1" role="complementary">
     <img class="bumpy-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/kant-sidebar-top.svg" alt="">
 
     <div class="site-branding">
@@ -22,7 +22,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
         </div>
     </div>
 
-    <p class="sidebar-site-description">Regnsky er en lille, dansk musikblog, der har eksisteret siden 2008. Her skriver unge skribenter om nyt musik gennem nyheder, anmeldelser og livereportager. <a class="h4" href="<?php echo esc_url( home_url( '/om-regnsky/' ) ); ?>">Læs mere</a></p>
+    <p class="sidebar-site-description">Regnsky er en lille, dansk musikblog, der har eksisteret siden 2008. Her skriver unge skribenter om nyt musik gennem nyheder, anmeldelser og livereportager. <a href="<?php echo esc_url( home_url( '/om-regnsky/' ) ); ?>">Læs mere</a>.</p>
 
     <div class="social-buttons">
         <a href="#" onclick="return false;"><img class="social-btn social-btn-rss" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-rss_black.png" alt="RSS Feed"></a>
