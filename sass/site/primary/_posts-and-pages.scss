@@ -1,10 +1,7 @@
 .site-content {
     margin-bottom: 0;
 
-    @media (min-width: $screen-sm-min) {
-        margin-bottom: 40px;
-    }
-    @media (min-width: $screen-lg-min) {
+    @media (min-width: 500px) {
         margin-bottom: 60px;
     }
 }
@@ -50,7 +47,7 @@
     margin-bottom: 1.25rem;
 
     a {
-        text-decoration: none;
+        //text-decoration: none;
     }
     
     &:hover {
@@ -100,7 +97,7 @@
     }
 }
 
-@media (min-width: $screen-md-min) {
+@media (min-width: $screen-lg-min) {
     .entry-title,
     .entry-meta,
     .page-title {
