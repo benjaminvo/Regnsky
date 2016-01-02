@@ -1,11 +1,18 @@
 .sidebar {
     position: relative;
     background-color: $color__gray-lightest;
+    margin: 0;
     padding: 30px 20px;
 
-    @media (min-width: $screen-md-min) {
-        padding: 30px;
-    }   
+    @media (min-width: $screen-sm-min) {
+        // margin: 0 20px;
+        // padding: 30px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+        margin: 0;
+        padding: 40px;
+    } 
 
     p, li {
         font-size: 16px;
@@ -89,5 +96,12 @@
             text-decoration: none;
             
         }
+    }
+}
+
+// Align sidebar with navigation on big screens by removing right margin of the row
+@media (min-width: $screen-lg-min) {
+    .row-main {
+        margin-right: 0;
     }
 }

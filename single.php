@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area col-lg-8">
+	<div id="primary" class="content-area col-sm-12 col-lg-9">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -21,7 +21,7 @@ get_header(); ?>
 			<div class="entry-actions row">
 				
 				<!-- Share -->
-				<div class="entry-share col-md-3">
+				<div class="entry-share col-md-2">
 					<!-- Display first header on extra small screens, second header on larger -->
 					<h4 class="entry-actions-header visible-xs visible-sm">Del og kommentér</h4>
 					<h4 class="entry-actions-header hidden-xs hidden-sm">Del</h4>
@@ -63,7 +63,7 @@ get_header(); ?>
 
 			<div class="entry-actions entry-related row">
 				<div class="col-sm-12">
-					<h4 class="entry-actions-header">Læs relateret indlæg</h4>
+					<h4 class="entry-actions-header">Læs mere</h4>
 
 					<div class="row">
 						<div class="col-sm-6">Relateret indlæg</div>

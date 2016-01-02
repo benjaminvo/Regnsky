@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'row' ); ?>>
-	<header class="entry-header">
+	<header class="entry-header col-md-12">
 		<?php
 			if ( is_single() ) { ?>
 
@@ -40,7 +40,7 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content col-md-10 col-md-offset-2">
 		<?php
 			
 			if ( is_single() ) {
@@ -63,9 +63,9 @@
 	<?php
 	if ( is_single() ) { ?>
 	
-		<footer class="entry-footer">
-			<?php regnsky_entry_footer(); ?>
-		</footer><!-- .entry-footer -->
+	<footer class="entry-footer col-md-9 col-md-offset-2">
+		<?php regnsky_entry_footer(); ?>
+	</footer><!-- .entry-footer -->
 	
 	<?php 
 	} ?>

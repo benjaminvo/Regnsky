@@ -1,7 +1,7 @@
 .site-content {
     margin-bottom: 0;
 
-    @media (min-width: $screen-xs-min) {
+    @media (min-width: $screen-sm-min) {
         margin-bottom: 40px;
     }
     @media (min-width: $screen-lg-min) {
@@ -18,7 +18,7 @@
 }
 
 .hentry {
-	margin: 0 0 2.5rem; // 40px
+	margin-bottom: 40px;
 }
 
 .byline,

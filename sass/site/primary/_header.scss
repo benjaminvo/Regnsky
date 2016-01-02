@@ -26,7 +26,7 @@
 
 .site-branding {
     width: 100%;
-    padding: 0 1.25rem 1.25rem 1.25rem;
+    padding: 0 20px 20px 20px;
 
     div {
         margin: 0 auto;
@@ -82,6 +82,16 @@
 }
 
 @media screen and (min-width: $screen-md-min) {
+    .header-border {
+        right: -290px;
+    }
+
+    .main-navigation {
+        right: 60px;
+    }
+}
+
+@media screen and (min-width: $screen-lg-min) {
     .header-border {
         right: -270px;
     }

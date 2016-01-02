@@ -1,9 +1,5 @@
 .entry-actions-header {
 
-    @media(min-width: $screen-sm-min) {
-        text-align: left;
-    }
-    
     &:before {
         content: " ";
         display: block;
@@ -12,7 +8,7 @@
         background-color: $color__base;
         margin: 0 auto 20px;
 
-        @media(min-width: $screen-sm-min) {
+        @media(min-width: $screen-md-min) {
             margin-left: 0;
         }
     }
@@ -41,7 +37,7 @@
 .share-buttons {
     text-align: center;
 
-    @media(min-width: $screen-sm-min) {
+    @media(min-width: $screen-md-min) {
         text-align: left;
     }
 
@@ -58,7 +54,7 @@
         display: inline-block;
         margin-right: 20px;
 
-        @media(min-width: $screen-sm-min) {
+        @media(min-width: $screen-md-min) {
             margin-bottom: 10px;
         }
         
@@ -89,7 +85,7 @@
 .no-comments-yet {
     text-align: center;
 
-    @media (min-width: $screen-sm-min) {
+    @media (min-width: $screen-md-min) {
         text-align: left;
     }
 }
@@ -125,7 +121,7 @@
     margin-bottom: 0;
     text-align: center;
 
-    @media (min-width: $screen-sm-min) {
+    @media (min-width: $screen-md-min) {
         text-align: left;
     }
 }
