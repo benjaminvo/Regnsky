@@ -15,7 +15,10 @@
 }
 
 .hentry {
-	margin-bottom: 40px;
+	margin-bottom: 3rem;
+}
+.single .hentry {
+    margin-bottom: 40px;
 }
 
 .byline,
@@ -38,22 +41,25 @@
     margin: 0 0 1.5em;
 }
 
-/* Entry header */
+/* Entries */
 .entry-header {
-    margin-bottom: 1.875rem; // 30px
-}
-
-.entry-category {
     margin-bottom: 1.25rem;
-
-    // a {
-    //     text-decoration: none;
-    // }
-
-    // &:hover {
-    //     text-decoration: underline;
-    // }
 }
+
+.archive .entry-category,
+.archive .entry-title,
+.home .entry-category,
+.home .entry-title {
+    margin-bottom: 1rem; // Mindre end standard margin på arkiv-side og home
+}
+
+.single .entry-header {
+    margin-bottom: 1.875rem;
+}
+.single .entry-category {
+    margin-bottom: 1.25rem;
+}
+
 .category-musik {
     .entry-category,
     .entry-category a {
@@ -86,10 +92,12 @@
     text-align: center;
 }
 
-.blog .entry-title,
-.blog .entry-meta,
+.home .entry-title,
+.home .entry-meta,
+.home .entry-category,
 .archive .entry-title,
-.archive .entry-meta {
+.archive .entry-meta,
+.archive .entry-category {
     text-align: left;
 }
 
@@ -118,6 +126,13 @@
 /* Entry content */ 
 .single .entry-content {
     margin-bottom: 10px; // To get 30px down to the tags
+}
+
+.archive .entry-content,
+.home .entry-content {
+    p {
+        margin-bottom: 0; // Remove margin bottom from excerpt
+    }
 }
 
 .entry-content img {
