@@ -108,6 +108,8 @@
 
 .widget_recent_comments {
 
+    margin: 0 0 40px;
+
     .comment-author-link {
         a {
             @include font-size(1);
@@ -119,6 +121,13 @@
             }
         }
     }
+}
+
+.widget-spotify {
+    .spotify-embed-track {
+        margin-bottom: 0;
+    }
+
 }
 
 // Align sidebar with navigation on big screens by removing right margin of the row

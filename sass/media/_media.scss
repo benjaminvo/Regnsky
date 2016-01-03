@@ -12,7 +12,10 @@ embed,
 iframe,
 object {
 	width: 100%;
-    margin-bottom: 1.25rem; 
+    margin-bottom: 1.25rem;
+    -webkit-border-radius: 5px !important;
+            border-radius: 5px !important;
+    overflow: hidden;
 }
 
 /* Margin bottom for audio player */

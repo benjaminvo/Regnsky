@@ -39,5 +39,12 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
         </div>
 
     	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+
+        <div class="widget widget-spotify">
+            <h4 class="widget-title">Ugens sang</h4>
+            <p>2016's første uge byder på canadisk pop fra 29-årige Sean Nicholas Savage.</p>
+            <iframe class="spotify-embed-track" src="https://embed.spotify.com/?uri=spotify%3Atrack%3A6fzATkBUwNDRNqKCGitAB2" width="100%" height="80" frameborder="0" allowtransparency="true"></iframe>
+        </div>
     </div>
+
 </aside><!-- #secondary -->
