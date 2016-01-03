@@ -1,9 +1,10 @@
 .main-navigation,
 .footer-navigation {
-	clear: both;
 	display: block;
 	width: 250px;
-	margin: 20px auto;
+	margin: 30px auto;
+	font-family: $font__headers;
+	font-weight: bold;
 
 	// opacity: 0;
 	// transform: translateY(-100%);
@@ -18,63 +19,56 @@
 		padding-left: 0;
 		text-align: center;
 
-	    -webkit-columns: 2;
-	       -moz-columns: 2;
-	    		columns: 2;
+		@media (max-width: ($screen-md-min - 1)) {
+		    -webkit-columns: 2;
+		       -moz-columns: 2;
+		    		columns: 2;
 
-	    -webkit-column-gap: 0rem;
-    	   -moz-column-gap: 0rem;
-    			column-gap: 0rem;
-
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-				&:hover > ul,
-				&.focus > ul {
-					left: 100%;
-				}
-			}
-
-			a {
-				width: 200px;
-			}
-		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
+		    -webkit-column-gap: 0rem;
+	    	   -moz-column-gap: 0rem;
+	    			column-gap: 0rem;
+	    }
 	}
+	
 	li {
 		position: relative;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 	}
+	
 	a {
 		display: block;
-		text-decoration: none;
 		text-transform: uppercase;
 		color: $color__base;
 		
 		@include font-size(0.75); // 12px
 		font-weight: bold;
     	letter-spacing: 2px;
-
-		// LAV KUN HOVER PÅ MOBIL!
+		
     	&:hover {
     		text-decoration: underline;
     	}
 	}
+
+	// Menu på større skærme
+	@media (min-width: $screen-md-min) {
+		margin: 1.25rem 0; 
+		width: auto;
+
+		ul {
+			margin: 0;
+			text-align: right;		
+		}
+		
+		ul#menu-pages {
+			margin-bottom: 1.25rem; 
+		}
+
+		li {
+			display: inline-block;
+			margin-left: 1.25rem;
+			margin-bottom: 0;
+		}
+    }
 
 	.current_page_item > a,
 	.current-menu-item > a,
@@ -83,16 +77,20 @@
 	}
 
 	/* Color menu items */
-	#menu-item-16179 a {
+	#menu-item-16179 a,
+	#menu-item-16198 a {
 		color: $color__brand-1; 
 	}
-	#menu-item-16181 a {
+	#menu-item-16181 a,
+	#menu-item-16200 a {
 		color: $color__brand-2;
 	}
-	#menu-item-16182 a {
+	#menu-item-16182 a,
+	#menu-item-16201 a {
 		color: $color__brand-3;
 	}
-	#menu-item-16180 a {
+	#menu-item-16180 a,
+	#menu-item-16199 a {
 		color: $color__brand-4;
 	}
 }
@@ -142,7 +140,7 @@
 .category-nyheder .menu-toggle span {
 	background: $color__brand-2;
 }
-.category-anmeldelse .menu-toggle span {
+.category-anmeldelser .menu-toggle span {
 	background: $color__brand-3;
 }
 .category-livestemning .menu-toggle span {
@@ -179,7 +177,7 @@
 
 /* Main navigation on bigger screens */
 
-@media screen and (min-width: $screen-sm-min) {
+@media screen and (min-width: $screen-md-min) {
 	.menu-toggle {
 		display: none;
 	}

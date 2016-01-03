@@ -10,7 +10,7 @@
     position: absolute;
     top: 0;
     left: -80px;
-    width: (1440px / 2);
+    width: (1952px / 2);
 }
 
 .header-border {
@@ -41,7 +41,7 @@
     @include clearfix();
 }
 
-@media screen and (min-width: $screen-sm-min) {
+@media screen and (min-width: $screen-md-min) {
     .site-header-top {
         height: 136px;
         margin-bottom: 40px;
@@ -49,12 +49,12 @@
 
     .header-regnsky {
         left: 0;
-        width: 1440px;
+        width: 1952px;
     }
 
     .header-border {
         top: 0;
-        right: -340px;
+        right: -140px;
         width: 2200px;
     }
 
@@ -65,7 +65,7 @@
     .main-navigation {
         position: absolute;
         top: 40px;
-        right: 40px;
+        right: 60px;
         margin: 0;
     }
 
@@ -74,19 +74,9 @@
     }
 }
 
-@media screen and (min-width: $screen-md-min) {
-    .header-border {
-        right: -290px;
-    }
-
-    .main-navigation {
-        right: 60px;
-    }
-}
-
 @media screen and (min-width: $screen-lg-min) {
     .header-border {
-        right: -270px;
+        right: -100px;
     }
 
     .main-navigation {
