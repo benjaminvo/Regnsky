@@ -75,7 +75,7 @@ get_header(); ?>
 
 				<div class="related-post small-post row">
 					<div class="small-post-meta col-sm-3">
-						<p><span class="small-post-category h4 text-brand-1">Musik</span> <span class="small-post-date text-sub text-mute">Den 15. dec 2015</span></p>
+						<p><span class="small-post-category h4 text-brand-1">Musik</span> <span class="small-post-date text-sub text-mute">25. december 2015</span></p>
 					</div>
 					<div class="small-post-title col-sm-9">
 						<h3><a href="">Året der gik – del 1: Årets bedste koncerter</a></h3>
@@ -84,7 +84,7 @@ get_header(); ?>
 
 				<div class="related-post small-post row">
 					<div class="small-post-meta col-sm-3">
-						<p><span class="small-post-category h4 text-brand-2">Nyhed</span> <span class="small-post-date text-sub text-mute">Den 15. dec 2015</span></p>
+						<p><span class="small-post-category h4 text-brand-2">Nyhed</span> <span class="small-post-date text-sub text-mute">15. december 2015</span></p>
 					</div>
 					<div class="small-post-title col-sm-9">
 						<h3><a href="">Bliv en del af Regnsky</a></h3>
@@ -93,7 +93,7 @@ get_header(); ?>
 			
 				<div class="related-post small-post row">
 					<div class="small-post-meta col-sm-3">
-						<p><span class="small-post-category h4 text-brand-1">Musik</span> <span class="small-post-date text-sub text-mute">Den 15. dec 2015</span></p>
+						<p><span class="small-post-category h4 text-brand-1">Musik</span> <span class="small-post-date text-sub text-mute">6. september 2015</span></p>
 					</div>
 					<div class="small-post-title col-sm-9">
 						<h3><a href="">The wind had changed and the rain was relentless</a></h3>
@@ -102,7 +102,7 @@ get_header(); ?>
 
 				<div class="related-post small-post row">
 					<div class="small-post-meta col-sm-3">
-						<p><span class="small-post-category h4 text-brand-4">Livestemning</span> <span class="small-post-date text-sub text-mute">Den 15. dec 2015</span></p>
+						<p><span class="small-post-category h4 text-brand-4">Livestemning</span> <span class="small-post-date text-sub text-mute">8. august 2015</span></p>
 					</div>
 					<div class="small-post-title col-sm-9">
 						<h3><a href="">Velvet Volume vælter UHØRT</a></h3>
