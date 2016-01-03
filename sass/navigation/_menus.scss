@@ -55,12 +55,8 @@
 		width: auto;
 
 		ul {
-			margin: 0;
+			margin: 0 0 1.25rem;
 			text-align: right;		
-		}
-		
-		ul#menu-pages {
-			margin-bottom: 1.25rem; 
 		}
 
 		li {
@@ -92,6 +88,12 @@
 	#menu-item-16180 a,
 	#menu-item-16199 a {
 		color: $color__brand-4;
+	}
+}
+
+.footer-navigation {
+	ul {
+		text-align: center;
 	}
 }
 

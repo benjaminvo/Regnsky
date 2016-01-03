@@ -20,7 +20,10 @@
         <div class="site-info container">
 
             <nav class="footer-navigation" role="navigation">
-                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+                <?php 
+                    wp_nav_menu( array( 'theme_location' => 'menu-pages', 'menu_id' => 'menu-pages' ) ); 
+                    wp_nav_menu( array( 'theme_location' => 'menu-categories', 'menu_id' => 'menu-categories' ) ); 
+                ?>
             </nav>
     
             <p class="text-sub text-mute">
