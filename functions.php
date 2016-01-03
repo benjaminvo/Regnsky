@@ -166,7 +166,7 @@ require get_template_directory() . '/inc/jetpack.php';
 
 /* Indsæt "Read more" link */
 function new_excerpt_more( $more ) {
-	return '<span class="read-more h4 text-mute"> [...] ' . '<a class="read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Læs indlæg', 'your-text-domain' ) . '</a></span>';
+	return '<span class="read-more h5 text-mute"> [...] ' . '<a class="read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Læs mere', 'your-text-domain' ) . '</a></span>';
 }
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 
