@@ -61,18 +61,47 @@ get_header(); ?>
 				</div>
 			</div>
 
-			<div class="entry-actions entry-related row">
-				<div class="col-sm-12">
-					<h4 class="entry-actions-header">Læs mere</h4>
+			<div class="entry-actions entry-related small-post-wrapper">
+			
+				<h4 class="entry-actions-header">Læs relateret</h4>
 
-					<div class="row">
-						<div class="col-sm-6">Relateret indlæg</div>
-						<div class="col-sm-6">Relateret indlæg</div>
-						<div class="col-sm-6">Relateret indlæg</div>
-						<div class="col-sm-6">Relateret indlæg</div>
-					</div>			
+				<div class="related-post small-post row">
+					<div class="col-sm-3">
+						<p><span class="h4 text-brand-1">Musik</span><br><span class="text-sub">Den 15. december 2015</span></p>
+					</div>
+					<div class="col-sm-9">
+						<h3><a href="">Året der gik – del 1: Årets bedste koncerter</a></h3>
+					</div>
 				</div>
-			</div>
+
+				<div class="related-post small-post row">
+					<div class="col-sm-3">
+						<p><span class="h4 text-brand-2">Nyhed</span><br><span class="text-sub">Den 15. december 2015</span></p>
+					</div>
+					<div class="col-sm-9">
+						<h3><a href="">Bliv en del af Regnsky</a></h3>
+					</div>
+				</div>
+			
+				<div class="related-post small-post row">
+					<div class="col-sm-3">
+						<p><span class="h4 text-brand-1">Musik</span><br><span class="text-sub">Den 15. december 2015</span></p>
+					</div>
+					<div class="col-sm-9">
+						<h3><a href="">The wind had changed and the rain was relentless</a></h3>
+					</div>
+				</div>
+
+				<div class="related-post small-post row">
+					<div class="col-sm-3">
+						<p><span class="h4 text-brand-4">Livestemning</span><br><span class="text-sub">Den 15. december 2015</span></p>
+					</div>
+					<div class="col-sm-9">
+						<h3><a href="">Velvet Volume vælter UHØRT</a></h3>
+					</div>
+				</div>		
+			
+			</div> <!-- /.small-post-wrapper -->
 
 
 		<?php
