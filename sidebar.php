@@ -27,10 +27,10 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
         <p class="sidebar-site-description">Regnsky er en lille, dansk musikblog, der har eksisteret siden 2008. Her skriver unge skribenter om nyt musik gennem nyheder, anmeldelser og livereportager. <a href="<?php echo esc_url( home_url( '/om-regnsky/' ) ); ?>">Læs mere</a>.</p>
 
         <div class="social-buttons">
-            <a href="#" onclick="return false;"><img class="social-btn social-btn-rss" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-rss_black.png" alt="RSS Feed"></a>
-            <a href="#" onclick="return false;"><img class="social-btn social-btn-fb" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-fb_black.png" alt="Regnsky on Facebook"></a>
-            <a href="#" onclick="return false;"><img class="social-btn social-btn-twitter" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-twitter_black.png" alt="Regnsky on twitter"></a>
-            <a href="#" onclick="return false;"><img class="social-btn social-btn-hypem" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-hypem_black.png" alt="Regnsky on Hype Machine"></a>
+            <a href="<?php echo bloginfo('rss2_url'); ?>" target="_blank"><img class="social-btn social-btn-rss" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-rss_black.png" alt="RSS Feed"></a>
+            <a href="http://www.facebook.com/regnsky.dk" target="_blank"><img class="social-btn social-btn-fb" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-fb_black.png" alt="Regnsky on Facebook"></a>
+            <a href="http://twitter.com/regnskyblog" target="_blank"><img class="social-btn social-btn-twitter" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-twitter_black.png" alt="Regnsky on twitter"></a>
+            <a href="http://hypem.com/blog/regnsky/6579" target="_blank"><img class="social-btn social-btn-hypem" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-hypem_black.png" alt="Regnsky on Hype Machine"></a>
         </div>
 
         <div class="sidebar-fb">
