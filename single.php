@@ -78,7 +78,7 @@ get_header(); ?>
 						<p><span class="small-post-category h4 text-brand-1">Musik</span> <span class="small-post-date text-sub text-mute">25. december 2015</span></p>
 					</div>
 					<div class="small-post-title col-sm-9">
-						<h3><a href="">Året der gik – del 1: Årets bedste koncerter</a></h3>
+						<h3><a href="<?php echo esc_url( home_url( '/2015/12/aaret-der-gik-del-1-aarets-bedste-koncerter/' ) ); ?>">Året der gik – del 1: Årets bedste koncerter</a></h3>
 					</div>
 				</div>
 
@@ -87,7 +87,7 @@ get_header(); ?>
 						<p><span class="small-post-category h4 text-brand-2">Nyhed</span> <span class="small-post-date text-sub text-mute">15. december 2015</span></p>
 					</div>
 					<div class="small-post-title col-sm-9">
-						<h3><a href="">Bliv en del af Regnsky</a></h3>
+						<h3><a href="<?php echo esc_url( home_url( '/2015/12/bliv-en-del-af-regnsky/' ) ); ?>">Bliv en del af Regnsky</a></h3>
 					</div>
 				</div>
 			
@@ -96,7 +96,7 @@ get_header(); ?>
 						<p><span class="small-post-category h4 text-brand-1">Musik</span> <span class="small-post-date text-sub text-mute">6. september 2015</span></p>
 					</div>
 					<div class="small-post-title col-sm-9">
-						<h3><a href="">The wind had changed and the rain was relentless</a></h3>
+						<h3><a href="<?php echo esc_url( home_url( '/2015/09/the-wind-had-changed-and-the-rain-was-relentless/' ) ); ?>">The wind had changed and the rain was relentless</a></h3>
 					</div>
 				</div>
 
@@ -105,7 +105,7 @@ get_header(); ?>
 						<p><span class="small-post-category h4 text-brand-4">Livestemning</span> <span class="small-post-date text-sub text-mute">8. august 2015</span></p>
 					</div>
 					<div class="small-post-title col-sm-9">
-						<h3><a href="">Velvet Volume vælter UHØRT</a></h3>
+						<h3><a href="<?php echo esc_url( home_url( '/2015/08/velvet-volume-vaelter-uhoert/' ) ); ?>">Velvet Volume vælter UHØRT</a></h3>
 					</div>
 				</div>		
 			
