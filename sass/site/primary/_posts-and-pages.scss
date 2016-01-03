@@ -46,30 +46,34 @@
 .entry-category {
     margin-bottom: 1.25rem;
 
-    a {
-        //text-decoration: none;
-    }
-    
-    &:hover {
-        text-decoration: underline;
-    }
+    // a {
+    //     text-decoration: none;
+    // }
+
+    // &:hover {
+    //     text-decoration: underline;
+    // }
 }
 .category-musik {
+    .entry-category,
     .entry-category a {
         color: $color__brand-1;
     }
 }
 .category-nyheder {
+    .entry-category,
     .entry-category a {
         color: $color__brand-2;
     }
 }
 .category-anmeldelser {
+    .entry-category,
     .entry-category a {
         color: $color__brand-3;
     }
 }
 .category-livestemning {
+    .entry-category,
     .entry-category a {
         color: $color__brand-4;
     }
