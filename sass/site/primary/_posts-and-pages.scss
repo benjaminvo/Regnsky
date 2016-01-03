@@ -124,3 +124,12 @@
     height: auto; /* Make sure images are scaled correctly. */
     width: 100%; /* Adhere to container width. */
 }
+
+/* Pages */
+.page-title {
+    margin-bottom: 40px;
+
+    @media (max-width: $screen-md-min) {
+        margin-top: 20px;
+    }
+}
