@@ -77,10 +77,40 @@
 
 @media screen and (min-width: $screen-lg-min) {
     .header-border {
-        right: -100px;
+        right: -80px;
     }
 
     .main-navigation {
-        right: 80px;
+        right: 65px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .header-border {
+        right: -60px;
+    }
+
+    .main-navigation {
+        right: 85px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .header-border {
+        right: -20px;
+    }
+
+    .main-navigation {
+        right: 125px;
+    }
+}
+
+@media screen and (min-width: 1360px) {
+    .header-border {
+        right: 0px;
+    }
+
+    .main-navigation {
+        right: 165px;
     }
 }
