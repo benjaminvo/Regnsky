@@ -45,7 +45,7 @@
 @media screen and (min-width: $screen-md-min) {
     .site-header-top {
         height: 136px;
-        margin-bottom: 40px;
+        margin-bottom: 60px;
     }
 
     .header-regnsky {
@@ -76,6 +76,10 @@
 }
 
 @media screen and (min-width: $screen-lg-min) {
+    .site-header-top {
+        margin-bottom: 80px;
+    }
+
     .header-border {
         right: -80px;
     }
