@@ -35,7 +35,7 @@
 */
 
 .entry-share {
-    margin-bottom: 30px;
+    margin-bottom: 0px; // Skal være 30px, når det ikke er sociale embeddede knapper
 }
 
 .share-buttons {
@@ -55,8 +55,9 @@
     }
 
     div {
-        display: inline-block;
-        margin-right: 20px;
+        //display: inline-block;
+        //margin-right: 20px;
+        margin-bottom: 10px;
 
         @media(min-width: $screen-sm-min) {
             margin-bottom: 10px;
@@ -149,7 +150,7 @@
 */
 
 .entry-related {
-    margin-bottom: 20px;
+    margin-bottom:20px;
 }
 
 .related-post,
@@ -158,8 +159,22 @@
     
     p {
         font-size: 16px;
+        margin-bottom: 10px;
     }
     span {
         font-size: 0.75rem;
     }
+
+    .small-post-meta,
+    .small-post-title {
+        text-align: center;
+
+        @media (min-width: $screen-sm-min) {
+            text-align: left;
+        }
+    }
+}
+
+.small-post-date {
+    display: block;
 }

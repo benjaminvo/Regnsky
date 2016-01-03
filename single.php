@@ -28,15 +28,23 @@ get_header(); ?>
 
 					<div class="share-buttons">
 						<div class="fb">
-							<a href="#" onclick="return false;">
-								<img class="icon-fb" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-fb.svg" alt="Facebook share"><span class="h6">Del (12)</span>
-							</a>
+							
+							<div class="fb-share-button" 
+								data-href="<?php echo the_permalink(); ?>" 
+								data-layout="button">
+							</div>
+
+							<!-- <a href="#" onclick="return false;">
+								<img class="icon-fb" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-fb.svg" alt="Facebook share"><span class="h6">Del (12) <?php echo get_permalink(); ?></span>
+							</a> -->
 						</div>
 						
 						<div class="twitter">
-							<a href="#" onclick="return false;">
+							
+							<a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+							<!-- <a href="#" onclick="return false;">
 								<img class="icon-twitter" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-twitter.svg" alt="Twitter share"><span class="h6">Tweet (1)</span>
-							</a>
+							</a> -->
 						</div>
 					</div>
 				</div>
@@ -63,40 +71,40 @@ get_header(); ?>
 
 			<div class="entry-actions entry-related small-post-wrapper">
 			
-				<h4 class="entry-actions-header">Læs relateret</h4>
+				<h4 class="entry-actions-header">Relateret</h4>
 
 				<div class="related-post small-post row">
-					<div class="col-sm-3">
-						<p><span class="h4 text-brand-1">Musik</span><br><span class="text-sub">Den 15. december 2015</span></p>
+					<div class="small-post-meta col-sm-3">
+						<p><span class="small-post-category h4 text-brand-1">Musik</span> <span class="small-post-date text-sub text-mute">Den 15. dec 2015</span></p>
 					</div>
-					<div class="col-sm-9">
+					<div class="small-post-title col-sm-9">
 						<h3><a href="">Året der gik – del 1: Årets bedste koncerter</a></h3>
 					</div>
 				</div>
 
 				<div class="related-post small-post row">
-					<div class="col-sm-3">
-						<p><span class="h4 text-brand-2">Nyhed</span><br><span class="text-sub">Den 15. december 2015</span></p>
+					<div class="small-post-meta col-sm-3">
+						<p><span class="small-post-category h4 text-brand-2">Nyhed</span> <span class="small-post-date text-sub text-mute">Den 15. dec 2015</span></p>
 					</div>
-					<div class="col-sm-9">
+					<div class="small-post-title col-sm-9">
 						<h3><a href="">Bliv en del af Regnsky</a></h3>
 					</div>
 				</div>
 			
 				<div class="related-post small-post row">
-					<div class="col-sm-3">
-						<p><span class="h4 text-brand-1">Musik</span><br><span class="text-sub">Den 15. december 2015</span></p>
+					<div class="small-post-meta col-sm-3">
+						<p><span class="small-post-category h4 text-brand-1">Musik</span> <span class="small-post-date text-sub text-mute">Den 15. dec 2015</span></p>
 					</div>
-					<div class="col-sm-9">
+					<div class="small-post-title col-sm-9">
 						<h3><a href="">The wind had changed and the rain was relentless</a></h3>
 					</div>
 				</div>
 
 				<div class="related-post small-post row">
-					<div class="col-sm-3">
-						<p><span class="h4 text-brand-4">Livestemning</span><br><span class="text-sub">Den 15. december 2015</span></p>
+					<div class="small-post-meta col-sm-3">
+						<p><span class="small-post-category h4 text-brand-4">Livestemning</span> <span class="small-post-date text-sub text-mute">Den 15. dec 2015</span></p>
 					</div>
-					<div class="col-sm-9">
+					<div class="small-post-title col-sm-9">
 						<h3><a href="">Velvet Volume vælter UHØRT</a></h3>
 					</div>
 				</div>		

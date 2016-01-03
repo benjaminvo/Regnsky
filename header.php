@@ -28,10 +28,19 @@
 </script>
 
 <?php wp_head(); ?>
+
+<!-- Open Graph tags to customize link previews -->
+<meta property="og:url"           content="<?php echo esc_url( home_url( '/' ) ); ?>" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Regnsky" />
+<meta property="og:description"   content="Danmarks sødeste musikblog siden 2008" />
+<meta property="og:image"         content="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-regnsky_transparent.gif" />
+
 </head>
 
 <body <?php body_class(); ?>>
 
+<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -82,7 +91,7 @@
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-regnsky_transparent.gif" alt="logo">
 			</a>
-			<span class="site-description">Danmarks sødeste<br>musikblog siden 2008</span>
+			<span class="site-description">Danmarks sødeste<br>musikblog siden 2008 </span>
 		</div><!-- .site-branding -->
 
 	</header><!-- #masthead -->
