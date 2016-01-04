@@ -26,7 +26,7 @@
     margin-left: auto;
 
     .logo {
-        width: 100px;
+        width: 120px;
         float: left;
         margin-right: 20px;
     }
@@ -40,6 +40,10 @@
     }
 
     @include clearfix();
+}
+
+.floating-homelink {
+    display: none;
 }
 
 @media screen and (min-width: $screen-md-min) {
@@ -57,6 +61,15 @@
         top: 0;
         right: -140px;
         width: 2200px;
+    }
+
+    .floating-homelink {
+        display: block;
+        position: absolute;
+        height: 100px;
+        width: 200px;
+        top: 0;
+        left: 0;
     }
 
     .menu-toggle {

@@ -30,12 +30,12 @@
 <?php wp_head(); ?>
 
 <!-- Open Graph tags to customize link previews -->
-<meta property="og:url"           content="<?php echo esc_url( home_url( '/' ) ); ?>" />
+<!-- <meta property="og:url"           content="<?php //echo esc_url( home_url( '/' ) ); ?>" />
 <meta property="og:type"          content="website" />
 <meta property="og:title"         content="Regnsky" />
 <meta property="og:description"   content="Danmarks sødeste musikblog siden 2008" />
-<meta property="og:image"         content="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-regnsky_transparent.gif" />
-
+<meta property="og:image"         content="<?php //echo get_stylesheet_directory_uri(); ?>/img/logo-regnsky_transparent.gif" />
+ -->
 </head>
 
 <body <?php body_class(); ?>>
@@ -56,9 +56,7 @@
 	<header id="masthead" class="site-header" role="banner">
 
 		<div class="site-header-top">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<img class="header-regnsky" src="<?php echo get_stylesheet_directory_uri(); ?>/img/header-regnsky.jpg" alt="Header">
-			</a>
+			<img class="header-regnsky" src="<?php echo get_stylesheet_directory_uri(); ?>/img/header-regnsky.jpg" alt="Header">
 
 			<svg class="header-border" width="2200px" height="138px" viewBox="0 0 2200 138" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
 			    <defs></defs>
@@ -68,6 +66,8 @@
 			        </g>
 			    </g>
 			</svg>
+
+			<a class="floating-homelink" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a>
 
 			<a id="menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 				<span class="bar-1"></span>
