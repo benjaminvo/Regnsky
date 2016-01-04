@@ -9,8 +9,8 @@
 	// opacity: 0;
 	// transform: translateY(-100%);
 
-    // -webkit-transition: all .2s cubic-bezier(0.4, 0, 0.35, 1.5);
-    // 		transition: all .2s cubic-bezier(0.4, 0, 0.35, 1.5);
+ //    -webkit-transition: all .2s cubic-bezier(0.4, 0, 0.35, 1.5);
+ //    		transition: all .2s cubic-bezier(0.4, 0, 0.35, 1.5);
 
 	ul {
 		list-style: none;
@@ -65,27 +65,45 @@
 		}
     }
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
+	@media (min-width: $screen-sm-min) {
+		.current_page_item > a,
+		.current-menu-item > a,
+		.current_page_ancestor > a,
+		.current-menu-ancestor > a {
+			&:after {
+				position: absolute;
+				top: -25px;
+				left: 50%;
+				margin-left: -8px;
+				content: "∴";
+				font-size: 20px;
+				color: $color__base;
+			}
+		}
 	}
+	
+
+	.category-musik {}
 
 	/* Color menu items */
 	#menu-item-16179 a,
-	#menu-item-16198 a {
+	#menu-item-16198 a,
+	#menu-item-17 a { // Sidste menupunkt er til ungtriumf.dk/regnsky
 		color: $color__brand-1; 
 	}
 	#menu-item-16181 a,
-	#menu-item-16200 a {
+	#menu-item-16200 a,
+	#menu-item-19 a {
 		color: $color__brand-2;
 	}
 	#menu-item-16182 a,
-	#menu-item-16201 a {
+	#menu-item-16201 a,
+	#menu-item-20 a {
 		color: $color__brand-3;
 	}
 	#menu-item-16180 a,
-	#menu-item-16199 a {
+	#menu-item-16199 a,
+	#menu-item-18 a {
 		color: $color__brand-4;
 	}
 }
@@ -171,10 +189,10 @@
 	display: block;
 }
 
-.main-navigation.toggled {
-	opacity: 1;
-	transform: translateY(0px);
-}
+// .main-navigation.toggled {
+// 	opacity: 1;
+// 	transform: translateY(0px);
+// }
 
 /* Main navigation on bigger screens */
 
