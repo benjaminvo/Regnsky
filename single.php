@@ -56,7 +56,7 @@ get_header(); ?>
 					
 					<?php 
 					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) : ?>
+					if ( comments_open() && get_comments_number()==0 ) : ?>
 						
 						<div id="no-comments" class="no-comments-yet">
 							<p class="text-sub text-mute">Ingen kommentarer til dette indlæg endnu.<br>Men måske du vil være den første?</p>
@@ -64,8 +64,20 @@ get_header(); ?>
 							<button id="btn-comment" class="btn-neutral">Skriv kommentar</button>
 						</div>
 
-						<?php comments_template();
-					endif; ?>
+						<div id="comments-area_no-comments">
+							<?php comments_template(); ?>
+						</div>
+					<?php endif; ?>
+
+					<?php 
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() && get_comments_number() > 0 ) : ?>
+
+						<div id="comments-area_comments">
+							<?php comments_template(); ?>
+						</div>
+					<?php endif; ?>
+
 				</div>
 			</div>
 

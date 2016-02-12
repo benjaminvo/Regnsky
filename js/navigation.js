@@ -82,7 +82,7 @@
 	var btn_comment, no_comments, comments;
     btn_comment = document.getElementById( 'btn-comment' );
     no_comments = document.getElementById( 'no-comments' );
-    comments = document.getElementById( 'comments' );
+    comments = document.getElementById( 'comments-area_no-comments' );
 
     btn_comment.onclick = function() {
         no_comments.style.display = "none";

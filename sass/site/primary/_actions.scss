@@ -96,8 +96,6 @@
 }
 
 .comments-area {
-    display: none;
-
     .comment-reply-title {
         display: none; // Hide title "Skriv et svar"
     }
@@ -126,6 +124,14 @@
     .comments-title {
         display: none;
     }
+}
+
+#comments-area_no-comments {
+    display: none;
+}
+
+#comments-area_comments {
+    display: block;
 }
 
 .comment-content a {
