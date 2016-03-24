@@ -21,6 +21,17 @@
     font-weight: 600;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Gotham Rounded';
+    src: url('fonts/gotham-rounded-bold.eot');
+    src: url('fonts/gotham-rounded-bold.eot') format('embedded-opentype'),
+         url('fonts/gotham-rounded-bold.woff2') format('woff2'),
+         url('fonts/gotham-rounded-bold.woff') format('woff'),
+         url('fonts/gotham-rounded-bold.ttf') format('truetype'),
+         url('fonts/gotham-rounded-bold.svg#gotham-rounded-bold') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
 
 // Livory
 @font-face {
