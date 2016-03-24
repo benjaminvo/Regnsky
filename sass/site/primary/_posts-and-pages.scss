@@ -1,4 +1,4 @@
-.site-content {
+._0site-content {
     margin-bottom: 0;
 
     @media (min-width: 500px) {
@@ -60,28 +60,28 @@
     margin-bottom: 1.25rem;
 }
 
-.category-musik {
+.category-opdagelser {
     .entry-category,
     .entry-category a {
-        color: $color__brand-1;
-    }
-}
-.category-nyheder {
-    .entry-category,
-    .entry-category a {
-        color: $color__brand-2;
-    }
-}
-.category-anmeldelser {
-    .entry-category,
-    .entry-category a {
-        color: $color__brand-3;
+        color: $color__1_0;
     }
 }
 .category-livestemning {
     .entry-category,
     .entry-category a {
-        color: $color__brand-4;
+        color: $color__2_0;
+    }
+}
+.category-feature {
+    .entry-category,
+    .entry-category a {
+        color: $color__3_0;
+    }
+}
+.category-generelt {
+    .entry-category,
+    .entry-category a {
+        color: $color__4_0;
     }
 }
 

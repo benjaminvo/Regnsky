@@ -32,20 +32,20 @@ hr {
 	margin-bottom: 1.25rem;
 	width: 60px;
 }
-.category-musik hr {
-    background-color: $color__brand-1;
-}
-
-.category-nyheder hr {
-    background-color: $color__brand-2;
-}
-
-.category-anmeldelser hr {
-    background-color: $color__brand-3;
+.category-opdagelser hr {
+    background-color: $color__1_0;
 }
 
 .category-livestemning hr {
-    background-color: $color__brand-4;
+    background-color: $color__2_0;
+}
+
+.category-feature hr {
+    background-color: $color__3_0;
+}
+
+.category-generelt hr {
+    background-color: $color__4_0;
 }
 
 a,

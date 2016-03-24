@@ -52,17 +52,17 @@ big {
 .read-more-link {
 	color: $color__base;
 }
-.category-musik .read-more-link {
-    color: $color__brand-1;
-}
-.category-nyheder .read-more-link {
-    color: $color__brand-2;
-}
-.category-anmeldelser .read-more-link {
-    color: $color__brand-3;
+.category-opdagelser .read-more-link {
+    color: $color__1_0;
 }
 .category-livestemning .read-more-link {
-    color: $color__brand-4;
+    color: $color__2_0;
+}
+.category-feature .read-more-link {
+    color: $color__3_0;
+}
+.category-generelt .read-more-link {
+    color: $color__4_0;
 }
 
 /* Helper classes */ 
@@ -75,16 +75,16 @@ big {
 }
 
 .text-brand-1 {
-	color: $color__brand-1;
+	color: $color__1_0;
 }
 .text-brand-2 {
-	color: $color__brand-2;
+	color: $color__2_0;
 }
 .text-brand-3 {
-	color: $color__brand-3;
+	color: $color__3_0;
 }
 .text-brand-4 {
-	color: $color__brand-4;
+	color: $color__4_0;
 }
 
 

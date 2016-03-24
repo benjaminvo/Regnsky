@@ -90,22 +90,22 @@
 	#menu-item-16179 a,
 	#menu-item-16198 a,
 	#menu-item-17 a { // Sidste menupunkt er til ungtriumf.dk/regnsky
-		color: $color__brand-1; 
+		color: $color__1_0; 
 	}
 	#menu-item-16181 a,
 	#menu-item-16200 a,
 	#menu-item-19 a {
-		color: $color__brand-2;
+		color: $color__2_0;
 	}
 	#menu-item-16182 a,
 	#menu-item-16201 a,
 	#menu-item-20 a {
-		color: $color__brand-3;
+		color: $color__3_0;
 	}
 	#menu-item-16180 a,
 	#menu-item-16199 a,
 	#menu-item-18 a {
-		color: $color__brand-4;
+		color: $color__4_0;
 	}
 }
 
@@ -154,17 +154,17 @@
 }
 
 /* Color burger menu according to category */
-.category-musik .menu-toggle span {
-	background: $color__brand-1;
-}
-.category-nyheder .menu-toggle span {
-	background: $color__brand-2;
-}
-.category-anmeldelser .menu-toggle span {
-	background: $color__brand-3;
+.category-opdagelser .menu-toggle span {
+	background: $color__1_0;
 }
 .category-livestemning .menu-toggle span {
-	background: $color__brand-4;
+	background: $color__2_0;
+}
+.category-feature .menu-toggle span {
+	background: $color__3_0;
+}
+.category-generelt .menu-toggle span {
+	background: $color__4_0;
 }
 
 .menu-toggle[aria-expanded="true"] {

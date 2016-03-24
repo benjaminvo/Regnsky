@@ -19,39 +19,39 @@
         }
     }
 }
-.category-musik {
+.category-opdagelser {
     .entry-footer .tags-links a {
-        background-color: $color__brand-1_3;
+        background-color: $color__1_3;
 
         &:hover {
-            border: 1px solid $color__brand-1_2;
-        }
-    }
-}
-.category-nyheder {
-    .entry-footer .tags-links a {
-        background-color: $color__brand-2_3;
-
-        &:hover {
-            border: 1px solid $color__brand-2_2;
-        }
-    }
-}
-.category-anmeldelser {
-    .entry-footer .tags-links a {
-        background-color: $color__brand-3_3;
-
-        &:hover {
-            border: 1px solid $color__brand-3_2;
+            border: 1px solid $color__1_2;
         }
     }
 }
 .category-livestemning {
     .entry-footer .tags-links a {
-        background-color: $color__brand-4_3;
+        background-color: $color__2_3;
 
         &:hover {
-            border: 1px solid $color__brand-4_2;
+            border: 1px solid $color__2_2;
+        }
+    }
+}
+.category-feature {
+    .entry-footer .tags-links a {
+        background-color: $color__3_3;
+
+        &:hover {
+            border: 1px solid $color__3_2;
+        }
+    }
+}
+.category-generelt {
+    .entry-footer .tags-links a {
+        background-color: $color__4_3;
+
+        &:hover {
+            border: 1px solid $color__4_2;
         }
     }
 }

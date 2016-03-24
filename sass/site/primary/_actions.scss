@@ -17,17 +17,17 @@
         }
     }
 }
-.category-musik .entry-actions-header:before {
-    background-color: $color__brand-1;
-}
-.category-nyheder .entry-actions-header:before {
-    background-color: $color__brand-2;
-}
-.category-anmeldelser .entry-actions-header:before {
-    background-color: $color__brand-3;
+.category-opdagelser .entry-actions-header:before {
+    background-color: $color__1_0;
 }
 .category-livestemning .entry-actions-header:before {
-    background-color: $color__brand-4;
+    background-color: $color__2_0;
+}
+.category-feature .entry-actions-header:before {
+    background-color: $color__3_0;
+}
+.category-generelt .entry-actions-header:before {
+    background-color: $color__4_0;
 }
 
 /*--------------------------------------------------------------
