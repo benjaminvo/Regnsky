@@ -1,0 +1,88 @@
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	width: 100%;
+    margin-bottom: 1.25rem;
+    -webkit-border-radius: 3px !important;
+            border-radius: 3px !important;
+    overflow: hidden;
+}
+
+// img {
+//  height: auto; /* Make sure images are scaled correctly. */
+//  max-width: 100%; /* Adhere to container width. */
+// }
+
+img {
+    -webkit-border-radius: 3px !important;
+            border-radius: 3px !important;
+}
+
+/* Margin bottom for audio player */
+.wp-audio-shortcode {
+    margin-bottom: 1.25rem;
+}
+
+/* Figures */
+figure {
+    margin: 0;
+}
+
+/*--------------------------------------------------------------
+## Bumpy borders
+--------------------------------------------------------------*/
+
+.bumpy-top {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.bumpy-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.bumpy-left {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+.bumpy-right {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+.bumpy-top_on-top {
+    position: absolute;
+    width: 100%;
+    bottom:  100%;
+    left: 0px;
+    right: 0px;
+}
+
+.bumpy-top,
+.bumpy-bottom,
+.bumpy-left,
+.bumpy-right,
+.bumpy-top_on-top {
+    -webkit-border-radius: 0px !important;
+            border-radius: 0px !important;
+}

@@ -1,0 +1,97 @@
+html {
+    font-size: 16px;
+
+    @media (min-width: $screen-sm-min) {
+        font-size: 18px;
+    }
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(1); // 16px
+	line-height: $font__line-height-body;
+}
+
+p,
+h1, h2, h3, h4, h5, h6,
+a {
+    padding: 0; // VIL NORMALIZE FIXE DETTE?
+    margin: 0;	// OG DETTE?
+}
+
+p {
+	margin-bottom: 1.25rem;
+}
+
+a {
+    color: $color__base;
+
+    &:visited {
+        color: $color__base;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color__base;
+    }
+    &:focus {
+        outline: thin dotted;
+    }
+    &:hover,
+    &:active {
+        outline: 0;
+    }
+}
+
+blockquote {
+    font-style: italic;
+    margin: 0 1.25rem;
+}
+
+/* Read more links */
+.read-more {
+	color: $color__gray-light;
+}
+
+.read-more-link {
+	color: $color__base;
+}
+.category-opdagelser .read-more-link {
+    color: $color__1_0;
+}
+.category-livestemning .read-more-link {
+    color: $color__2_0;
+}
+.category-feature .read-more-link {
+    color: $color__3_0;
+}
+.category-generelt .read-more-link {
+    color: $color__4_0;
+}
+
+/* Text helper classes */ 
+.text-sub {
+	@include font-size(0.75);
+	font-style: italic;
+}
+.text-mute {
+	color: $color__gray-light;
+}
+
+.text-brand-1 {
+	color: $color__1_0;
+}
+.text-brand-2 {
+	color: $color__2_0;
+}
+.text-brand-3 {
+	color: $color__3_0;
+}
+.text-brand-4 {
+	color: $color__4_0;
+}

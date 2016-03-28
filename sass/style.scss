@@ -10,113 +10,53 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: regnsky
 Tags:
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
 regnsky is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
 /*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-    ## Posts and pages
-	## Asides
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
+# Base
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+@import "base/variables";
+@import "base/mixins";
+
+@import "base/vendor/normalize";
+@import "base/vendor/bootstrap-grid";
+@import "base/vendor/bootstrap-utilities";
+
+@import "base/reset";
+
+// Typography
+@import "base/typography/fontface";
+@import "base/typography/copy"; // Indtil videre vigtigt, at denne loades før headers, da den har styles i toppen, der skal erklæres inden headers
+@import "base/typography/headings";
+@import "base/typography/captions";
 
 /*--------------------------------------------------------------
-# Normalize
+# Partials
 --------------------------------------------------------------*/
-@import "normalize";
+@import "partials/buttons";
+@import "partials/fields";
+@import "partials/media";
+@import "partials/tags";
+@import "partials/menus";
+@import "partials/hr";
+
+@import "partials/modules/accessibility";
+@import "partials/modules/alignments";
+@import "partials/modules/clearings";
+@import "partials/modules/infinite-scroll";
 
 /*--------------------------------------------------------------
-# Bootstrap - grid and responsive utilities
+# Components
 --------------------------------------------------------------*/
-@import "bootstrap-grid";
-@import "bootstrap-utilities";
-
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-@import "typography/typography";
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-@import "elements/elements";
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-@import "forms/forms";
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-@import "navigation/navigation";
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-@import "modules/accessibility";
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-@import "modules/alignments";
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-@import "modules/clearings";
-
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-@import "site/secondary/widgets";
-
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-@import "site/site";
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-@import "modules/infinite-scroll";
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-@import "media/media";
-
-/*--------------------------------------------------------------
-# Bumpy borders
---------------------------------------------------------------*/
-@import "layout/bumpy-borders";
-
+@import "components/header";
+@import "components/footer";
+@import "components/posts-and-pages"; // Post actions - share, comment, read more 
+@import "components/actions";
+@import "components/sidebar";
+@import "components/asides";
+@import "components/widgets";
 
 /* Dev */ 
 #__bs_notify__ {

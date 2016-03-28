@@ -1,11 +1,18 @@
-// Black and gray
+// Media queries (and structure)
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+
+$screen-sm-min: 620px;
+$screen-md-min: 780px;
+$screen-lg-min: 1140px;
+
+// Colors
 $color__base:           rgba(0,0,0,.87);
 $color__gray-dark:      rgba(0,0,0,.71);
 $color__gray-light:     rgba(0,0,0,.39);
 $color__gray-lighter:   rgba(0,0,0,.18);
 $color__gray-lightest:  rgba(0,0,0,.05);
 
-// Colors
 $color__1_-1: #169861; // Grøn
 $color__1_0: #1BB373;
 $color__1_1: #5EC99C;
@@ -30,7 +37,6 @@ $color__4_1: #F56565;
 $color__4_2: #FBBDBD;
 $color__4_3: #FDE9E9;
 
-
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
@@ -51,3 +57,11 @@ $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
+// Typography
+$font__main: 'Livory', Georgia, serif;
+$font__headers: 'Gotham Rounded', "Helvetica Neue", Helvetica, sans-serif;
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;

@@ -1,0 +1,22 @@
+hr {
+	background-color: $color__base;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.25rem;
+	width: 60px;
+}
+.category-opdagelser hr {
+    background-color: $color__1_0;
+}
+
+.category-livestemning hr {
+    background-color: $color__2_0;
+}
+
+.category-feature hr {
+    background-color: $color__3_0;
+}
+
+.category-generelt hr {
+    background-color: $color__4_0;
+}
