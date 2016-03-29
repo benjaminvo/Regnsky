@@ -1,0 +1,21 @@
+/* Text helper classes */ 
+.text-sub {
+    @include font-size(0.75);
+    font-style: italic;
+}
+.text-mute {
+    color: $color__gray-light;
+}
+
+.text-brand-1 {
+    color: $color__1_0;
+}
+.text-brand-2 {
+    color: $color__2_0;
+}
+.text-brand-3 {
+    color: $color__3_0;
+}
+.text-brand-4 {
+    color: $color__4_0;
+}

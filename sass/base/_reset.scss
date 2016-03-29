@@ -1,16 +1,16 @@
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+}
+
 html {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
-}
-
-*,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-    -webkit-box-sizing: inherit;
-            box-sizing: inherit;
 }
 
 body {

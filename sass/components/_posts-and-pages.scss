@@ -148,3 +148,24 @@
         margin-top: 20px;
     }
 }
+
+/* Read more links */
+.read-more {
+    color: $color__gray-light;
+}
+
+.read-more-link {
+    color: $color__base;
+}
+.category-opdagelser .read-more-link {
+    color: $color__1_0;
+}
+.category-livestemning .read-more-link {
+    color: $color__2_0;
+}
+.category-feature .read-more-link {
+    color: $color__3_0;
+}
+.category-generelt .read-more-link {
+    color: $color__4_0;
+}

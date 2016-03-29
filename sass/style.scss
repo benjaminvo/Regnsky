@@ -26,11 +26,10 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 @import "base/reset";
 
-// Typography
 @import "base/typography/fontface";
-@import "base/typography/copy"; // Indtil videre vigtigt, at denne loades før headers, da den har styles i toppen, der skal erklæres inden headers
-@import "base/typography/headings";
-@import "base/typography/captions";
+@import "base/typography/typography";
+
+@import "base/helpers";
 
 /*--------------------------------------------------------------
 # Partials
@@ -38,6 +37,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "partials/buttons";
 @import "partials/fields";
 @import "partials/media";
+@import "partials/captions";
 @import "partials/tags";
 @import "partials/menus";
 @import "partials/hr";
