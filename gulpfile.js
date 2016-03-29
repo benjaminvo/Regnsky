@@ -1,6 +1,7 @@
 var gulp        = require('gulp'),
-    sourcemaps  = require('gulp-sourcemaps'),
     sass        = require('gulp-sass'),
+    sourcemaps  = require('gulp-sourcemaps'),
+    prefix      = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create();
 
 // Setup static server
@@ -17,11 +18,12 @@ gulp.task('bs-reload', function () {
 });
 
 gulp.task('sass', function() {
-  gulp.src('./sass/**/*.scss')
-    .pipe(sourcemaps.init()) // init sourcemaps
-    .pipe(sass({outputStyle: 'expanded'})) // run sass - output styles: nested/compact/expanded/compressed
-    .pipe(sourcemaps.write()) // write source maps
-    .pipe(sass().on('error', sass.logError))
+  gulp.src('./sass/style.scss')
+    //.pipe(sourcemaps.init()) // init sourcemaps
+    .pipe(sass({outputStyle: 'compressed'})) // run sass - output styles: nested/compact/expanded/compressed
+    .pipe(prefix())
+    //.pipe(sourcemaps.write()) // write source maps
+    //.pipe(sass().on('error', sass.logError)) // Virker ikke lige nu
     .pipe(gulp.dest('./')) // destination of compiled css file
     .pipe(browserSync.stream()); // inject into browsers
 });
