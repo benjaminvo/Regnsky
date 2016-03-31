@@ -1,3 +1,10 @@
+// Media query mixin
+@mixin respond-to($point) {
+  @media (min-width: $point) {
+    @content;
+  }
+}
+
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1) {
 	font-size: ($sizeValue * 16) * 1px;
@@ -13,9 +20,11 @@
 
 // Clearfix
 @mixin clearfix() {
-	content: "";
-	display: table;
-	table-layout: fixed;
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 // Clear after (not all clearfix need this also)
