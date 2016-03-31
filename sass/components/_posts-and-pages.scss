@@ -1,4 +1,4 @@
-._0site-content {
+.site-content {
     margin-bottom: 0;
 
     @media (min-width: 500px) {
@@ -42,6 +42,11 @@
 }
 
 /* Entries */
+.post {
+    padding: 2rem 0;
+    background-color: #fff;
+}
+
 .entry-header {
     margin-bottom: 1.25rem;
 }
@@ -61,24 +66,40 @@
 }
 
 .category-opdagelser {
+    .post {
+        background-color: $color__1_2;
+    }
+
     .entry-category,
     .entry-category a {
         color: $color__1_0;
     }
 }
 .category-livestemning {
+    .post {
+        background-color: $color__2_2;
+    }
+
     .entry-category,
     .entry-category a {
         color: $color__2_0;
     }
 }
 .category-feature {
+    .post {
+        background-color: $color__3_2;
+    }
+
     .entry-category,
     .entry-category a {
         color: $color__3_0;
     }
 }
 .category-generelt {
+    .post {
+        background-color: $color__4_2;
+    }
+
     .entry-category,
     .entry-category a {
         color: $color__4_0;
