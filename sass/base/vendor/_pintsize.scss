@@ -2,10 +2,10 @@
 //
 //    Pintsize
 //    Url: http://www.pintsize.io
-//    Github: https://github.com/alistairtweedie/Pintsize/
+//    Github: https://github.com/benjaminvo/pintsize
+//    Original: https://github.com/alistairtweedie/Pintsize/
 //
 //-------------------------------------------------------
-
 
 
 //-------------------------------------------------------
@@ -24,12 +24,6 @@ $gutter-width: 20px !default;
 //Fixed gutter width?
 //False will generate a flexible gutter width.
 $fixed-gutter-size: true !default;
-
-//Medium breakpoint to respond to
-$md: 40em;
-
-//Large breakpoint to respond to
-$lg: 64em;
 
 //Provide fallbacks for IE9 and IE8?
 //This generates a lot more css
@@ -60,53 +54,14 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
 
 
 //-------------------------------------------------------
-//    #clearfix mixin
-//-------------------------------------------------------
-
-
-@mixin clearfix() {
-
-    &:before,
-    &:after {
-        content: " "; /* 1 */
-        display: table; /* 2 */
-    }
-
-    &:after {
-        clear: both;
-    }
-
-    & {
-        *zoom: 1;
-    }
-
-}
-
-//-------------------------------------------------------
 //    #box-sizing mixin
 //-------------------------------------------------------
-
 
 @mixin box-sizing {
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-
-}
-
-
-//-------------------------------------------------------
-//    #media query mixin
-//-------------------------------------------------------
-
-@mixin respond-to($point) {
-
-    @media (min-width: $point) {
-
-        @content;
-
-    }
 
 }
 
@@ -192,7 +147,7 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
 //    - docs for browser support to be provided
 //-------------------------------------------------------
 
-.flex--auto {
+.flex-auto {
 
     .col {
 
@@ -202,7 +157,7 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
 
 }
 
-.flex--start {
+.flex-start {
 
     justify-content: flex-start;
 
@@ -214,7 +169,7 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
 
 }
 
-.flex--center {
+.flex-center {
 
     justify-content: center;
 
@@ -239,9 +194,7 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
 
 }
 
-
-
-.flex--end {
+.flex-end {
 
     justify-content: flex-end;
 
@@ -253,32 +206,32 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
     }
 }
 
-.flex--top {
+.flex-top {
 
     align-items: flex-start;
 }
 
-.flex--middle {
+.flex-middle {
 
     align-items: center;
 }
 
-.flex--baseline {
+.flex-baseline {
 
     align-items: baseline;
 }
 
-.flex--wrap {
+.flex-wrap {
 
     flex-wrap: wrap;
 }
 
-.flex--row {
+.flex-row {
 
     flex-direction: row;
 }
 
-.flex--bottom {
+.flex-bottom {
 
     align-items: flex-end;
 
@@ -289,8 +242,7 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
     }
 }
 
-
-.flex--around {
+.flex-around {
 
     justify-content: space-around;
 
@@ -304,7 +256,7 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
 
 }
 
-.flex--between {
+.flex-between {
 
     justify-content: space-between;
 
@@ -317,13 +269,15 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
     }
 }
 
-.flex--reverse {
+.flex-reverse {
 
     flex-direction: row-reverse;
 }
 
 
-// defualt columns class - auto flex
+//-------------------------------------------------------
+//    # The colums
+//-------------------------------------------------------
 .col {
 
     flex-grow: 0;
@@ -342,23 +296,24 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
 }
 
 
-.col--first {
+.col-first {
 
     order: -1;
 
 }
 
-.col--last {
+.col-last {
 
     order: 1;
 }
 
 
+//-------------------------------------------------------
+//    # xs column
 
-// cycles through $columns and calculates widths
 @for $i from 1 through $columns {
 
-    .col--#{$i} {
+    .col-xs-#{$i} {
 
         flex-basis: column($i);
         max-width: column($i);
@@ -373,10 +328,9 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
 
 }
 
-// cycles through $columns and calculates offsets
 @for $i from 1 through $columns {
 
-    .col__offset--#{$i} {
+    .offset-xs-#{$i} {
 
         margin-left: column($i);
 
@@ -415,15 +369,15 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
     
 // }
 
+//-------------------------------------------------------
+//    # sm column
 
-// cycles through $columns and
-// generates medium breakpoint column classes
-@include respond-to($md)  {
+@include respond-to($sm)  {
 
 
     @for $i from 1 through $columns {
 
-        .col__md--#{$i} {
+        .col-sm-#{$i} {
 
             flex-basis: column($i);
             max-width: column($i);
@@ -438,10 +392,9 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
 
     }
 
-    // Offsets for md media query
     @for $i from 0 through $columns {
 
-        .col__md-offset--#{$i} {
+        .offset-sm-#{$i} {
 
             margin-left: column($i);
 
@@ -458,14 +411,15 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
 }
 
 
-// cycles through $columns and
-// generates large breakpoint column classes
-@include respond-to($lg)  {
+//-------------------------------------------------------
+//    # md column
+
+@include respond-to($md)  {
 
 
     @for $i from 1 through $columns {
 
-        .col__lg--#{$i} {
+        .col-md-#{$i} {
 
             flex-basis: column($i);
             max-width: column($i);
@@ -480,10 +434,92 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
 
     }
 
-    // Offsets for lg media query
     @for $i from 0 through $columns {
 
-        .col__lg-offset--#{$i} {
+        .offset-md-#{$i} {
+
+            margin-left: column($i);
+
+            @include old-ie {
+
+                margin-left: column($i);
+
+            }
+
+        }
+
+    }
+
+}
+
+
+//-------------------------------------------------------
+//    # lg column
+
+@include respond-to($lg)  {
+
+
+    @for $i from 1 through $columns {
+
+        .col-lg-#{$i} {
+
+            flex-basis: column($i);
+            max-width: column($i);
+
+            @include old-ie {
+
+                width: column($i);
+
+            }
+
+        }
+
+    }
+
+    @for $i from 0 through $columns {
+
+        .offset-lg-#{$i} {
+
+            margin-left: column($i);
+
+            @include old-ie {
+
+                margin-left: column($i);
+
+            }
+
+        }
+
+    }
+
+}
+
+//-------------------------------------------------------
+//    # xl column
+
+@include respond-to($xl)  {
+
+
+    @for $i from 1 through $columns {
+
+        .col-xl-#{$i} {
+
+            flex-basis: column($i);
+            max-width: column($i);
+
+            @include old-ie {
+
+                width: column($i);
+
+            }
+
+        }
+
+    }
+
+    @for $i from 0 through $columns {
+
+        .offset-xl-#{$i} {
 
             margin-left: column($i);
 
