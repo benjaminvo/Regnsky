@@ -20,6 +20,12 @@
     color: $color__4_0;
 }
 
+// Positioning
+.stick {
+    position: fixed;
+    top: 0px;
+}
+
 // Visibility helper classes
 .invisible {
   visibility: hidden !important;
