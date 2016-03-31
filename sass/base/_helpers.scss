@@ -1,4 +1,4 @@
-/* Text helper classes */ 
+// Text helper classes 
 .text-sub {
     @include font-size(0.75);
     font-style: italic;
@@ -18,4 +18,79 @@
 }
 .text-brand-4 {
     color: $color__4_0;
+}
+
+// Visibility helper classes
+.invisible {
+  visibility: hidden !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: ($sm - 1)) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: $sm) {
+  .hidden-sm-up {
+    display: none !important;
+  }
+}
+
+@media (min-width: $sm) and (max-width: ($md - 1)) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (max-width: ($md - 1)) {
+  .hidden-sm-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: $md) {
+  .hidden-md-up {
+    display: none !important;
+  }
+}
+
+@media (min-width: $md) and (max-width: ($lg - 1)) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media (max-width: ($lg - 1)) {
+  .hidden-md-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: $lg) {
+  .hidden-lg-up {
+    display: none !important;
+  }
+}
+
+@media (min-width: $lg) and (max-width: ($xl - 1)) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+@media (max-width: ($xl - 1)) {
+  .hidden-lg-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: $xl) {
+  .hidden-xl {
+    display: none !important;
+  }
 }
