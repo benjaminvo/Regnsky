@@ -37,5 +37,40 @@
 
 <?php wp_footer(); ?>
 
+<script>
+    
+    var headerPosition = $('.site-header').offset();
+
+    $(window).scroll(function(){
+        if($(window).scrollTop() >= headerPosition.top){
+            // $('.site-header').css({'position':'fixed','top':'0'});
+            $('.site-header').addClass("stick");
+            $('#content').css({'margin-top':'165px'});
+        } else {
+            // $('.site-header').css({'position':'static'});
+            $('.site-header').removeClass("stick");
+            $('#content').css({'margin-top':'0px'});
+        }
+    });
+
+    // var headerPos = header.offset();
+            
+    // $(window).scroll(function() {
+    //     var windowpos = $(window).scrollTop();
+        
+    //     if (windowpos >= header.pos) {
+    //         header.addClass("stick");
+    //     } else {
+    //         header.removeClass("stick"); 
+    //     }
+    // });
+
+    // Navigation - toggle body class when menu is active
+    $('.menu-toggle').on("click", function() {
+        $('body').toggleClass("menu-toggled");
+    });
+
+</script>
+
 </body>
 </html>
