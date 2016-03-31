@@ -1,10 +1,12 @@
-// Media queries (and structure)
-$size__site-main: 100%;
-$size__site-sidebar: 25%;
+// Media queries
+$screen-sm-min: 620px;  // Gamle media queries  
+$screen-md-min: 780px;  // Gamle media queries
+$screen-lg-min: 1140px; // Gamle media queries
 
-$screen-sm-min: 620px;
-$screen-md-min: 780px;
-$screen-lg-min: 1140px;
+$sm: 620px;
+$md: 780px;
+$lg: 1140px;
+$xl: 1200px;
 
 // Colors
 $color__base:           rgba(0,0,0,.87);
