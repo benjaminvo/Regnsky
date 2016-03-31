@@ -123,6 +123,12 @@ add_action( 'widgets_init', 'regnsky_widgets_init' );
  * Enqueue scripts and styles.
  */
 function regnsky_scripts() {
+	
+	// deregister default jQuery included with Wordpress
+	wp_deregister_script( 'jquery' );
+	$jquery_cdn = '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js';
+	wp_enqueue_script( 'jquery', $jquery_cdn, array(), '20130115', true );
+
 	wp_enqueue_style( 'regnsky-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'regnsky-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
