@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1440px" height="13px" viewBox="0 0 1440 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>kant-header-top</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path id="path-1" d="M1440,4 L1430,4 C1402,4 1362,7 1313,7 C1273,7 1233,3 1207,3 C1130,3 1086,10 1000,10 C849,10 829,1 660,-3.4034997e-12 C543,-1.00826014e-11 452,12 359,12 C331,12 264,7 230,7 C190,7 175,11 134,11 C86,11 57.4898663,4 10,4 C5,4.00214775 0,4 0,4 L0,13 L1440,12.999999 L1440,4 Z"></path>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop---Artikel-(grøn)" transform="translate(0.000000, -134.000000)">
+            <g id="Header-nav" transform="translate(0.000000, 134.000000)">
+                <g id="Kanter">
+                    <g id="kant-header-top">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <use fill="none" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
