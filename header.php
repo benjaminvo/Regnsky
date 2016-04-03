@@ -67,7 +67,7 @@
 					<img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-regnsky_transparent.gif" alt="logo">
 				</a>
 				
-				<span class="tagline">Danmarks sødeste<br>musikblog siden 2008 </span>
+				<span class="tagline">Danmarks sødeste<br>musikblog siden 2008</span>
 
 			</div>
 
