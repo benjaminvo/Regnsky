@@ -66,6 +66,16 @@ h4,
     } 
 }
 
+h5
+.h5 {
+    font-family: $font__main;
+    @include font-size(0.75); // 12px
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.4;
+    color: $color__gray-light;
+}
+
 h6,
 .h6 {
     font-family: $font__headers;
