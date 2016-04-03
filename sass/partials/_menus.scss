@@ -1,119 +1,78 @@
-.main-navigation,
-.footer-navigation {
-	display: block;
-	width: 280px;
-	margin: 30px auto;
+.main-navigation {
+	margin: 20px auto;
 	font-family: $font__headers;
 	font-weight: bold;
+	font-size: 20px;
+	display: none;
+
+	// Display menu on bigger screen sizes
+	@include respond-to($md) {
+		display: block;
+		font-size: 16px;
+	}
+
+	@include respond-to($lg) {
+		font-size: 20px;
+	}
 
 	// opacity: 0;
 	// transform: translateY(-100%);
 
- //    -webkit-transition: all .2s cubic-bezier(0.4, 0, 0.35, 1.5);
- //    		transition: all .2s cubic-bezier(0.4, 0, 0.35, 1.5);
+ 	// -webkit-transition: all .2s cubic-bezier(0.4, 0, 0.35, 1.5);
+ 	//         transition: all .2s cubic-bezier(0.4, 0, 0.35, 1.5);
 
 	ul {
-		list-style: none;
 		margin: 0;
-		margin-left: -10px;
 		padding-left: 0;
 		text-align: center;
+		list-style: none;
 
-		@media (max-width: ($screen-sm-min - 1)) {
-		    -webkit-columns: 2;
-		       -moz-columns: 2;
-		    		columns: 2;
-
-		    -webkit-column-gap: 0rem;
-	    	   -moz-column-gap: 0rem;
-	    			column-gap: 0rem;
-	    }
+		@include respond-to($md) {
+			display: block;
+			text-align: right;
+		}
 	}
 	
 	li {
-		position: relative;
-		margin-bottom: 15px;
+		// opacity: 0;
+		margin-bottom: 1rem;
+
+		@include respond-to($md) {
+			opacity: 1;
+			display: inline-block;
+			margin-left: 20px;
+			margin-bottom: 0;
+		}
+
+		@include respond-to($xl) {
+			margin-left: 30px;
+		}
 	}
 	
 	a {
-		display: block;
 		color: $color__base;
-		@include font-size(1);
-		font-weight: bold;
+		text-decoration: none;
 		
     	&:hover {
     		text-decoration: underline;
     	}
 	}
 
-	// Menu på større skærme
-	@media (min-width: $screen-sm-min) {
-		margin: 30px 0; 
-		width: auto;
-
-		ul {
-			margin: 0 0 1.25rem;		
-		}
-
-		li {
-			display: inline-block;
-			margin-left: 1.25rem;
-			margin-bottom: 0;
-		}
-    }
-
-	@media (min-width: $screen-sm-min) {
-		.current_page_item > a,
-		.current-menu-item > a,
-		.current_page_ancestor > a,
-		.current-menu-ancestor > a,
-		.current-menu-parent > a {
-			&:after {
-				position: absolute;
-				top: -25px;
-				left: 50%;
-				margin-left: -8px;
-				content: "∴";
-				font-size: 20px;
-				color: $color__base;
-			}
-		}
-	}
-
-	/* Color menu items */
-	#menu-item-16179 a,
-	#menu-item-16198 a,
+	#menu-item-16789 a,
 	#menu-item-17 a { // Sidste menupunkt er til ungtriumf.dk/regnsky
 		color: $color__1_0; 
 	}
-	#menu-item-16181 a,
-	#menu-item-16200 a,
+	#menu-item-16791 a,
 	#menu-item-19 a {
 		color: $color__2_0;
 	}
-	#menu-item-16182 a,
-	#menu-item-16201 a,
+	#menu-item-16790 a,
 	#menu-item-20 a {
 		color: $color__3_0;
 	}
-	#menu-item-16180 a,
-	#menu-item-16199 a,
-	#menu-item-18 a {
-		color: $color__4_0;
-	}
 }
 
-.footer-navigation {
-	ul {
-		text-align: center;
-	}
-}
-
-.main-navigation ul {
-	display: none;
-}
-
-/* Small menu. */
+// Burger menu
 .menu-toggle {
 	position: absolute;
 	top: 5px;
@@ -141,9 +100,13 @@
     	transition: background .2s ease-in;
     	transition: all .2s $animation-spring;
 	}
+
+	// Hide on bigger screens
+	@include respond-to($md) {
+		display: none;
+	}
 }
 
-/* Color burger menu according to category */
 .category-opdagelser .menu-toggle span {
 	background: $color__1_0;
 }
@@ -157,52 +120,37 @@
 	background: $color__4_0;
 }
 
-.menu-toggle[aria-expanded="true"] {
-	background: $color__gray-lighter;
+// Display menu on mobile
+body.nav-toggled {
 
-	span {
-		background: $color__base;
+	.site-header {
+    	height: 380px;
 	}
 
-	.bar-1 {
-		transform: translateY(6px) rotate(-45deg);
-	}
-	.bar-2 {
-		opacity: 0;
-	}
-	.bar-3 {
-		transform: translateY(-6px) rotate(45deg);
-	}
-}
-
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-// .main-navigation.toggled {
-// 	opacity: 1;
-// 	transform: translateY(0px);
-// }
-
-/* Main navigation on bigger screens */
-
-@media screen and (min-width: $screen-md-min) {
-	.menu-toggle {
-		display: none;
-	}
 	.main-navigation {
-		margin: 1.25rem 0;
+		display: block;
+	}
 
-		ul {
-			display: block;
-			text-align: right;
+	.menu-toggle {
+		background: $color__gray-lighter;
+
+		span {
+			background: $color__base;
+		}
+
+		.bar-1 {
+			transform: translateY(6px) rotate(-45deg);
+		}
+		.bar-2 {
+			opacity: 0;
+		}
+		.bar-3 {
+			transform: translateY(-6px) rotate(45deg);
 		}
 	}
 }
 
 /* Navigation */
-
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
