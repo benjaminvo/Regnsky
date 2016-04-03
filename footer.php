@@ -34,6 +34,9 @@
     var windowWidth = $(window).width();
     var header = $('.site-header');
     var headerPos = header.offset();
+    var content = $('#content');
+    var menuItems = $('.main-navigation li');
+
 
     // Recalculate window width when window is resized
     $(window).on('resize', function() {
@@ -46,13 +49,13 @@
 
         if (windowPos >= 86 && windowWidth < 750) {             //  86 = banner height ((196 / 2) - header offset (-12)
             header.addClass("stick");
-            $('#content').css({'margin-top':'166px'});          // 166 = header (80) + banner height (196/2) - header offset (-12)
+            content.css({'margin-top':'166px'});          // 166 = header (80) + banner height (196/2) - header offset (-12)
         } else if (windowPos >= 172 && windowWidth >= 750) {    // 172 = banner (196) - header offset (-12)
             header.addClass("stick");
-            $('#content').css({'margin-top':'292px'});          // 292 = header (120) + banner height (196) - header offset (-24)
+            content.css({'margin-top':'292px'});          // 292 = header (120) + banner height (196) - header offset (-24)
         } else {
             header.removeClass("stick");
-            $('#content').css({'margin-top':'0px'});
+            content.css({'margin-top':'0px'});
         }
     });
 
@@ -60,7 +63,32 @@
     $('.menu-toggle').on("click", function() {
         $('body').toggleClass("nav-toggled");
 
-        // $('.main-navigation li').fadeIn();
+        // Loop through list items and assign animate class
+        if (!$('body').hasClass('nav-toggled')) {
+            menuItems.each(function() {
+                //$(this).removeClass('animate');
+                $(this).animate({'opacity': 0}, 50);
+            });
+        } else {
+            $.each(menuItems, function(i, el) { // Link: cl.ly/fajZ - Denne nye måde at bruge "each" kan måske også bare bruges til at tilføje en klasse én af gangen
+
+                setTimeout(function(){
+                   $(el).animate({
+                    'opacity': 1
+                   }, 50);
+                }, 0 + ( i * 50 ));
+
+            });
+
+            // menuItems.each(function(index) {
+            //     setTimeout(function() {
+            //         $(this).addClass('animate');
+            //     }, index * 100);       
+                
+            //     //$(this).delay(500*index).addClass('animate');
+            // });
+        }
+
     });
 
 </script>
