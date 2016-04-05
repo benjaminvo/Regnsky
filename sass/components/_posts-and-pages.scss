@@ -44,7 +44,8 @@
 /* Entries */
 .post {
     margin-top: -3rem;
-    padding: 5rem 0 2rem;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
     background-color: #fff;
 }
 
@@ -157,9 +158,10 @@
     }
 }
 
-.entry-content img {
+.post img {
     height: auto; /* Make sure images are scaled correctly. */
-    width: 100%; /* Adhere to container width. */
+    width: calc(100% + $gitter-width*2); /* Adhere to container width. */
+    margin-left: -$gutter-width;
 }
 
 /* Pages */
