@@ -31,31 +31,31 @@
 
 <script>
     
-    var windowWidth = $(window).width();
-    var header = $('.site-header');
-    var headerPos = header.offset();
-    var content = $('#content');
-    var menuItems = $('.main-navigation li');
-
+    var $window = $(window);
+    var windowWidth = $window.width();
+    var $header = $('.site-header');
+    var headerPos = $header.offset();
+    var $content = $('#content');
+    var $menuItems = $('.main-navigation li');
 
     // Recalculate window width when window is resized
-    $(window).on('resize', function() {
-        windowWidth = $(window).width();
+    $window.on('resize', function() {
+        windowWidth = $window.width();
     });
 
     // Stick header
-    $(window).scroll(function() {
-        var windowPos = $(window).scrollTop();
+    $window.on('scroll', function() {
+        var windowPos = $window.scrollTop();
 
         if (windowPos >= 86 && windowWidth < 750) {             //  86 = banner height ((196 / 2) - header offset (-12)
-            header.addClass("stick");
-            content.css({'margin-top':'166px'});          // 166 = header (80) + banner height (196/2) - header offset (-12)
+            $header.addClass("stick");
+            $content.css({'margin-top':'166px'});          // 166 = header (80) + banner height (196/2) - header offset (-12)
         } else if (windowPos >= 172 && windowWidth >= 750) {    // 172 = banner (196) - header offset (-12)
-            header.addClass("stick");
-            content.css({'margin-top':'292px'});          // 292 = header (120) + banner height (196) - header offset (-24)
+            $header.addClass("stick");
+            $content.css({'margin-top':'292px'});          // 292 = header (120) + banner height (196) - header offset (-24)
         } else {
-            header.removeClass("stick");
-            content.css({'margin-top':'0px'});
+            $header.removeClass("stick");
+            $content.css({'margin-top':'0px'});
         }
     });
 
@@ -76,11 +76,11 @@
 
         // Show/hide list elements
         if (!$('body').hasClass('nav-toggled')) {
-            menuItems.addClass('animated fadeOutUp');
-            menuItems.removeClass('animated fadeOutUp');
+            $menuItems.addClass('animated fadeOutUp');
+            $menuItems.removeClass('animated fadeOutUp');
             // $(el).animateCss('fadeOut');
         } else {
-            $.each(menuItems, function(i, el) { // Link: cl.ly/fajZ
+            $.each($menuItems, function(i, el) { // Link: cl.ly/fajZ
 
                 // Add animate class one element at a time
                 setTimeout(function(){
