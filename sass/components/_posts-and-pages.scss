@@ -6,9 +6,9 @@
     }
 }
 
-.content-area {
-    overflow: hidden;
-}
+// .content-area {
+//     overflow: hidden;
+// }
 
 .sticky {
 	display: block;
@@ -43,7 +43,8 @@
 
 /* Entries */
 .post {
-    padding: 2rem 0;
+    margin-top: -3rem;
+    padding: 5rem 0 2rem;
     background-color: #fff;
 }
 
