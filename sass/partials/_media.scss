@@ -7,21 +7,44 @@
 	padding: 0;
 }
 
-/* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
 object {
-	width: 100%;
-    margin-bottom: 1.25rem;
-    -webkit-border-radius: 3px !important;
-            border-radius: 3px !important;
+    height: 180px;
+    margin-bottom: 0;
     overflow: hidden;
+
+    @include respond-to(400px) {
+        height: 220px;
+    }
+
+    @include respond-to($md) {
+        height: 300px;
+    }
 }
 
-// img {
-//  height: auto; /* Make sure images are scaled correctly. */
-//  max-width: 100%; /* Adhere to container width. */
-// }
+.post img {
+    height: auto; /* Make sure images are scaled correctly. */
+    margin-left: -$gutter-width;
+}
+
+embed,
+iframe,
+object,
+.post img {
+    width: calc(100% + #{$gutter-width} * 2); // variable is interpolated in order to compile 
+    margin-left: -$gutter-width;
+
+    @include respond-to($md) {
+        width: calc(100% + (#{$gutter-width}*2) * 2);
+        margin-left: -$gutter-width * 2;
+    }
+
+    @include respond-to($xl) {
+        width: calc(100% + #{$gutter-width} * 2);
+        margin-left: -$gutter-width;
+    }
+}
 
 /* Margin bottom for audio player */
 .wp-audio-shortcode {

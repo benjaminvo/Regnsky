@@ -1,15 +1,15 @@
 .wp-caption {
 	@extend .h6;
 
-    margin-bottom: 1.25rem; // Behøves nok ikke - erklæres allerede ved h6
+    margin-bottom: 1rem;
 	max-width: 100%;
 
-	img[class*="wp-image-"] {
-		@include center-block;
-	}
+	// img[class*="wp-image-"] {
+	// 	@include center-block;
+	// }
 
 	.wp-caption-text {
-		margin: 10px 0 0;
+		margin: 5px 0 0;
         text-align: left;
 	}
 }
