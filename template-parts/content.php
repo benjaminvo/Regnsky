@@ -9,73 +9,100 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'row' ); ?>>
-	<header class="entry-header col-md-12">
-		<?php
+<article id="post-<?php the_ID(); ?>" <?php post_class( ); ?>>
+	
+	<div class="entry-wrapper">
 
-			$category_array = get_the_category();
-			$category 		= $category_array[0];
-			$category_name 	= $category->cat_name;
-			$category_id 	= $category->cat_ID;
-			$category_link 	= get_category_link( $category_id );
+		<div class="container">
+	
+			<!-- Entry header -->
+			<header class="entry-header">
+				<?php
 
-			if ($category_name == 'Nyheder') {
-				$category_name = 'Nyhed';
-			}
-			if ($category_name == 'Anmeldelser') {
-				$category_name = 'Anmeldelse';
-			}
-			?>
-			
-			<h4 class="entry-category">
-				<!-- <a href="<?php //echo esc_url( $category_link ); ?>" title="<?php //echo $category_name; ?>"><?php //echo $category_name; ?></a> -->
-				<?php echo $category_name; ?>
-			</h4>
+					$category_array = get_the_category();
+					$category 		= $category_array[0];
+					$category_name 	= $category->cat_name;
+					$category_id 	= $category->cat_ID;
+					$category_link 	= get_category_link( $category_id );
 
-			
-			<?php if ( is_single() ) { ?>				
-				<?php 
-				the_title( '<h1 class="entry-title">', '</h1>' );
-			} else {
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
+					if ($category_name == 'Nyheder') {
+						$category_name = 'Nyhed';
+					}
+					if ($category_name == 'Anmeldelser') {
+						$category_name = 'Anmeldelse';
+					}
+					?>
+					
+					<h4 class="entry-category">
+						<!-- <a href="<?php //echo esc_url( $category_link ); ?>" title="<?php //echo $category_name; ?>"><?php //echo $category_name; ?></a> -->
+						<?php echo $category_name; ?>
+					</h4>
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta text-sub text-mute">
-			<?php regnsky_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
+					
+					<?php if ( is_single() ) { ?>				
+						<?php 
+						the_title( '<h1 class="entry-title">', '</h1>' );
+					} else {
+						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+					}
 
-	<div class="entry-content col-md-12">
-		<?php
-			
-			if ( is_single() ) {
-				the_content( sprintf(
-					/* translators: %s: Name of current post. */
-					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'regnsky' ), array( 'span' => array( 'class' => array() ) ) ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				) );
-			} else {
-				the_excerpt();
-			}
+				if ( 'post' === get_post_type() ) : ?>
+				<div class="entry-meta text-sub text-mute">
+					<?php regnsky_posted_on(); ?>
+				</div><!-- .entry-meta -->
+				<?php
+				endif; ?>
+			</header>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'regnsky' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+			<!-- Entry content -->
+			<div class="entry-content">
+				<?php
+					
+					if ( is_single() ) {
+						the_content( sprintf(
+							/* translators: %s: Name of current post. */
+							wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'regnsky' ), array( 'span' => array( 'class' => array() ) ) ),
+							the_title( '<span class="screen-reader-text">"', '"</span>', false )
+						) );
+					} else {
+						the_content();
+					}
 
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'regnsky' ),
+						'after'  => '</div>',
+					) );
+				?>
+
+				<!-- Tags -->
+				<?php
+					
+					if ( 'post' === get_post_type() ) {
+						$tags_list = get_the_tag_list( '', esc_html__( '', 'regnsky' ) );
+						if ( $tags_list ) {
+							printf( '<div class="tags-links h6">' . esc_html__( '%1$s', 'regnsky' ) . '</div>', $tags_list );
+						}
+					}
+
+				?>
+			</div>		
+
+		</div> <!-- /.container -->
+
+	</div>
+
+	<!-- Entry footer -->
 	<?php
-	if ( is_single() ) { ?>
-	
-	<footer class="entry-footer col-md-12">
-		<?php regnsky_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-	
-	<?php 
-	} ?>
+		if ( is_single() || is_home() ) { ?>
+
+			<footer class="entry-footer">
+				<div class="container">
+					<?php include('entry-footer.php') ?>
+				</div>
+			</footer>
+
+		<?php
+		}
+	?>
 
 </article><!-- #post-## -->
