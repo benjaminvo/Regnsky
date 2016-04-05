@@ -14,12 +14,12 @@
 	display: block;
 }
 
-.hentry {
-	margin-bottom: 3rem;
-}
-.single .hentry {
-    margin-bottom: 40px;
-}
+// .hentry {
+// 	margin-bottom: 3rem;
+// }
+// .single .hentry {
+//     margin-bottom: 40px;
+// }
 
 .byline,
 .updated:not(.published){
@@ -42,34 +42,53 @@
 }
 
 /* Entries */
-.post {
-    margin-top: -3rem;
-    padding-top: 5rem;
-    padding-bottom: 2rem;
+.single .post {
+    margin-bottom: 40px;
+}
+
+.entry-wrapper {
+    padding-top: 40px;
+    padding-bottom: 20px;
     background-color: #fff;
 }
 
+// Add bg color behind header of the first post of a page
+.post:first-child .entry-wrapper {
+    margin-top: -40px;
+    padding-top: 80px;
+}
+
 .entry-header {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.875rem; // 30px
 }
 
-.archive .entry-category,
-.archive .entry-title,
-.home .entry-category,
-.home .entry-title {
-    margin-bottom: 1rem; // Mindre end standard margin på arkiv-side og home
+.entry-category {
+    margin-bottom: 1rem; // 16px
+    text-align: center;
 }
 
-.single .entry-header {
-    margin-bottom: 1.875rem;
-}
-.single .entry-category {
-    margin-bottom: 1.25rem;
+.entry-title {
+    text-align: center;
 }
 
-.category-opdagelser {
-    .post {
-        background-color: $color__1_2;
+.entry-meta {
+    text-align: center;
+
+    a, .date {
+        color: $color__base;
+    }
+}
+
+// .archive .entry-category,
+// .archive .entry-title,
+// .home .entry-category,
+// .home .entry-title {
+//     margin-bottom: 1rem; // Mindre end standard margin på arkiv-side og home
+// }
+
+article.category-opdagelser {
+    .entry-wrapper {
+        background-color: $color__1_2;    
     }
 
     .entry-category,
@@ -77,29 +96,28 @@
         color: $color__1_0;
     }
 }
-.category-livestemning {
-    .post {
-        background-color: $color__2_2;
+article.category-livestemning {
+    .entry-wrapper {
+        background-color: $color__2_2;    
     }
-
     .entry-category,
     .entry-category a {
         color: $color__2_0;
     }
 }
-.category-feature {
-    .post {
-        background-color: $color__3_2;
+article.category-feature {
+    .entry-wrapper {
+        background-color: $color__3_2;    
     }
-
     .entry-category,
     .entry-category a {
-        color: $color__3_0;
+        color: $color__3_-1;
     }
 }
-.category-generelt {
-    .post {
-        background-color: $color__4_2;
+article.category-generelt {
+
+    .entry-wrapper {
+        background-color: $color__4_2;    
     }
 
     .entry-category,
@@ -108,64 +126,17 @@
     }
 }
 
-// Center titles on single posts and pages
-.entry-title,
-.entry-meta,
-.page-title {
-    text-align: center;
+.entry-footer {
+    margin-bottom: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: $color__gray-lightest;
 }
 
-// .home .entry-title,
-// .home .entry-meta,
-// .home .entry-category,
-// .archive .entry-title,
-// .archive .entry-meta,
-// .archive .entry-category {
-//     text-align: left;
-// }
-
-.entry-meta {
-
-    a,
-    .date {
-        color: $color__base;
-    }
-}
-
-@media (min-width: $screen-lg-min) {
-    .entry-title,
-    .entry-meta,
-    .page-title {
-        text-align: left;
-    } 
-}
-
-// @media (min-width: $screen-lg-min) {
-//     .page-title {
-//         text-align: left;
-//     } 
-// }
-
-/* Entry content */ 
-.single .entry-content {
-    margin-bottom: 10px; // To get 30px down to the tags
-}
-
-.archive .entry-content,
-.home .entry-content {
-    p {
-        margin-bottom: 0; // Remove margin bottom from excerpt
-    }
-}
-
-.post img {
-    height: auto; /* Make sure images are scaled correctly. */
-    width: calc(100% + $gitter-width*2); /* Adhere to container width. */
-    margin-left: -$gutter-width;
-}
 
 /* Pages */
 .page-title {
+    text-align: center;
     margin-bottom: 40px;
 
     @media (max-width: $screen-md-min) {
@@ -193,3 +164,4 @@
 .category-generelt .read-more-link {
     color: $color__4_0;
 }
+
