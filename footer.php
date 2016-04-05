@@ -59,36 +59,39 @@
         }
     });
 
+    // Extend jQuery with animation function
+    // NOT IN USE
+    $.fn.extend({
+        animateCss: function (animationName) {
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+                $(this).removeClass('animated ' + animationName);
+            });
+        }
+    });
+
     // Navigation - toggle body class when menu is active
     $('.menu-toggle').on("click", function() {
         $('body').toggleClass("nav-toggled");
 
-        // Loop through list items and assign animate class
+        // Show/hide list elements
         if (!$('body').hasClass('nav-toggled')) {
-            menuItems.each(function() {
-                //$(this).removeClass('animate');
-                $(this).animate({'opacity': 0}, 50);
-            });
+            menuItems.addClass('animated fadeOutUp');
+            menuItems.removeClass('animated fadeOutUp');
+            // $(el).animateCss('fadeOut');
         } else {
-            $.each(menuItems, function(i, el) { // Link: cl.ly/fajZ - Denne nye måde at bruge "each" kan måske også bare bruges til at tilføje en klasse én af gangen
+            $.each(menuItems, function(i, el) { // Link: cl.ly/fajZ
 
+                // Add animate class one element at a time
                 setTimeout(function(){
-                   $(el).animate({
-                    'opacity': 1
-                   }, 50);
-                }, 0 + ( i * 50 ));
+                   $(el).addClass('animated fadeInDown');
+                }, 60 + ( i * 30 ));
+
+                // Remove animate class again
+                $(el).removeClass('animated fadeInDown')
 
             });
-
-            // menuItems.each(function(index) {
-            //     setTimeout(function() {
-            //         $(this).addClass('animate');
-            //     }, index * 100);       
-                
-            //     //$(this).delay(500*index).addClass('animate');
-            // });
         }
-
     });
 
 </script>

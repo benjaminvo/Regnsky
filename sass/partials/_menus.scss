@@ -36,7 +36,8 @@
 	li {
 		margin-bottom: 1rem;
 		opacity: 0;
-		// transition: opacity .5s ease;
+		animation-duration: .2s;
+		transition: opacity .2s ease;
 
 		@include respond-to($md) {
 			opacity: 1;
@@ -87,7 +88,7 @@
 	background: none;
 	cursor: pointer;
 
-    transition: background .2s ease-in;
+    transition: background .2s ease;
 
 	span {
 		display: block;
@@ -98,7 +99,6 @@
     	opacity: 1;
     	background: $color__base;
 
-    	transition: background .2s ease-in;
     	transition: all .2s $animation-spring;
 	}
 

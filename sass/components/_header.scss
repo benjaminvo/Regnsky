@@ -36,7 +36,7 @@ $topbanner-height: 196px;
     background-color: #fff;
     transform: translateZ(0); // Hack to stick header before scroll stops on mobile
     z-index: 30;
-    transition: height .2s ease;
+    transition: height .2s ease-out;
 
     @include respond-to($md) {
         height: 120px;
