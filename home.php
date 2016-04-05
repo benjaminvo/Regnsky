@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-    <div id="primary" class="content-area col col-xs-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3">
+    <div id="primary" class="content-area"> <!-- slettede: col col-xs-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3-->
         <main id="main" class="site-main" role="main">
 
         <?php
