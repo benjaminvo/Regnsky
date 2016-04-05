@@ -32,7 +32,9 @@ $topbanner-height: 196px;
 .site-header {
     height: 80px;
     width: 100%;
-    padding: 15px 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: $gutter-width;
     background-color: #fff;
     transform: translateZ(0); // Hack to stick header before scroll stops on mobile
     z-index: 30;
@@ -40,7 +42,13 @@ $topbanner-height: 196px;
 
     @include respond-to($md) {
         height: 120px;
-        padding: 2rem;
+        padding-top: 2rem;
+        padding-right: $gutter-width*2;        
+        padding-bottom: 2rem;
+    }
+
+    @include respond-to($xl) {
+        padding-right: 0;
     }
 
     &:before {
@@ -103,19 +111,4 @@ $topbanner-height: 196px;
     }
 
     @include clearfix();
-}
-
-@media (min-width: $md) {
-
-    .menu-toggle {
-        display: none;
-    }
-
-    .main-navigation {
-        position: absolute;
-        top: 10px;
-        right: 0;
-        margin: 0;
-    }
-
 }
