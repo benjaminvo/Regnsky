@@ -16,7 +16,7 @@ input[type="submit"] {
 	padding: 1.1667em 2.333em; // 14px 28px
 	box-shadow: 0px 5px 10px 0px rgba(196,196,196,0.74), inset 0px 1px 0px 0px #FFFFFF;
 
-	transition: all .1s ease;
+	transition: all .2s ease;
 
 	&:hover {
 		box-shadow: 0px 2px 5px 0px rgba(196,196,196,0.74), inset 0px 1px 0px 0px #FFFFFF;
@@ -30,7 +30,7 @@ input[type="submit"] {
 	}
 }
 
-.category-opdagelser {
+.category-opdagelser .entry-content {
 	button,
 	input[type="button"],
 	input[type="reset"],
@@ -44,7 +44,7 @@ input[type="submit"] {
 		}
 	}
 }
-.category-livestemning {
+.category-livestemning .entry-content {
 	button,
 	input[type="button"],
 	input[type="reset"],
@@ -57,12 +57,12 @@ input[type="submit"] {
 		}
 	}
 }
-.category-feature {
+.category-feature .entry-content {
 	button,
 	input[type="button"],
 	input[type="reset"],
 	input[type="submit"] {
-		color: $color__3_0;
+		color: $color__3_-1;
 		background-color: $color__3_3;
 		box-shadow: 0px 5px 10px 0px rgba(233,205,121,0.60), inset 0px 1px 0px 0px #FCFCFC;
 		
@@ -71,7 +71,7 @@ input[type="submit"] {
 		}
 	}
 }
-.category-generelt {
+.category-generelt .entry-content {
 	button,
 	input[type="button"],
 	input[type="reset"],
