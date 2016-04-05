@@ -85,5 +85,5 @@
 
 	</header>
 
-	<div id="content" class="site-content"> <!-- jeg har slettet container-klasse -->
+	<div id="content" class="site-content">
 		<div class="row row-main">
