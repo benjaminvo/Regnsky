@@ -118,6 +118,19 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
 
     max-width: $grid-width; // Calculated from config
     margin: 0 auto;
+    padding-left: $gutter-width;
+    padding-right: $gutter-width;
+
+    @include respond-to($md) {
+        padding-left: $gutter-width * 2;
+        padding-right: $gutter-width * 2;
+    }
+
+    @include respond-to($xl) {
+        padding-left: $gutter-width;
+        padding-right: $gutter-width;
+    }
+    
     @include box-sizing;
 
     @include old-ie {
