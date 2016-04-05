@@ -1,33 +1,32 @@
-.entry-footer {
-    .tags-links {
-        text-align: left;
+.tags-links {
+    text-align: left;
 
-        a {
-            display: inline-block;
-            padding: 3px 10px 2px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            border-radius: 15px;
-            // border: 1px solid transparent;
-            border: 0 px;
-            text-decoration: none;
-            color: $color__base;
-            
-            box-shadow: 0px 5px 10px 0px rgba(196,196,196,0.74), inset 0px 1px 0px 0px #FFFFFF;
-            transition: all .1s ease;
+    a {
+        display: inline-block;
+        padding: 3px 10px 2px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        // border: 1px solid transparent;
+        border: 0 px;
+        text-decoration: none;
+        color: $color__base;
+        
+        box-shadow: 0px 5px 10px 0px rgba(196,196,196,0.74), inset 0px 1px 0px 0px #FFFFFF;
+        transition: all .1s ease;
 
-            &:hover {
-                box-shadow: 0px 2px 5px 0px rgba(196,196,196,0.74), inset 0px 1px 0px 0px #FFFFFF;
-            }
+        &:hover {
+            box-shadow: 0px 2px 5px 0px rgba(196,196,196,0.74), inset 0px 1px 0px 0px #FFFFFF;
+        }
 
-            &:last-child {
-                margin-right: 0;
-            }
+        &:last-child {
+            margin-right: 0;
         }
     }
 }
+
 .category-opdagelser {
-    .entry-footer .tags-links a {
+    .tags-links a {
         color: $color__1_0;
         background-color: $color__1_3;
         box-shadow: 0px 5px 10px 0px rgba(94,201,156,0.4), inset 0px 1px 0px 0px #FCFCFC;
@@ -38,7 +37,7 @@
     }
 }
 .category-livestemning {
-    .entry-footer .tags-links a {
+    .tags-links a {
         color: $color__2_0;
         background-color: $color__2_3;
         box-shadow: 0px 5px 10px 0px rgba(99,165,231,0.25), inset 0px 1px 0px 0px #FCFCFC;
@@ -49,7 +48,7 @@
     }
 }
 .category-feature {
-    .entry-footer .tags-links a {
+    .tags-links a {
         color: $color__3_0;
         background-color: $color__3_3;
         box-shadow: 0px 5px 10px 0px rgba(233,205,121,0.60), inset 0px 1px 0px 0px #FCFCFC;
@@ -60,7 +59,7 @@
     }
 }
 .category-generelt {
-    .entry-footer .tags-links a {
+    .tags-links a {
         color: $color__4_0;
         background-color: $color__4_3;
         box-shadow: 0px 5px 10px 0px rgba(245,101,101,0.25), inset 0px 1px 0px 0px #FCFCFC;
