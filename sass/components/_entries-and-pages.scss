@@ -46,6 +46,10 @@
     margin-bottom: 40px;
 }
 
+.post p:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
 .entry-wrapper {
     padding-top: 40px;
     padding-bottom: 20px;
@@ -82,7 +86,7 @@
 }
 
 .entry-meta {
-    text-align: center;
+    @extend .h5;
 
     a, .date {
         color: $color__base;
@@ -142,7 +146,6 @@ article.category-generelt {
     padding-bottom: 40px;
     background-color: $color__gray-lightest;
 }
-
 
 /* Pages */
 .page-title {
