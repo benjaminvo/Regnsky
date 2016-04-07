@@ -115,11 +115,11 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
 //-------------------------------------------------------
 
 .container {
-
+    position: relative;
     max-width: $grid-width; // Calculated from config
     margin: 0 auto;
-    padding-left: $gutter-width;
-    padding-right: $gutter-width;
+    padding-left: $gutter-width/2;
+    padding-right: $gutter-width/2;
 
     @include respond-to($md) {
         padding-left: $gutter-width * 2;
@@ -127,8 +127,10 @@ $grid-width: ($columns * $column-width) + (($columns ) * $gutter-width);
     }
 
     @include respond-to($xl) {
-        padding-left: $gutter-width;
-        padding-right: $gutter-width;
+        // padding-left: $gutter-width;
+        // padding-right: $gutter-width;
+        padding-left: 0;
+        padding-right: 0;
     }
     
     @include box-sizing;
