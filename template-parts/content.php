@@ -18,7 +18,7 @@
 			<div class="flex">
 
 				<!-- Entry header -->
-				<header class="entry-header col col-xs-12 col-md-8 offset-md-2">
+				<header class="entry-header col col-xs-12 col-sm-10 offset-sm-1">
 					<?php
 
 						$category_array = get_the_category();
@@ -49,7 +49,7 @@
 						}
 
 					if ( 'post' === get_post_type() ) : ?>
-					<div class="entry-meta text-sub text-mute">
+					<div class="entry-meta">
 						<?php regnsky_posted_on(); ?>
 					</div><!-- .entry-meta -->
 					<?php
@@ -97,16 +97,16 @@
 
 	<!-- Entry footer -->
 	<?php
-		if ( is_single() || is_home() ) { ?>
+	if ( is_single() || is_home() ) { ?>
 
-			<footer class="entry-footer">
-				<div class="container">
-					<?php include('entry-footer.php') ?>
-				</div>
-			</footer>
+		<footer class="entry-footer">
+			<div class="container">
+				<?php include('entry-footer.php') ?>
+			</div>
+		</footer>
 
-		<?php
-		}
+	<?php
+	}
 	?>
 
 </article><!-- #post-## -->
