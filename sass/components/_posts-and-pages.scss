@@ -50,12 +50,22 @@
     padding-top: 40px;
     padding-bottom: 20px;
     background-color: #fff;
+
+    @include respond-to($md) {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
 }
 
 // Add bg color behind header of the first post of a page
 .post:first-child .entry-wrapper {
     margin-top: -40px;
     padding-top: 80px;
+
+    @include respond-to($md) {
+        padding-top: 100px;
+        margin-top: -40px;
+    }
 }
 
 .entry-header {
