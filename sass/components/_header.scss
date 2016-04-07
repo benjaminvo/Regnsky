@@ -34,21 +34,22 @@ $topbanner-height: 196px;
     width: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-right: $gutter-width;
+    // padding-right: $gutter-width;
     background-color: #fff;
     transform: translateZ(0); // Hack to stick header before scroll stops on mobile
     z-index: 30;
     transition: height .2s ease-out;
+    will-change: transform;
 
     @include respond-to($md) {
         height: 120px;
         padding-top: 2rem;
-        padding-right: $gutter-width*2;        
+        // padding-right: $gutter-width*2;        
         padding-bottom: 2rem;
     }
 
     @include respond-to($xl) {
-        padding-right: 0;
+        // padding-right: 0;
     }
 
     &:before {
@@ -72,13 +73,11 @@ $topbanner-height: 196px;
         bottom: -13px;
         left: 0;
     }
-
-    & .container {
-        position: relative; // To position the nav absolute right 
-    } 
 }
 
 .site-branding {
+
+    padding-left: $gutter-width / 2;
 
     .logo {
         width: 100px;
@@ -87,6 +86,12 @@ $topbanner-height: 196px;
         padding-left: 0;
 
         @include respond-to($md) {
+            width: 120px;
+            margin-right: 30px;
+            margin-top: -6px;
+        }
+
+        @include respond-to($lg) {
             width: 140px;
             margin-right: 30px;
             margin-top: -12px;
