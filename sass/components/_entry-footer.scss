@@ -17,31 +17,31 @@
     //     }
     // }
 }
-.category-opdagelser .entry-actions-header:before {
-    background-color: $color__1_0;
-}
-.category-livestemning .entry-actions-header:before {
-    background-color: $color__2_0;
-}
-.category-feature .entry-actions-header:before {
-    background-color: $color__3_0;
-}
-.category-generelt .entry-actions-header:before {
-    background-color: $color__4_0;
-}
+// .category-opdagelser .entry-actions-header:before {
+//     background-color: $color__1_0;
+// }
+// .category-livestemning .entry-actions-header:before {
+//     background-color: $color__2_0;
+// }
+// .category-feature .entry-actions-header:before {
+//     background-color: $color__3_0;
+// }
+// .category-generelt .entry-actions-header:before {
+//     background-color: $color__4_0;
+// }
 
 /*--------------------------------------------------------------
 ## Share post
 */
 
 .entry-share {
-    margin-bottom: 0px; // Skal være 30px, når det ikke er sociale embeddede knapper
+    margin-bottom: 30px; // Skal være 30px, når det ikke er sociale embeddede knapper
 }
 
 .share-buttons {
     text-align: center;
 
-    @media(min-width: $screen-sm-min) {
+    @media(min-width: $md) {
         text-align: left;
     }
 
@@ -54,28 +54,32 @@
         }
     }
 
-    div {
-        //display: inline-block;
-        //margin-right: 20px;
-        margin-bottom: 10px;
+    .share-button {
+        display: inline-block;
+        margin-right: 14px; // Der er allerede 6px
 
-        @media(min-width: $screen-sm-min) {
-            margin-bottom: 10px;
-        }
-        
         &:last-child {
             margin-right: 0;
         }
 
-        img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
+        @media(min-width: $md) {
+            margin-bottom: 1rem;
         }
+        
+        // img {
+        //     width: 20px;
+        //     height: 20px;
+        //     margin-right: 10px;
+        // }
 
-        span {
-            vertical-align: 6px; // 5px ved 12px font size
-        }
+        // span {
+        //     vertical-align: 6px; // 5px ved 12px font size
+        // }
+    }
+
+    .twitter {
+        height: 20px;
+        vertical-align: bottom;
     }
 }
 
@@ -90,7 +94,21 @@
 .no-comments-yet {
     text-align: center;
 
-    @media (min-width: $screen-sm-min) {
+    @media (min-width: $md) {
+        text-align: left;
+    }
+
+    .no-comments-cta {
+        @include respond-to($md) {
+            text-align: left;
+        }       
+    }
+}
+
+.comment-notes {
+    @extend .h5;
+
+    @include respond-to($md) {
         text-align: left;
     }
 }
@@ -100,15 +118,11 @@
         display: none; // Hide title "Skriv et svar"
     }
 
-    font-size: 16px;
-
-    // p {
-    //     font-size: 16px;
-    // }
-
-    textarea {
-        height: 120px;
+    p {
+        margin-bottom: 1rem;
     }
+
+    font-size: 16px;
 
     .comment-form-url {
         margin-bottom: 30px;
@@ -145,8 +159,8 @@
     margin-bottom: 0;
     text-align: center;
 
-    @media (min-width: $screen-sm-min) {
-        //text-align: left;
+    @media (min-width: $md) {
+        text-align: left;
     }
 }
 
@@ -175,7 +189,7 @@
     .small-post-title {
         text-align: center;
 
-        @media (min-width: $screen-sm-min) {
+        @media (min-width: $md) {
             text-align: left;
         }
     }
