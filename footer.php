@@ -11,7 +11,6 @@
 
 ?>
 
-	   </div> <!-- .row -->
     </div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
@@ -39,9 +38,8 @@
     var $menuItems = $('.main-navigation li');
     var $content = $('#content');
 
-
     // Recalculate window width when window is resized
-    $window.on('resize', function() {
+    $window.resize(function() {
         windowWidth = $window.width();
     });
 
@@ -73,9 +71,10 @@
     });
 
     // Navigation: On small screen sizes, toggle body class when menu is active
-    if (windowWidth < bp_md) {
-
-        $('.menu-toggle').on("click", function() {
+    $('.menu-toggle').on("click", function() {
+        
+        if (windowWidth < bp_md) {
+        
             $('body').toggleClass("nav-toggled");
 
             // Show/hide list elements
@@ -96,8 +95,10 @@
 
                 });
             }
-        });
-    }
+
+        }
+
+    });
 
 </script>
 
