@@ -86,4 +86,3 @@
 	</header>
 
 	<div id="content" class="site-content">
-		<div class="row row-main">
