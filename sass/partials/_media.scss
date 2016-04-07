@@ -7,12 +7,14 @@
 	padding: 0;
 }
 
-embed,
-iframe,
-object {
+.entry-content embed,
+.entry-content iframe,
+.entry-content object {
     height: 180px;
     margin-bottom: 0;
     overflow: hidden;
+
+    contain: strict;
 
     @include respond-to(400px) {
         height: 220px;
@@ -28,9 +30,9 @@ object {
     margin-left: -$gutter-width;
 }
 
-embed,
-iframe,
-object,
+.entry-content embed,
+.entry-content iframe,
+.entry-content object,
 .post img {
     width: calc(100% + #{$gutter-width} * 2); // variable is interpolated in order to compile 
     margin-left: -$gutter-width;
