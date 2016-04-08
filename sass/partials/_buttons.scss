@@ -7,7 +7,8 @@ input[type="submit"] {
 	background: $color__gray-lightest;
 	color: $color__base;
 	
-	@include font-size(0.75);
+	// @include font-size(0.75);
+	font-size: 12px;
 	font-family: $font__headers;
 	font-weight: 600;
 	text-transform: uppercase;
