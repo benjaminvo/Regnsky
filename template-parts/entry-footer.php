@@ -2,7 +2,6 @@
 <div class="entry-actions flex">
     
     <!-- Share -->
-    <!-- <div class="entry-share col col-xs-12 col-sm-2 offset-sm-1 col-md-2 offset-md-0"> -->
     <div class="entry-share col col-xs-12 col-sm-10 offset-sm-1 col-md-2 offset-md-0 col-lg-2 col-xl-3">
 
         <!-- Display first header on extra small screens, second header on larger -->
@@ -33,36 +32,36 @@
     </div>
 
     <!-- Comment -->
-    <div id="comment-section" class="entry-comment col col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-0 col-lg-6 col-xl-6">
+    <div id="comment-section" class="entry-comment col col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-0 col-xl-6 offset-xl-0">
         <!-- Do not display this header on extra small screens -->
         <h4 class="entry-actions-header hidden-sm-down">Kommentér</h4>
         
         <?php 
-        // If comments are open or we have at least one comment, load up the comment template.
         if ( comments_open() && get_comments_number()==0 ) : ?>
             
-            <div id="no-comments" class="no-comments-yet">
+            <div id="comments-cta" class="comments-cta no-comments-yet">
                 
-                <!-- Små skærmstørrelsen: To linjer -->
-                <h5 class="no-comments-cta hidden-md-up">Ingen kommentarer endnu.<br>Vil du være den første?</h5>
-                <!-- Store skærmstørrelsen: Én linje -->
-                <h5 class="no-comments-cta hidden-sm-down">Ingen kommentarer endnu. Vil du være den første?</h5>
+                <h5 class="cta">Ingen kommentarer endnu.<span class="hidden-md-up"><br></span> Vil du være den første?</h5>
 
                 <button id="btn-comment" class="btn-neutral">Skriv kommentar</button>
             </div>
 
-            <div id="comments-area_no-comments">
-                <?php comments_template(); ?>
-            </div>
+            <?php comments_template(); ?>
         <?php endif; ?>
 
-        <?php 
+        <?php
         // If comments are open or we have at least one comment, load up the comment template.
         if ( comments_open() && get_comments_number() > 0 ) : ?>
 
-            <div id="comments-area_comments">
-                <?php comments_template(); ?>
+            <?php comments_template(); ?>
+
+            <div id="comments-cta" class="comments-cta">
+                
+                <h5 class="cta">Vil du også sige noget?</h5>
+
+                <button id="btn-comment" class="btn-neutral">Skriv kommentar</button>
             </div>
+
         <?php endif; ?>
 
     </div>
