@@ -14,7 +14,7 @@
     margin-bottom: 0;
     overflow: hidden;
 
-    contain: strict;
+    // contain: strict;
 
     @include respond-to(400px) {
         height: 220px;
