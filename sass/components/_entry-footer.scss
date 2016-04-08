@@ -91,14 +91,14 @@
 //     margin-bottom: 50px;
 // }
 
-.no-comments-yet {
+.comments-cta {
     text-align: center;
 
     @media (min-width: $md) {
         text-align: left;
     }
 
-    .no-comments-cta {
+    .cta {
         @include respond-to($md) {
             text-align: left;
         }       
@@ -114,6 +114,12 @@
 }
 
 .comments-area {
+    font-size: 14px;
+
+    @include respond-to($md) {
+        font-size: 16px;
+    }
+
     .comment-reply-title {
         display: none; // Hide title "Skriv et svar"
     }
@@ -121,8 +127,6 @@
     p {
         margin-bottom: 1rem;
     }
-
-    font-size: 16px;
 
     .comment-form-url {
         margin-bottom: 30px;
@@ -140,12 +144,8 @@
     }
 }
 
-#comments-area_no-comments {
+#respond {
     display: none;
-}
-
-#comments-area_comments {
-    display: block;
 }
 
 .comment-content a {

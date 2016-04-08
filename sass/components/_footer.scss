@@ -1,26 +1,35 @@
 .site-footer {
     position: relative;
-    padding: 10px 0 30px;
+    padding: 2rem 0;
+    background-color: $color__gray-lightest;
+    margin-bottom: 120px;
+
+    @include respond-to($md) {
+        margin-bottom: 100px;
+    }
+}
+
+.site-info {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    padding: 2rem 0;
     background-color: black;
-    color: #fff;
-
-    @include font-size(0.75);
     text-align: center;
-
+    
+    h5 {
+        color: #9c9c9c;
+        margin-bottom: 0;
+    }
+    
     a {
-        color: #fff;
+        color: #9c9c9c;
         text-decoration: none;
 
         &:hover {
             text-decoration: underline;
-        }
-    }
-
-    p {
-        margin-bottom: 0;
-
-        a {
-            color: $color__gray-light;
         }
     }
 }
