@@ -14,17 +14,32 @@
     </div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<img class="bumpy-top_on-top" src="<?php echo get_stylesheet_directory_uri(); ?>/img/kant-footer.png" alt="Footer kant">
+        <div class="container">
+            <div class="flex">
+                <div class="col col-xs-12 col-md-4">
+                    <h4>Overskrift</h4>
+                </div>
+                <div class="col col-xs-12 col-md-4">
+                    <h4>Overskrift</h4>
+                </div>
+                <div class="col col-xs-12 col-md-4">
+                    <h4>Overskrift</h4>
+                </div>
+            </div>
+        </div>
+        
 
-        <div class="site-info container">    
-            <p class="text-sub text-mute">
-                Copyright © Regnsky-skribenterne 2016<br>
-                Hjemmeside af <a href="ungtriumf.dk">Benjamin Vedel Ottensten</a><br>
-                Illustration af Nan Na Hvass
-            </p>
-		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
+
 </div><!-- #page -->
+
+<div class="site-info">  
+
+    <h5>
+        Copyright © Regnsky-skribenterne <?php echo date("Y"); ?><span class="hidden-md-up"><br></span><span class="hidden-sm-down"> · </span>Hjemmeside af <a href="ungtriumf.dk">Benjamin Vedel Ottensten</a><span class="hidden-md-up"><br></span><span class="hidden-sm-down"> · </span>Illustration af Nan Na Hvass
+    </h5>
+
+</div><!-- .site-info -->
 
 <?php wp_footer(); ?>
 
@@ -98,6 +113,16 @@
 
         }
 
+    });
+
+    var btn_comment, comments_cta, comments;
+    btn_comment = $('#btn-comment');
+    comments_cta = $('#comments-cta');
+    comments_form = $('#respond');
+
+    btn_comment.on("click", function() {
+        comments_cta.css("display", "none");
+        comments_form.css("display", "block");
     });
 
 </script>
