@@ -6,9 +6,11 @@ input[type="search"],
 textarea {
     width: 100%;
     margin-bottom: 0;
+    padding: 4px 8px;
     outline: 0;
     appearance: none; // Remove input shadow on mobile
     font-family: $font__main;
+    font-size: 16px;
     border: 2px solid white;
     border-radius: 6px;
 	background: #fff;
@@ -70,15 +72,6 @@ textarea {
             border-color: $color__4_2;
         }
     }
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-textarea {
-	padding: 4px 8px;
 }
 
 textarea {
