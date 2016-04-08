@@ -11,13 +11,13 @@ $(document).ready(function() {
     // });
    
     // Hide and display comments
-    var btn_comment, no_comments, comments;
+    var btn_comment, comments_cta, comments;
     btn_comment = document.getElementById( 'btn-comment' );
-    no_comments = document.getElementById( 'no-comments' );
-    comments = document.getElementById( 'comments-area_no-comments' );
+    comments_cta = document.getElementById( 'comments_cta' );
+    comments = document.getElementById( 'comments' );
 
     btn_comment.onclick = function() {
-        no_comments.style.display = "none";
+        comments_cta.style.display = "none";
         comments.style.display = "block";
     };
 
