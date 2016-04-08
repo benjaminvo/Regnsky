@@ -9,8 +9,8 @@ textarea {
     outline: 0;
     appearance: none; // Remove input shadow on mobile
     font-family: $font__main;
-    border: 1px solid $color__gray-lighter;
-    border-radius: 3px;
+    border: 2px solid white;
+    border-radius: 6px;
 	background: #fff;
     color: $color__gray-light;
     transition: color .2s ease, border-color .5s ease;
@@ -31,7 +31,7 @@ textarea {
     input[type="search"],
     textarea {
         &:focus {
-            border-color: $color__1_1;
+            border-color: $color__1_2;
         }
     }
 }
@@ -43,7 +43,7 @@ textarea {
     input[type="search"],
     textarea {
         &:focus {
-            border-color: $color__2_1;
+            border-color: $color__2_2;
         }
     }
 }
@@ -55,7 +55,7 @@ textarea {
     input[type="search"],
     textarea {
         &:focus {
-            border-color: $color__3_1;
+            border-color: $color__3_2;
         }
     }
 }
@@ -67,7 +67,7 @@ textarea {
     input[type="search"],
     textarea {
         &:focus {
-            border-color: $color__4_1;
+            border-color: $color__4_2;
         }
     }
 }
