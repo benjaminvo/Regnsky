@@ -19,60 +19,60 @@ textarea {
     box-shadow: none;
 
     &:focus {
-		border-color: $color__gray-light;
+		border-color: $color__gray-lighter;
         color: $color__base;
 	}
 }
 
 // Farve focus efter kategori
-.category-opdagelser {
-    input[type="text"],
-    input[type="email"],
-    input[type="url"],
-    input[type="password"],
-    input[type="search"],
-    textarea {
-        &:focus {
-            border-color: $color__1_2;
-        }
-    }
-}
-.category-livestemning {
-    input[type="text"],
-    input[type="email"],
-    input[type="url"],
-    input[type="password"],
-    input[type="search"],
-    textarea {
-        &:focus {
-            border-color: $color__2_2;
-        }
-    }
-}
-.category-feature {
-    input[type="text"],
-    input[type="email"],
-    input[type="url"],
-    input[type="password"],
-    input[type="search"],
-    textarea {
-        &:focus {
-            border-color: $color__3_2;
-        }
-    }
-}
-.category-generelt {
-    input[type="text"],
-    input[type="email"],
-    input[type="url"],
-    input[type="password"],
-    input[type="search"],
-    textarea {
-        &:focus {
-            border-color: $color__4_2;
-        }
-    }
-}
+// .category-opdagelser {
+//     input[type="text"],
+//     input[type="email"],
+//     input[type="url"],
+//     input[type="password"],
+//     input[type="search"],
+//     textarea {
+//         &:focus {
+//             border-color: $color__1_2;
+//         }
+//     }
+// }
+// .category-livestemning {
+//     input[type="text"],
+//     input[type="email"],
+//     input[type="url"],
+//     input[type="password"],
+//     input[type="search"],
+//     textarea {
+//         &:focus {
+//             border-color: $color__2_2;
+//         }
+//     }
+// }
+// .category-feature {
+//     input[type="text"],
+//     input[type="email"],
+//     input[type="url"],
+//     input[type="password"],
+//     input[type="search"],
+//     textarea {
+//         &:focus {
+//             border-color: $color__3_2;
+//         }
+//     }
+// }
+// .category-generelt {
+//     input[type="text"],
+//     input[type="email"],
+//     input[type="url"],
+//     input[type="password"],
+//     input[type="search"],
+//     textarea {
+//         &:focus {
+//             border-color: $color__4_2;
+//         }
+//     }
+// }
 
 textarea {
     height: 100px;
