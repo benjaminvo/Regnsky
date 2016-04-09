@@ -1,14 +1,107 @@
 .site-footer {
     position: relative;
-    padding: 2rem 0;
+    padding: 3rem 0 .5rem;
     background-color: $color__gray-lightest;
     margin-bottom: 120px;
-
+    
     @include respond-to($md) {
         margin-bottom: 100px;
     }
+
+    p,
+    ul,
+    li,
+    span {
+        @extend .h6;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul, li {
+        list-style: none;
+        text-align: left;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+    li:last-child {
+        margin-bottom: 0;
+    }
+
+    h4 {
+        @include respond-to($sm) {
+            text-align: left;
+        }
+    }
 }
 
+.footer-module {
+    margin-bottom: 40px;
+}
+
+// Change order of modules on mobile
+.follow-regnsky {
+    order: 2;
+
+    @include respond-to($md) {
+        order: 1;
+    }
+}
+.about-regnsky {
+    order: 1;
+
+    @include respond-to($md) {
+        order: 2;
+    }
+}
+.recent-comments {
+    order: 3;
+}
+.recent-posts {
+    order: 4;
+}
+
+.social-buttons {
+    margin-bottom: 20px;
+    text-align: center;
+
+    @include respond-to($sm) {
+        text-align: left;
+    }
+
+    .social-btn {
+        height: 20px;
+        margin-right: 20px;
+    }
+    
+    .social-btn-hypem {
+        margin-right: 0;
+    }
+}
+.footer-fb {
+    margin: 0 auto;
+    text-align: center;
+
+    @include respond-to($sm) {
+        text-align: left;
+    }
+
+    .fb-follow-text {
+        margin-right: 10px;
+        color: $color__base;
+    }
+}
+
+.recent-comments {
+    .comment-author-link {
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+// Copyright etc. - behind site
 .site-info {
     position: fixed;
     bottom: 0;
