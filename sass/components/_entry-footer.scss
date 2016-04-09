@@ -35,7 +35,7 @@
 */
 
 .entry-share {
-    margin-bottom: 30px; // Skal være 30px, når det ikke er sociale embeddede knapper
+    margin-bottom: 20px; // Skal være 30px, når det ikke er sociale embeddede knapper
 }
 
 .share-buttons {
@@ -77,9 +77,14 @@
         // }
     }
 
+    .fb span {
+        // height: 20px;
+        vertical-align: baseline !important;
+    }
+
     .twitter {
         height: 20px;
-        vertical-align: bottom;
+        vertical-align: baseline;
     }
 }
 
