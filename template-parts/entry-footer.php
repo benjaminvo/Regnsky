@@ -57,7 +57,7 @@
 
             <div id="comments-cta" class="comments-cta">
                 
-                <h5 class="cta">Vil du også sige noget?</h5>
+                <h5 class="cta">Har du også lyst til at sige noget?</h5>
 
                 <button id="btn-comment" class="btn-neutral">Skriv kommentar</button>
             </div>
