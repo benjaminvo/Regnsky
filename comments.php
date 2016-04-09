@@ -41,7 +41,7 @@ if ( post_password_required() ) {
 			<?php
 				wp_list_comments( array(
 					'style'      => 'ol',
-					'short_ping' => true,
+					'type'		 => 'comment',
 					'callback'	 => regnsky_comment,
 				) );
 			?>
