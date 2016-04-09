@@ -10,10 +10,6 @@
 //     overflow: hidden;
 // }
 
-.sticky {
-	display: block;
-}
-
 // .hentry {
 // 	margin-bottom: 3rem;
 // }
@@ -61,8 +57,9 @@
     }
 }
 
-// Add bg color behind header of the first post of a page
-.post:first-child .entry-wrapper {
+// Add bg color behind header of the first article of a page
+.post:first-child .entry-wrapper,
+.page:first-child .entry-wrapper {
     margin-top: -40px;
     padding-top: 80px;
 
@@ -148,6 +145,12 @@ article.category-generelt {
 }
 
 /* Pages */
+article.page {
+    .entry-wrapper {
+        background-color: $color__gray-lightest;
+    }
+}
+
 .page-title {
     text-align: center;
     margin-bottom: 40px;
