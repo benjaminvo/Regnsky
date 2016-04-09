@@ -135,9 +135,9 @@ function regnsky_scripts() {
 	
 	wp_enqueue_script( 'regnsky-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', false );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	// 	wp_enqueue_script( 'comment-reply' );
+	// }
 }
 add_action( 'wp_enqueue_scripts', 'regnsky_scripts' );
 
@@ -235,3 +235,46 @@ function remove_empty_lines( $content ){
   return $content;
 }
 add_action('content_save_pre', 'remove_empty_lines');
+
+/**
+ * Custom comment display
+ * https://codex.wordpress.org/Function_Reference/wp_list_comments#Comments_Only_With_A_Custom_Comment_Display
+ */
+function regnsky_comment($comment, $args, $depth) {
+    if ( 'div' === $args['style'] ) {
+        $tag       = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag       = 'li';
+        $add_below = 'div-comment';
+    }
+    ?>
+    <<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+    <?php if ( 'div' != $args['style'] ) : ?>
+        <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+    <?php endif; ?>
+	<div class="comment-meta">
+	    <div class="comment-author vcard">
+	        <?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+	        <?php printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() ); ?>
+	    </div>
+	    <?php if ( $comment->comment_approved == '0' ) : ?>
+	         <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
+	          <br />
+	    <?php endif; ?>
+
+	    <div class="comment-metadata"><span>
+	        <?php
+	        printf( __('%1$s'), get_comment_date() ); ?><?php edit_comment_link( __( '(Edit)' ), '  ', '' );
+	        ?>
+	        </span>
+	    </div>
+	</div>
+
+    <?php comment_text(); ?>
+
+    <?php if ( 'div' != $args['style'] ) : ?>
+    </div>
+    <?php endif; ?>
+    <?php
+    }

@@ -63,7 +63,7 @@
         }
 
         @media(min-width: $md) {
-            margin-bottom: 1rem;
+            margin-bottom: 10px;
         }
         
         // img {
@@ -149,6 +149,40 @@
     }
 }
 
+// Comment author and date
+.comment-meta {
+    margin-bottom: 1em;
+    @include clearfix();
+
+    a {
+        text-decoration: none;
+    }
+
+    .comment-author {
+        float: left;
+        @extend .h5;
+
+        font-style: normal;
+        color: $color__base;
+        
+        .fn {
+            font-weight: bold;
+            font-style: normal;
+        }
+    }
+
+    .comment-metadata {
+        float: right;
+
+        @extend .h5;
+
+        a {
+            color: $color__gray-light;
+        }
+    }
+}
+
+// Respond formular - remove until in use
 #respond {
     display: none;
 }
