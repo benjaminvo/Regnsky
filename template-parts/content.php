@@ -27,11 +27,8 @@
 						$category_id 	= $category->cat_ID;
 						$category_link 	= get_category_link( $category_id );
 
-						if ($category_name == 'Nyheder') {
-							$category_name = 'Nyhed';
-						}
-						if ($category_name == 'Anmeldelser') {
-							$category_name = 'Anmeldelse';
+						if ($category_name == 'Opdagelser') {
+							$category_name = 'Opdagelse';
 						}
 						?>
 						
