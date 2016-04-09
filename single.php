@@ -17,8 +17,6 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', get_post_format() ); ?>
 
-			<?php //include('template-parts/entry-actions.php') ?>
-
 			<!-- Related articles -->
 			<div class="entry-actions entry-related small-post-wrapper container">
 			
