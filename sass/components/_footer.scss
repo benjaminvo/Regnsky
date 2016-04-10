@@ -1,11 +1,15 @@
 .site-footer {
     position: relative;
     padding: 3rem 0 .5rem;
-    background-color: $color__gray-lightest;
+    background-color: $color__base;
     margin-bottom: 120px;
     
     @include respond-to($md) {
         margin-bottom: 100px;
+    }
+
+    p, li, a, span, h4, h6 {
+        color: white;
     }
 
     p,
@@ -30,6 +34,7 @@
     }
 
     h4 {
+        font-weight: 900; 
         @include respond-to($sm) {
             text-align: left;
         }
@@ -89,7 +94,7 @@
 
     .fb-follow-text {
         margin-right: 10px;
-        color: $color__base;
+        // color: $color__base;
     }
 }
 
