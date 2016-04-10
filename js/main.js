@@ -3,7 +3,7 @@
  *
  */
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
     var $window = $(window);
     var windowWidth = $window.width();
@@ -91,4 +91,4 @@ $(document).ready(function() {
 
     }
 
-});
+// });
