@@ -37,32 +37,40 @@
         <h4 class="entry-actions-header hidden-sm-down">Kommentér</h4>
         
         <?php 
-        if ( comments_open() && get_comments_number()==0 ) : ?>
+        if ( comments_open() ) { ?>
             
+            <?php
+            // If comments, display comments + form above cta
+            if ( get_comments_number() > 0 ) {
+                comments_template();
+            } ?>
+
             <div id="comments-cta" class="comments-cta">
                 
-                <h5 class="cta">Ingen kommentarer endnu.<span class="hidden-md-up"><br></span> Vil du være den første?</h5>
+                <?php
+                // cta if no comments
+                if ( get_comments_number() == 0 ) { ?>
+                    
+                    <h5 class="cta">Ingen kommentarer endnu.<span class="hidden-md-up"><br></span> Vil du være den første?</h5>
+
+                <?php }
+                // cta if comments
+                else { ?>
+
+                    <h5 class="cta">Har du også lyst til at sige noget?</h5>
+
+                <?php } ?>
 
                 <button id="btn-comment" class="btn-comment" onclick="displayComments('.post-<?php the_ID(); ?>')">Skriv kommentar</button>
             </div>
 
-            <?php comments_template(); ?>
-        <?php endif; ?>
+            <?php
+            // If no comments, display form below cta
+            if ( get_comments_number() == 0 ) {
+                comments_template();
+            } ?>
 
-        <?php
-        // If comments are open or we have at least one comment, load up the comment template.
-        if ( comments_open() && get_comments_number() > 0 ) : ?>
-
-            <?php comments_template(); ?>
-
-            <div id="comments-cta" class="comments-cta">
-                
-                <h5 class="cta">Har du også lyst til at sige noget?</h5>
-
-                <button id="btn-comment" class="btn-comment" onclick="displayComments('.post-<?php the_ID(); ?>')">Skriv kommentar</button>
-            </div>
-
-        <?php endif; ?>
+        <?php } ?>
 
     </div>
 </div>
