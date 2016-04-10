@@ -94,7 +94,7 @@
 
 	<!-- Entry footer -->
 	<?php
-	if ( is_single() || is_home() ) { ?>
+	if ( is_single() || is_home() || is_archive() ) { ?>
 
 		<footer class="entry-footer">
 			<div class="container">
