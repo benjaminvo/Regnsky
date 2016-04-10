@@ -23,6 +23,10 @@
     @include respond-to($md) {
         height: 300px;
     }
+
+    @include respond-to($xl) {
+        height: 360px;
+    }
 }
 
 .post img {
@@ -43,8 +47,8 @@
     }
 
     @include respond-to($xl) {
-        width: calc(100% + #{$gutter-width} * 2);
-        margin-left: -$gutter-width;
+        width: calc(100% + (#{$gutter-width}*3) * 2);
+        margin-left: -$gutter-width * 3;
     }
 }
 
