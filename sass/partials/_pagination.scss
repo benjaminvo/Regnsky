@@ -1,0 +1,50 @@
+.pagination-wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+
+    span,
+    a {
+        @extend h2;
+        text-decoration: none;
+        padding: 9px 10px 0;
+        margin-bottom: 0;
+        display: inline-block;
+        border-radius: 20px;
+        height: 38px;
+        min-width: 38px;
+
+        @include respond-to($sm) {
+            padding-top: 7px;
+        }
+
+        @include respond-to($sm) {
+            padding-top: 5px;
+        }
+    }
+    
+    a.page-numbers {
+        cursor: pointer;
+        transition: background .2 ease;
+
+        &:hover {
+            background-color: $color__gray-lighter;
+        }
+
+        &:active {
+            background-color: $color__gray-lighter;
+        }
+    }
+
+    .current {
+        color: white;
+        background-color: $color__base;
+    }
+
+    a.prev,
+    a.next {
+        display: block;
+        width: auto;
+        background-color: none;
+    }
+}

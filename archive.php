@@ -33,10 +33,28 @@ get_header(); ?>
 				 */
 				get_template_part( 'template-parts/content', get_post_format() );
 
-			endwhile;
+			endwhile; ?>
+				
+			<section class="pagination-wrapper container">
+				<div class="pagination flex">
+					<div class="col col-xs-12">
+						<?php
+						$paginate_args = array(
+							'show_all'           => false,
+							'end_size'           => 2,
+							'mid_size'           => 1,
+							'prev_next'          => false,
+							'prev_text'          => __('« Tilbage'),
+							'next_text'          => __('Videre »')
+						);
 
-			the_posts_navigation();
+						echo paginate_links($paginate_args);
+						?>					
+					</div>
+				</div>
+			</section>
 
+		<?php
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
