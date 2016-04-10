@@ -171,15 +171,21 @@
 
     });
 
-    var btn_comment, comments_cta, comments;
-    btn_comment = $('#btn-comment');
-    comments_cta = $('#comments-cta');
-    comments_form = $('#respond');
+    // Comments - Show hide comment form
+    // Function is called when user clicks btn in entry-footer
+    var postId, $comments_cta, $comments_form;
 
-    btn_comment.on("click", function() {
-        comments_cta.css("display", "none");
-        comments_form.css("display", "block");
-    });
+    function displayComments(postId) {        
+        
+        // Get post ID, use it to only target comment content relevant to that specific post
+        $comments_cta  = $(postId + ' .comments-cta');
+        $comments_form = $(postId + ' .comment-respond');
+
+        // Hide call to action text, show comment form
+        $comments_cta.hide();
+        $comments_form.show();
+
+    }
 
 </script>
 

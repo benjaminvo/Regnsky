@@ -11,14 +11,14 @@ $(document).ready(function() {
     // });
    
     // Hide and display comments
-    var btn_comment, comments_cta, comments;
-    btn_comment = document.getElementById( 'btn-comment' );
-    comments_cta = document.getElementById( 'comments_cta' );
-    comments = document.getElementById( 'comments' );
+    // var btn_comment, comments_cta, comments;
+    // btn_comment = document.getElementById( 'btn-comment' );
+    // comments_cta = document.getElementById( 'comments_cta' );
+    // comments = document.getElementById( 'comments' );
 
-    btn_comment.onclick = function() {
-        comments_cta.style.display = "none";
-        comments.style.display = "block";
-    };
+    // btn_comment.onclick = function() {
+    //     comments_cta.style.display = "none";
+    //     comments.style.display = "block";
+    // };
 
 });

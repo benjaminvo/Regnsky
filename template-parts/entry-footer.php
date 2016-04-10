@@ -39,11 +39,11 @@
         <?php 
         if ( comments_open() && get_comments_number()==0 ) : ?>
             
-            <div id="comments-cta" class="comments-cta no-comments-yet">
+            <div id="comments-cta" class="comments-cta">
                 
                 <h5 class="cta">Ingen kommentarer endnu.<span class="hidden-md-up"><br></span> Vil du være den første?</h5>
 
-                <button id="btn-comment" class="btn-neutral">Skriv kommentar</button>
+                <button id="btn-comment" class="btn-comment" onclick="displayComments('.post-<?php the_ID(); ?>')">Skriv kommentar</button>
             </div>
 
             <?php comments_template(); ?>
@@ -59,7 +59,7 @@
                 
                 <h5 class="cta">Har du også lyst til at sige noget?</h5>
 
-                <button id="btn-comment" class="btn-neutral">Skriv kommentar</button>
+                <button id="btn-comment" class="btn-comment" onclick="displayComments('.post-<?php the_ID(); ?>')">Skriv kommentar</button>
             </div>
 
         <?php endif; ?>
