@@ -1,9 +1,9 @@
 .site-content {
     margin-bottom: 0;
 
-    @media (min-width: 500px) {
-        margin-bottom: 60px;
-    }
+    // @media (min-width: 500px) {
+    //     margin-bottom: 60px;
+    // }
 }
 
 // .content-area {
@@ -27,10 +27,10 @@
 	display: inline;
 }
 
-.page-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
+// .page-content,
+// .entry-summary {
+// 	margin: 1.5em 0 0;
+// }
 
 .page-links {
     clear: both;
@@ -57,9 +57,85 @@
     }
 }
 
+/* Pages */
+.page,
+.error-404 {
+    .entry-wrapper {
+        background-color: $color__gray-lightest;
+    }
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 40px;
+
+    @media (max-width: $screen-md-min) {
+        margin-top: 20px;
+    }
+}
+
+// Archive pages
+.archive {
+    .page-title {
+        margin-bottom: 0;
+    }
+
+    .page-header {
+        background-color: $color__gray-lightest;
+        padding-top: 50px; // 10px + 40
+        padding-bottom: 20px;
+        margin-top: -40px;
+
+        @include respond-to($md) {
+            padding-top: 80px;
+            padding-bottom: 35px;
+        }
+    }
+}
+
+.category-opdagelser {
+    .page-title {
+        color: $color__1_0;
+        // color: $color__base;
+    }
+    .page-header {
+        background-color: $color__1_3;
+    }
+}
+.category-livestemning {
+    .page-title {
+        color: $color__2_1;
+        // color: $color__base;
+    }
+    .page-header {
+        background-color: $color__2_3;
+    }
+}
+.category-feature {
+    .page-title {
+        color: $color__3_-1;
+        // color: $color__base;
+    }
+    .page-header {
+        background-color: $color__3_3;
+    }
+}
+.category-generelt {
+    .page-title {
+        color: $color__4_0;
+        // color: $color__base;
+    }
+    .page-header {
+        background-color: $color__4_3;
+    }
+}
+
+
+
 // Add bg color behind header of the first article of a page
 .post:first-child .entry-wrapper,
-.page:first-child .entry-wrapper {
+.page:first-child .entry-wrapper,
+.error-404:first-child .entry-wrapper {
     margin-top: -40px;
     padding-top: 80px;
 
@@ -142,22 +218,6 @@ article.category-generelt {
     padding-top: 40px;
     padding-bottom: 40px;
     background-color: $color__gray-lightest;
-}
-
-/* Pages */
-article.page {
-    .entry-wrapper {
-        background-color: $color__gray-lightest;
-    }
-}
-
-.page-title {
-    text-align: center;
-    margin-bottom: 40px;
-
-    @media (max-width: $screen-md-min) {
-        margin-top: 20px;
-    }
 }
 
 /* Read more links */
