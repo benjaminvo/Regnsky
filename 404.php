@@ -9,52 +9,28 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area col-lg-8">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+			
+			<section class="error-404">
+				<div class="entry-wrapper">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'regnsky' ); ?></h1>
-				</header><!-- .page-header -->
+					<div class="container">
+				
+						<div class="flex">
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'regnsky' ); ?></p>
+							<header class="page-header col col-xs-12 col-sm-10 offset-sm-1">
+								<h1 class="page-title"><?php esc_html_e( 'Ups! Den side kan vi vist ikke finde.', 'regnsky' ); ?></h1>
+							</header><!-- .page-header -->
 
-					<?php
-						get_search_form();
+							<div class="page-content col col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+								<p>Hvor end fejlen ligger, så er der ingenting at læse eller finde her. Men klik dig gerne til forsiden eller en af kategorierne!</p>
+							</div><!-- .page-content -->
 
-						the_widget( 'WP_Widget_Recent_Posts' );
-
-						if ( regnsky_categorized_blog() ) : // Only show the widget if site has multiple categories.
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'regnsky' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-						endif;
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'regnsky' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+						</div>
+					</div>
+				</div>				
+			</section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
