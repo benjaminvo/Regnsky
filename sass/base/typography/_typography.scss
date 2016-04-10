@@ -137,3 +137,122 @@ a {
         outline: 0;
     }
 }
+
+.entry-title,
+.entry-meta,
+.entry-content p {
+    a {
+        text-decoration: none;
+        transition: color .2s ease, background-image .2s ease;
+        background-image: linear-gradient(to bottom, transparent 50%, $color__gray-dark 50%);
+        background-repeat: repeat-x;
+        background-size: 2px 2px;
+        background-position: 0 90%;
+    }
+
+    // a:active,
+    // a:hover {
+    //   background-image: linear-gradient(to bottom, transparent 50%, $color__gray-dark 50%);
+    // }
+}
+
+.entry-title a {
+    background-position: 0 92%;
+}
+
+.category-opdagelser {
+    .entry-title,
+    .entry-meta,
+    .entry-content p {
+        a {
+            text-shadow: 1px 0 $color__1_2, 2px 0 $color__1_2, 3px 0 $color__1_2, -1px 0 $color__1_2, -2px 0 $color__1_2, -3px 0 $color__1_2;
+        }
+    
+        a:active,
+        a:hover {
+          color: $color__1_0;
+        }
+    }
+
+    .entry-title {
+        a {
+            background-image: linear-gradient(to bottom, transparent 50%, $color__base 50%);
+
+            @include respond-to($sm) {
+                background-image: linear-gradient(to bottom, transparent 0%, $color__base 0%);
+            }
+        }
+    }
+}
+.category-livestemning {
+    .entry-title,
+    .entry-meta,
+    .entry-content p {
+        a {
+            text-shadow: 1px 0 $color__2_2, 2px 0 $color__2_2, 3px 0 $color__2_2, -1px 0 $color__2_2, -2px 0 $color__2_2, -3px 0 $color__2_2;
+        }
+    
+        a:active,
+        a:hover {
+          color: $color__2_0;
+        }
+    }
+
+    .entry-title {
+        a {
+            background-image: linear-gradient(to bottom, transparent 50%, $color__base 50%);
+
+            @include respond-to($sm) {
+                background-image: linear-gradient(to bottom, transparent 0%, $color__base 0%);
+            }
+        }
+    }
+}
+.category-feature {
+    .entry-title,
+    .entry-meta,
+    .entry-content p {
+        a {
+            text-shadow: 1px 0 $color__3_2, 2px 0 $color__3_2, 3px 0 $color__3_2, -1px 0 $color__3_2, -2px 0 $color__3_2, -3px 0 $color__3_2;
+        }
+    
+        a:active,
+        a:hover {
+          color: $color__3_0;
+        }
+    }
+
+    .entry-title {
+        a {
+            background-image: linear-gradient(to bottom, transparent 50%, $color__base 50%);
+
+            @include respond-to($sm) {
+                background-image: linear-gradient(to bottom, transparent 0%, $color__base 0%);
+            }
+        }
+    }
+}
+.category-generelt {
+    .entry-title,
+    .entry-meta,
+    .entry-content p {
+        a {
+            text-shadow: 1px 0 $color__4_2, 2px 0 $color__4_2, 3px 0 $color__4_2, -1px 0 $color__4_2, -2px 0 $color__4_2, -3px 0 $color__4_2;
+        }
+    
+        a:active,
+        a:hover {
+          color: $color__4_-1;
+        }
+    }
+
+    .entry-title {
+        a {
+            background-image: linear-gradient(to bottom, transparent 50%, $color__base 50%);
+
+            @include respond-to($sm) {
+                background-image: linear-gradient(to bottom, transparent 0%, $color__base 0%);
+            }
+        }
+    }
+}
