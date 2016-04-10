@@ -29,6 +29,39 @@ $topbanner-height: 196px;
     }
 }
 
+.current-menu-item a {
+    position: relative;
+
+    &:before {
+        content: '👉 ';
+        position: absolute;
+        top: -5px;
+        left: -35px;
+    }
+
+    &:after {
+        content: ' 👈';
+        position: absolute;
+        top: -4px;
+        right: -35px;
+    }  
+
+    @include respond-to($md) {
+        &:before {
+            content: '💧';
+            position: absolute;
+            top: -34px;
+            left: calc(50% - 10px);
+        }
+
+        &:after {
+            content: '';
+        }        
+    }
+
+
+}
+
 .site-header {
     height: 80px;
     width: 100%;
