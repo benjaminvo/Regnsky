@@ -276,5 +276,19 @@ function regnsky_comment($comment, $args, $depth) {
     <?php if ( 'div' != $args['style'] ) : ?>
     </div>
     <?php endif; ?>
-    <?php
+<?php
+}
+
+
+/**
+ * Remove "Category: " from category pages
+ * http://wordpress.stackexchange.com/questions/179585/remove-category-tag-author-from-the-archive-title
+ */
+add_filter( 'get_the_archive_title', function ($title) {
+
+    if ( is_category() ) {
+        $title = single_cat_title( '', false );
     }
+
+    return $title;
+});
