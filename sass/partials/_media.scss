@@ -32,9 +32,12 @@
 .post img {
     height: auto; /* Make sure images are scaled correctly. */
     margin-left: -$gutter-width;
+
+    // clip-path: url(#border_bottom);
+    // mask: url("http://regnsky.dk/wp/wp-content/themes/regnsky_/img/kant-header-top.svg") top left repeat-x;
 }
 
-.entry-content embed,
+.top-content,
 .entry-content iframe,
 .entry-content object,
 .post img {
