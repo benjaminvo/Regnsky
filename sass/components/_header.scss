@@ -32,33 +32,32 @@ $topbanner-height: 196px;
 .current-menu-item a {
     position: relative;
 
-    &:before {
-        content: '👉 ';
-        position: absolute;
-        top: -5px;
-        left: -35px;
-    }
+    // &:before {
+    //     content: '👉 ';
+    //     position: absolute;
+    //     top: -5px;
+    //     left: -35px;
+    // }
 
-    &:after {
-        content: ' 👈';
-        position: absolute;
-        top: -4px;
-        right: -35px;
-    }  
+    // &:after {
+    //     content: ' 👈';
+    //     position: absolute;
+    //     top: -4px;
+    //     right: -35px;
+    // }  
 
-    @include respond-to($md) {
-        &:before {
-            content: '💧';
-            position: absolute;
-            top: -34px;
-            left: calc(50% - 10px);
-        }
+    // @include respond-to($md) {
+    //     &:before {
+    //         content: '💧';
+    //         position: absolute;
+    //         top: -34px;
+    //         left: calc(50% - 10px);
+    //     }
 
-        &:after {
-            content: '';
-        }        
-    }
-
+    //     &:after {
+    //         content: '';
+    //     }        
+    // }
 
 }
 
@@ -68,7 +67,6 @@ $topbanner-height: 196px;
     width: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
-    // padding-right: $gutter-width;
     background-color: #fff;
     transform: translateZ(0); // Hack to stick header before scroll stops on mobile
     z-index: 2000;
@@ -78,42 +76,15 @@ $topbanner-height: 196px;
 
     @include respond-to($md) {
         height: 120px;
-        padding-top: 2rem;
-        // padding-right: $gutter-width*2;        
+        padding-top: 2rem;       
         padding-bottom: 2rem;
     }
 
-    @include respond-to($xl) {
-        // padding-right: 0;
-    }
-
-    &:before {
-        content: '';
-        background: url("http://regnsky.dk/wp/wp-content/themes/regnsky_/img/kant-header-top.svg");
-        background-repeat: repeat-x;
-        width: 100%;
-        height: 13px;
-        position: absolute;
-        top: -13px;
-        right: 0;
-    }
-
-    // &:after {
-    //     content: '';
-    //     background: url("http://regnsky.dk/wp/wp-content/themes/regnsky_/img/kant-header-bottom.svg");
-    //     background-repeat: repeat-x;
-    //     width: 100%;
-    //     height: 13px;
-    //     position: absolute;
-    //     bottom: -13px;
-    //     left: 0;
-    // }
-
+    @include border-before($border__white);
     @include border-after($border__white);
 }
 
 .site-branding {
-
     padding-left: $gutter-width / 2;
 
     .logo {
