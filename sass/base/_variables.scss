@@ -15,6 +15,9 @@ $color__gray-light:     rgba(0,0,0,.39);
 $color__gray-lighter:   rgba(0,0,0,.18);
 $color__gray-lightest:  rgba(0,0,0,.05);
 
+$color__base_solid:          #212121;
+$color__gray-lightest_solid: #f3f3f3;
+
 $color__1_-1: #169861; // Grøn
 $color__1_0: #1BB373;
 $color__1_1: #5EC99C;
@@ -69,4 +72,4 @@ $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 
 // Animation
-$animation-spring: cubic-bezier(0.5, 0.15, 0.35, 1.2); 
+$animation-spring: cubic-bezier(0.5, 0.15, 0.35, 1.2);
