@@ -2,10 +2,10 @@
     position: relative;
     padding: 3rem 0 .5rem;
     background-color: $color__base;
-    margin-bottom: 120px;
+    margin-bottom: 110px;
     
     @include respond-to($md) {
-        margin-bottom: 100px;
+        margin-bottom: 85px;
     }
 
     p, li, a, span, h4, h6 {
@@ -115,7 +115,7 @@
     right: 0;
     left: 0;
     z-index: 10;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     background-color: black;
     text-align: center;
     
