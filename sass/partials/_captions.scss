@@ -2,14 +2,9 @@
 	@extend .h6;
 
     margin-bottom: 1rem;
-	max-width: 100%;
-
-	// img[class*="wp-image-"] {
-	// 	@include center-block;
-	// }
 
 	.wp-caption-text {
-		margin: 5px 0 0;
+		margin-top: 5px;
         text-align: left;
 	}
 }
