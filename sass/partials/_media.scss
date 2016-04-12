@@ -29,7 +29,7 @@
     }
 }
 
-.post img {
+.post figure {
     height: auto; /* Make sure images are scaled correctly. */
     margin-left: -$gutter-width;
 
@@ -40,7 +40,7 @@
 .top-content,
 .entry-content iframe,
 .entry-content object,
-.post img {
+.post figure {
     width: calc(100% + #{$gutter-width} * 2); // variable is interpolated in order to compile 
     margin-left: -$gutter-width;
 
@@ -55,15 +55,24 @@
     }
 }
 
+figure {
+    overflow: hidden;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+}
+
 /* Margin bottom for audio player */
 .wp-audio-shortcode {
     margin-bottom: 1.25rem;
 }
 
 /* Figures */
-figure {
-    margin: 0;
-}
+// figure {
+//     margin: 0;
+// }
 
 /*--------------------------------------------------------------
 ## Bumpy borders
