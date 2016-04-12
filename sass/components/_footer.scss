@@ -39,6 +39,8 @@
             text-align: left;
         }
     }
+
+    @include border-after($border__base);
 }
 
 .footer-module {

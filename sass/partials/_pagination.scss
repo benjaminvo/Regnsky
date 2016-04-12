@@ -47,4 +47,6 @@
         width: auto;
         background-color: none;
     }
+
+    @include border-after($border__white);
 }

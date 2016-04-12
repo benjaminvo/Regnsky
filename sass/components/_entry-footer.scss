@@ -1,3 +1,12 @@
+.entry-footer {
+    margin-bottom: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: $color__gray-lightest;
+
+    @include border-after($border__gray-lightest);
+}
+
 .entry-actions-header {
 
     @media(min-width: $md) {

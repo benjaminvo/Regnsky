@@ -71,7 +71,7 @@ $topbanner-height: 196px;
     // padding-right: $gutter-width;
     background-color: #fff;
     transform: translateZ(0); // Hack to stick header before scroll stops on mobile
-    z-index: 30;
+    z-index: 2000;
     transition: height .2s ease-out;
     will-change: transform;
     // backdrop-filter: blur(20px); // En dag...
@@ -98,16 +98,18 @@ $topbanner-height: 196px;
         right: 0;
     }
 
-    &:after {
-        content: '';
-        background: url("http://regnsky.dk/wp/wp-content/themes/regnsky_/img/kant-header-bottom.svg");
-        background-repeat: repeat-x;
-        width: 100%;
-        height: 13px;
-        position: absolute;
-        bottom: -13px;
-        left: 0;
-    }
+    // &:after {
+    //     content: '';
+    //     background: url("http://regnsky.dk/wp/wp-content/themes/regnsky_/img/kant-header-bottom.svg");
+    //     background-repeat: repeat-x;
+    //     width: 100%;
+    //     height: 13px;
+    //     position: absolute;
+    //     bottom: -13px;
+    //     left: 0;
+    // }
+
+    @include border-after($border__white);
 }
 
 .site-branding {
