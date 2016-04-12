@@ -194,7 +194,7 @@ a {
         // Only hover on bigger screens
         @include respond-to($md) {
             a:hover {
-                color: $color__1_0;
+                color: $color__gray-dark;
             }
         }
     }
@@ -224,7 +224,7 @@ a {
         // Only hover on bigger screens
         @include respond-to($md) {
             a:hover {
-                color: $color__2_0;
+                color: $color__gray-dark;
             }
         }
     }
@@ -254,7 +254,7 @@ a {
         // Only hover on bigger screens
         @include respond-to($md) {
             a:hover {
-                color: $color__3_0;
+                color: $color__gray-dark;
             }
         }
     }
@@ -284,7 +284,7 @@ a {
         // Only hover on bigger screens
         @include respond-to($md) {
             a:hover {
-                color: $color__4_0;
+                color: $color__gray-dark;
             }
         }
     }
