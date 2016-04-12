@@ -101,35 +101,3 @@ $border__white:         borderBig(#fff);
         }
     }
 }
-
-/* Artikler */
-
-article.category-opdagelser {
-  .entry-wrapper {
-    @include border-after($border__green);
-  }
-}
-
-article.category-livestemning {
-  .entry-wrapper {
-    @include border-after($border__blue);
-  }
-}
-
-article.category-feature {
-  .entry-wrapper {
-    @include border-after($border__yellow);
-  }
-}
-article.category-generelt {
-  .entry-wrapper {
-    @include border-after($border__red);
-  }
-}
-
-.page,
-.error404 {
-  .entry-wrapper {
-    @include border-after($border__gray-lightest);
-  }
-}
