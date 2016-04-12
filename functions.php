@@ -226,6 +226,21 @@ function my_img_caption_shortcode_filter($val, $attr, $content = null)
 }
 
 /**
+ * Wrap images in figure tags
+ * http://wordpress.stackexchange.com/questions/174582/always-use-figure-for-post-images
+ */    
+function fb_unautop_4_img( $content )
+{ 
+    $content = preg_replace( 
+        '/<p>\\s*?(<a rel=\"attachment.*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', 
+        '<figure>$1</figure>', 
+        $content 
+    ); 
+    return $content; 
+} 
+add_filter( 'the_content', 'fb_unautop_4_img', 99 );
+
+/**
  * Remove empty lines from posts
  * http://wordpress.stackexchange.com/questions/137738/remove-empty-lines-nbsp-when-author-updates-their-post
  */
