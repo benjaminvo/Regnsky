@@ -1,6 +1,6 @@
 .pagination-wrapper {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 45px;
+    padding-bottom: 30px;
     text-align: center;
 
     span,
@@ -49,4 +49,17 @@
     }
 
     @include border-after($border__white);
+}
+
+.category-opdagelser .current {
+    background-color: $color__1-0;
+}
+.category-livestemning .current {
+    background-color: $color__2-0;
+}
+.category-feature .current {
+    background-color: $color__3-0;
+}
+.category-generelt .current {
+    background-color: $color__4-0;
 }
