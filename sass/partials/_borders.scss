@@ -2,72 +2,71 @@
 // Functions to create svg code
 // --------------------------------------------------------------
 
-@function borderBig($color) {
-  $width: 1440px;
-  $height: 13px;
+// @function borderBig($color) {
+//   $width: 1440px;
+//   $height: 13px;
 
-  $path: 'm1440,5c0,0 -2.6608,0.06246 -10,0c-36,1 -64,5 -123,4c-30.48476,0 -73,-1.78371 -118,-3c-70.28062,-1.17535 -116,-1 -168,-1c-50.32462,0 -101,8 -164,8c-52,0 -109,-8 -185,-8c-102,0 -109,4 -172,4c-38,0 -119,-6 -186,-6c-49,0 -110,8 -158,8c-59,0 -112,-6 -146,-6c0,0 -10,0 -10,0l0,-5l1440,0l0,5z';
-  $svg-content: '%3Cpath%20fill%3D%22#{$color}%22%20d%3D%22#{$path}%22%20%2F%3E';
-  $svg: '%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22#{$width}%22%20height%3D%22#{$height}%22%3E#{$svg-content}%3C%2Fsvg%3E';
-  $url: url("data:image/svg+xml;charset=utf8,#{$svg}");
+//   $path: 'm1440,5c0,0 -2.6608,0.06246 -10,0c-36,1 -64,5 -123,4c-30.48476,0 -73,-1.78371 -118,-3c-70.28062,-1.17535 -116,-1 -168,-1c-50.32462,0 -101,8 -164,8c-52,0 -109,-8 -185,-8c-102,0 -109,4 -172,4c-38,0 -119,-6 -186,-6c-49,0 -110,8 -158,8c-59,0 -112,-6 -146,-6c0,0 -10,0 -10,0l0,-5l1440,0l0,5z';
+//   $svg-content: '%3Cpath%20fill%3D%22#{$color}%22%20d%3D%22#{$path}%22%20%2F%3E';
+//   $svg: '%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22#{$width}%22%20height%3D%22#{$height}%22%3E#{$svg-content}%3C%2Fsvg%3E';
+//   $url: url("data:image/svg+xml;charset=utf8,#{$svg}");
   
-  $border: $url;
-  @return $border;
+//   $border: $url;
+//   @return $border;
+// }
+
+@function _buildShape($shape) {
+  $shape: '%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22#{$width}%22%20height%3D%22#{$height}%22%3E#{$shape}%3C%2Fsvg%3E';
+  @return $shape;
 }
 
-// @function _buildShape($shape) {
-//   $shape: '%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22#{$width}%22%20height%3D%22#{$height}%22%3E#{$shape}%3C%2Fsvg%3E';
-//   @return $shape;
-// }
+@function _buildPath($path, $parameters) {
+  $shape: '%3Cpath%20fill%3D%22#{map-get($parameters, color)}%22%20d%3D%22#{$path}%22%20%2F%3E';
+  @return $shape; 
+}
 
-// @function _buildPath($path, $parameters) {
-//   $shape: '%3Cpath%20fill%3D%22#{map-get($parameters, color)}%22%20d%3D%22#{$path}%22%20%2F%3E';
-//   @return $shape; 
-// }
-
-// @function shape($shape-name, $color) {
-//   $parameters: (
-//     'color': $color
-//   );
+@function shape($shape-name, $color) {
+  $parameters: (
+    'color': $color
+  );
   
-//   $shapes: (
-//     border_large: _buildPath('m1440,5c0,0 -2.6608,0.06246 -10,0c-36,1 -64,5 -123,4c-30.48476,0 -73,-1.78371 -118,-3c-70.28062,-1.17535 -116,-1 -168,-1c-50.32462,0 -101,8 -164,8c-52,0 -109,-8 -185,-8c-102,0 -109,4 -172,4c-38,0 -119,-6 -186,-6c-49,0 -110,8 -158,8c-59,0 -112,-6 -146,-6c0,0 -10,0 -10,0l0,-5l1440,0l0,5z', $parameters)
-//   );
+  $shapes: (
+    border_large: _buildPath('m1440,5c0,0 -2.6608,0.06246 -10,0c-36,1 -64,5 -123,4c-30.48476,0 -73,-1.78371 -118,-3c-70.28062,-1.17535 -116,-1 -168,-1c-50.32462,0 -101,8 -164,8c-52,0 -109,-8 -185,-8c-102,0 -109,4 -172,4c-38,0 -119,-6 -186,-6c-49,0 -110,8 -158,8c-59,0 -112,-6 -146,-6c0,0 -10,0 -10,0l0,-5l1440,0l0,5z', $parameters)
+  );
 
-//   $shape: _buildShape(map-get($shapes, $shape-name));
-//   @return url("data:image/svg+xml;charset=utf8,#{$shape}");
-// }
+  $shape: _buildShape(map-get($shapes, $shape-name));
+  @return url("data:image/svg+xml;charset=utf8,#{$shape}");
+}
 
 // Big border dimensions
-// $width: 1440px;
-// $height: 13px;
+$width: 1440px;
+$height: 13px;
 
 // Borders
-// $border__green:         shape(border_large, $color__1_2);
-// $border__green-light:   shape(border_large, $color__1_3);
-// $border__blue:          shape(border_large, $color__2_2);
-// $border__blue-light:    shape(border_large, $color__2_3);
-// $border__yellow:        shape(border_large, $color__3_2);
-// $border__yellow-light:  shape(border_large, $color__3_3);
-// $border__red:           shape(border_large, $color__4_2);
-// $border__red-light:     shape(border_large, $color__4_3);
+$border__green:         shape(border_large, $color__1_2);
+$border__green-light:   shape(border_large, $color__1_3);
+$border__blue:          shape(border_large, $color__2_2);
+$border__blue-light:    shape(border_large, $color__2_3);
+$border__yellow:        shape(border_large, $color__3_2);
+$border__yellow-light:  shape(border_large, $color__3_3);
+$border__red:           shape(border_large, $color__4_2);
+$border__red-light:     shape(border_large, $color__4_3);
 
-// $border__base:          shape(border_large, $color__base_solid);
-// $border__gray-lightest: shape(border_large, $color__gray-lightest_solid);
-// $border__white:         shape(border_large, #fff);
+$border__base:          shape(border_large, $color__base_solid);
+$border__gray-lightest: shape(border_large, $color__gray-lightest_solid);
+$border__white:         shape(border_large, #fff);
 
-$border__green:         borderBig($color__1_2);
-$border__green-light:   borderBig($color__1_3);
-$border__blue:          borderBig($color__2_2);
-$border__blue-light:    borderBig($color__2_3);
-$border__yellow:        borderBig($color__3_2);
-$border__yellow-light:  borderBig($color__3_3);
-$border__red:           borderBig($color__4_2);
-$border__red-light:     borderBig($color__4_3);
-
-$border__base:          borderBig($color__base_solid);
-$border__gray-lightest: borderBig($color__gray-lightest_solid);
-$border__white:         borderBig(#fff);
+// $border__green:         borderBig($color__1_2);
+// $border__green-light:   borderBig($color__1_3);
+// $border__blue:          borderBig($color__2_2);
+// $border__blue-light:    borderBig($color__2_3);
+// $border__yellow:        borderBig($color__3_2);
+// $border__yellow-light:  borderBig($color__3_3);
+// $border__red:           borderBig($color__4_2);
+// $border__red-light:     borderBig($color__4_3);
+// $border__base:          borderBig($color__base_solid);
+// $border__gray-lightest: borderBig($color__gray-lightest_solid);
+// $border__white:         borderBig(#fff);
 
 
 // --------------------------------------------------------------
