@@ -62,6 +62,7 @@
 .error-404 {
     .entry-wrapper {
         background-color: $color__gray-lightest;
+        @include border-after($border__gray-lightest);
     }
 }
 
@@ -82,13 +83,13 @@
 
     .page-header {
         background-color: $color__gray-lightest;
-        padding-top: 50px; // 10px + 40
+        padding-top: 55px; // 15px + 40
         padding-bottom: 20px;
         margin-top: -40px;
 
         @include respond-to($md) {
             padding-top: 80px;
-            padding-bottom: 35px;
+            padding-bottom: 30px;
         }
     }
 }
@@ -100,24 +101,28 @@
     }
     .page-header {
         background-color: $color__1_3;
+        @include border-after($border__green-light);
+
     }
 }
 .category-livestemning {
     .page-title {
-        color: $color__2_1;
+        color: $color__2_0;
         // color: $color__base;
     }
     .page-header {
         background-color: $color__2_3;
+        @include border-after($border__blue-light);
     }
 }
 .category-feature {
     .page-title {
-        color: $color__3_-1;
+        color: $color__3_0;
         // color: $color__base;
     }
     .page-header {
         background-color: $color__3_3;
+        @include border-after($border__yellow-light);
     }
 }
 .category-generelt {
@@ -127,6 +132,7 @@
     }
     .page-header {
         background-color: $color__4_3;
+        @include border-after($border__red-light);
     }
 }
 
@@ -175,7 +181,8 @@
 
 article.category-opdagelser {
     .entry-wrapper {
-        background-color: $color__1_2;    
+        background-color: $color__1_2;
+        @include border-after($border__green);    
     }
 
     .entry-category,
@@ -185,7 +192,8 @@ article.category-opdagelser {
 }
 article.category-livestemning {
     .entry-wrapper {
-        background-color: $color__2_2;    
+        background-color: $color__2_2;
+        @include border-after($border__blue);    
     }
     .entry-category,
     .entry-category a {
@@ -194,7 +202,8 @@ article.category-livestemning {
 }
 article.category-feature {
     .entry-wrapper {
-        background-color: $color__3_2;    
+        background-color: $color__3_2; 
+        @include border-after($border__yellow);   
     }
     .entry-category,
     .entry-category a {
@@ -204,7 +213,8 @@ article.category-feature {
 article.category-generelt {
 
     .entry-wrapper {
-        background-color: $color__4_2;    
+        background-color: $color__4_2;
+        @include border-after($border__red);    
     }
 
     .entry-category,
