@@ -15,10 +15,12 @@
         min-width: 38px;
 
         @include respond-to($sm) {
+            padding-top: 8px;
+        }
+        @include respond-to($md) {
             padding-top: 7px;
         }
-
-        @include respond-to($sm) {
+        @include respond-to($lg) {
             padding-top: 5px;
         }
     }
