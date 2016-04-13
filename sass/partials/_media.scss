@@ -30,17 +30,14 @@
 }
 
 .post figure {
-    height: auto; /* Make sure images are scaled correctly. */
+    height: auto;
     margin-left: -$gutter-width;
-
-    // clip-path: url(#border_bottom);
-    // mask: url("http://regnsky.dk/wp/wp-content/themes/regnsky_/img/kant-header-top.svg") top left repeat-x;
 }
 
 .top-content,
 .entry-content iframe,
-.entry-content object,
-.post figure {
+.post figure,
+.entry-content a img {
     width: calc(100% + #{$gutter-width} * 2); // variable is interpolated in order to compile 
     margin-left: -$gutter-width;
 
@@ -53,6 +50,11 @@
         width: calc(100% + (#{$gutter-width}*3) * 2);
         margin-left: -$gutter-width * 3;
     }
+}
+
+.entry-content a img {
+    margin-bottom: 1rem; // Old blog photos wrapped in a-tags need this because they are a part of the p-tag together with the paragraph text
+    height: auto; // Again, old blog photos in a-tags need this
 }
 
 figure {
@@ -69,10 +71,6 @@ figure img {
     margin-bottom: 1.25rem;
 }
 
-/* Figures */
-// figure {
-//     margin: 0;
-// }
 
 /*--------------------------------------------------------------
 ## Bumpy borders
