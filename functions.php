@@ -192,8 +192,6 @@ function add_category_to_single($classes, $class) {
 	return $classes;
 }
 
-add_filter('img_caption_shortcode', 'my_img_caption_shortcode_filter',10,3);
-
 /**
  * Filter to replace the [caption] shortcode text with HTML5 compliant code
  *
@@ -201,6 +199,7 @@ add_filter('img_caption_shortcode', 'my_img_caption_shortcode_filter',10,3);
  *
  * From: http://wordpress.stackexchange.com/questions/107358/make-wordpress-image-captions-responsive
  **/
+add_filter('img_caption_shortcode', 'my_img_caption_shortcode_filter',10,3);
 function my_img_caption_shortcode_filter($val, $attr, $content = null)
 {
     extract(shortcode_atts(array(
