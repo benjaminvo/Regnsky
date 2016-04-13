@@ -17,7 +17,7 @@
     }
 
     // Align sidebar (approx.) with titles
-    @media (min-width: $screen-lg-min) {
+    @media (min-width: $lg) {
         //margin-top: 50px;
     }
 }
@@ -32,7 +32,7 @@
         font-size: 1rem;
     }
 
-    @media (min-width: $screen-sm-min) {
+    @media (min-width: $sm) {
         padding: 40px;
 
         p, li {
@@ -94,7 +94,7 @@
             font-style: italic;
             text-decoration: none;
 
-            @media (min-width: $screen-sm-min) {
+            @media (min-width: $sm) {
                 @include font-size(0.75);
             }
         }
@@ -109,7 +109,7 @@
 }
 
 // Align sidebar with navigation on big screens by removing right margin of the row
-@media (min-width: $screen-lg-min) {
+@media (min-width: $lg) {
     .row-main {
         margin-right: 0;
     }
