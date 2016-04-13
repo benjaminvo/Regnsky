@@ -38,6 +38,10 @@
 }
 
 /* Entries */
+.post {
+    word-wrap: break-word; // Breaks lines without spaces (e.g. the wordpress audio code: "[audio:http://www...") 
+}
+
 .single .post {
     margin-bottom: 40px;
 }
