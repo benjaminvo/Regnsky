@@ -2,11 +2,6 @@
 // Function to create svg code
 // --------------------------------------------------------------
 
-$path-1_width:  640px;
-$path-1_height: 7px;
-$path-2_width:  1440px;
-$path-2_height: 13px;
-
 @function buildUrl($path, $color, $width, $height) {
   $path-wrap: '%3Cpath%20fill%3D%22#{$color}%22%20d%3D%22#{$path}%22%20%2F%3E'; 
   $svg:       '%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22#{$width}%22%20height%3D%22#{$height}%22%3E#{$path-wrap}%3C%2Fsvg%3E';
@@ -15,25 +10,48 @@ $path-2_height: 13px;
   @return $url;
 }
 
+// Small border
+$border-small_width:  640px;
+$border-small_height: 7px;
+
 @function borderSmall($color) {
-  $width:  $path-1_width;
-  $height: $path-1_height;
+  $width:  $border-small_width;
+  $height: $border-small_height;
   $path:   'm0,0l640,0c0,0 0,4 0,4c0,0 -9,3 -22,3c-13,0 -35,-4 -66,-4c-33,0 -86,3 -114,3c-17.47892,0 -76,-3 -89,-3c-24,0 -37,4 -62,4c-24,0 -54,-4 -89,-4c-26,0 -46,2 -75,2c-25,0 -44,-4 -74,-4c-22,0 -42.33026,1 -49,3l0,-4z';
 
   @return buildUrl($path, $color, $width, $height);
 }
 
+// Big border
+$border-big_width:  1440px;
+$border-big_height: 13px;
+
 @function borderBig($color) {
-  $width:  $path-2_width;
-  $height: $path-2_height;
+  $width:  $border-big_width;
+  $height: $border-big_height;
   $path:   'm1440,5c0,0 -2.6608,0.06246 -10,0c-36,1 -64,5 -123,4c-30.48476,0 -73,-1.78371 -118,-3c-70.28062,-1.17535 -116,-1 -168,-1c-50.32462,0 -101,8 -164,8c-52,0 -109,-8 -185,-8c-102,0 -109,4 -172,4c-38,0 -119,-6 -186,-6c-49,0 -110,8 -158,8c-59,0 -112,-6 -146,-6c0,0 -10,0 -10,0l0,-5l1440,0l0,5z';
 
   @return buildUrl($path, $color, $width, $height);
 }
 
+// Frame border
+$border-frame_width:  1440px;
+$border-frame_height: 1440px;
+
+@function borderFrame($color) {
+  $width:  $border-frame_width;
+  $height: $border-frame_height;
+  $path:   'm5,5l5,0c34,0 87,6 146,6c48,0 109,-8 158,-8c67,0 148,6 186,6c63,0 70,-4 172,-4c76,0 133,8 185,8c63,0 113.674988,-8 164,-8c52,0 97.719971,-0.175 168,1c45,1.216 87.515015,3 118,3c59,1 87,-3 123,-4c7.339966,0.062 10,0 10,0l0,-5l-1440,0l0,1440l5,0l0,-10c0,-34 6,-87 6,-146c0,-48 -8,-109 -8,-158c0,-67 6,-148 6,-186c0,-63 -4,-70 -4,-172c0,-76 8,-133 8,-185c0,-63 -8,-113.674988 -8,-164c0,-52 -0.175,-97.720001 1,-168c1.216,-45 3,-87.514999 3,-118c1,-59 -3,-87 -4,-123l0,-5z';
+
+
+  @return buildUrl($path, $color, $width, $height);
+}
+
+// Create borders
 $border__green: (
   small: borderSmall($color__1_2),
-  big: borderBig($color__1_2)
+  big: borderBig($color__1_2),
+  frame: borderFrame($color__1_2)
 );
 $border__green-light: (
   small: borderSmall($color__1_3),
@@ -41,7 +59,8 @@ $border__green-light: (
 );
 $border__blue: (
   small: borderSmall($color__2_2),
-  big: borderBig($color__2_2)
+  big: borderBig($color__2_2),
+  frame: borderFrame($color__2_2)
 );
 $border__blue-light: (
   small: borderSmall($color__2_3),
@@ -49,7 +68,8 @@ $border__blue-light: (
 );
 $border__yellow: (
   small: borderSmall($color__3_2),
-  big: borderBig($color__3_2)
+  big: borderBig($color__3_2),
+  frame: borderFrame($color__3_2)
 );
 $border__yellow-light: (
   small: borderSmall($color__3_3),
@@ -57,7 +77,8 @@ $border__yellow-light: (
 );
 $border__red: (
   small: borderSmall($color__4_2),
-  big: borderBig($color__4_2)
+  big: borderBig($color__4_2),
+  frame: borderFrame($color__4_2)
 );
 $border__red-light: (
   small: borderSmall($color__4_3),
@@ -76,30 +97,6 @@ $border__white: (
   big: borderBig(#fff)
 );
 
-// $border__green:         borderBig($color__1_2);
-// $border__green-light:   borderBig($color__1_3);
-// $border__blue:          borderBig($color__2_2);
-// $border__blue-light:    borderBig($color__2_3);
-// $border__yellow:        borderBig($color__3_2);
-// $border__yellow-light:  borderBig($color__3_3);
-// $border__red:           borderBig($color__4_2);
-// $border__red-light:     borderBig($color__4_3);
-// $border__base:          borderBig($color__base_solid);
-// $border__gray-lightest: borderBig($color__gray-lightest_solid);
-// $border__white:         borderBig(#fff);
-
-// $border__green__mobile:         borderSmall($color__1_2);
-// $border__green-light__mobile:   borderSmall($color__1_3);
-// $border__blue__mobile:          borderSmall($color__2_2);
-// $border__blue-light__mobile:    borderSmall($color__2_3);
-// $border__yellow__mobile:        borderSmall($color__3_2);
-// $border__yellow-light__mobile:  borderSmall($color__3_3);
-// $border__red__mobile:           borderSmall($color__4_2);
-// $border__red-light__mobile:     borderSmall($color__4_3);
-// $border__base__mobile:          borderSmall($color__base_solid);
-// $border__gray-lightest__mobile: borderSmall($color__gray-lightest_solid);
-// $border__white__mobile:         borderSmall(#fff);
-
 // --------------------------------------------------------------
 // Mixins
 // --------------------------------------------------------------
@@ -110,18 +107,18 @@ $border__white: (
     &:before {
         content: '';
         position: absolute;
-        top: -$path-1_height;
+        top: -$border-small_height;
         left: 0;
         width: 100%;
-        height: $path-1_height;
+        height: $border-small_height;
         background-image: map-get($border__color, small);
         background-repeat: repeat-x;
         z-index: 1000;
         transform: rotate(-180deg);
 
         @include respond-to($sm) {
-          top: -$path-2_height;
-          height: $path-2_height;
+          top: -$border-big_height;
+          height: $border-big_height;
           background-image: map-get($border__color, big);
         }
     }
@@ -133,10 +130,10 @@ $border__white: (
     &:after {
         content: '';
         position: absolute;
-        bottom: -$path-1_height;
+        bottom: -$border-small_height;
         left: 0;
         width: 100%;
-        height: $path-1_height;
+        height: $border-small_height;
         background-image: map-get($border__color, small);
         background-repeat: repeat-x;
         z-index: 1000;
@@ -144,47 +141,73 @@ $border__white: (
 
 
         @include respond-to($sm) {
-          bottom: -$path-2_height;
-          height: $path-2_height;
+          bottom: -$border-big_height;
+          height: $border-big_height;
           background-image: map-get($border__color, big);
         }
     }
 }
 
 // --------------------------------------------------------------
-// Billeder
+// Images
 // --------------------------------------------------------------
 
-// .entry-content figure {
-//     position: relative;
+@mixin border-frame($border__color) {
+  &:before,
+  &:after {
+      background-image: map-get($border__color, big);
 
-//     &:before {
-//         content: '';
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         background-repeat: repeat-x;
-//         width: 1440px;
-//         height: 13px;
-//     }
+      @include respond-to($sm) {
+        background-image: map-get($border__color, frame);
+      }
+  }
+}
 
-//     &:after {
-//         content: '';
-//         position: absolute;
-//         bottom: 0;
-//         left: 0;
-//         background-repeat: repeat-x;
-//         width: 1440px;
-//         height: 13px;
-//         transform: rotate(-180deg);
-//     }
-// }
+.img-border {
+    position: relative;
+    overflow: hidden;
 
-// .category-livestemning {
-//     .entry-content figure {
-//         &:before,
-//         &:after {
-//             background-image: $border__blue;
-//         }
-//     }
-// }
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $border-big_width;
+        height: $border-big_height;
+
+        @include respond-to($sm) {
+          width: $border-frame_width;
+          height: $border-frame_height;
+        }
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -200px;
+        width: $border-big_width;
+        height: $border-big_height;
+        transform: rotate(-180deg);
+
+        @include respond-to($sm) {
+          width: $border-frame_width;
+          height: $border-frame_height;
+          left: auto;
+          right: 0;
+        }
+    }
+}
+
+.category-opdagelser .img-border {
+  @include border-frame($border__green);
+}
+.category-livestemning .img-border {
+  @include border-frame($border__blue);
+}
+.category-feature .img-border {
+  @include border-frame($border__yellow);
+}
+.category-generelt .img-border {
+  @include border-frame($border__red);
+}

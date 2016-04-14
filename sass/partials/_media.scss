@@ -29,11 +29,6 @@
     }
 }
 
-.post figure {
-    height: auto;
-    margin-left: -$gutter-width;
-}
-
 .top-content,
 .entry-content iframe,
 .post figure,
@@ -58,12 +53,13 @@
 }
 
 figure {
-    overflow: hidden;
-}
-
-figure img {
-    width: 100%;
     height: auto;
+    margin-left: -$gutter-width;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 /* Margin bottom for audio player */
@@ -72,51 +68,51 @@ figure img {
 }
 
 
-/*--------------------------------------------------------------
-## Bumpy borders
---------------------------------------------------------------*/
+// /*--------------------------------------------------------------
+// ## Bumpy borders
+// --------------------------------------------------------------*/
 
-.bumpy-top {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-.bumpy-bottom {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-.bumpy-left {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-}
-.bumpy-right {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    right: 0;
-}
-.bumpy-top_on-top {
-    position: absolute;
-    width: 100%;
-    bottom:  100%;
-    left: 0px;
-    right: 0px;
-}
+// .bumpy-top {
+//     position: absolute;
+//     width: 100%;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+// }
+// .bumpy-bottom {
+//     position: absolute;
+//     width: 100%;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+// }
+// .bumpy-left {
+//     position: absolute;
+//     height: 100%;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+// }
+// .bumpy-right {
+//     position: absolute;
+//     height: 100%;
+//     top: 0;
+//     bottom: 0;
+//     right: 0;
+// }
+// .bumpy-top_on-top {
+//     position: absolute;
+//     width: 100%;
+//     bottom:  100%;
+//     left: 0px;
+//     right: 0px;
+// }
 
-.bumpy-top,
-.bumpy-bottom,
-.bumpy-left,
-.bumpy-right,
-.bumpy-top_on-top {
-    -webkit-border-radius: 0px !important;
-            border-radius: 0px !important;
-}
+// .bumpy-top,
+// .bumpy-bottom,
+// .bumpy-left,
+// .bumpy-right,
+// .bumpy-top_on-top {
+//     -webkit-border-radius: 0px !important;
+//             border-radius: 0px !important;
+// }
