@@ -145,7 +145,7 @@
 
 // Add bg color behind header of the first article of a page
 .post:first-child .entry-wrapper,
-.page:first-child .entry-wrapper,
+.page .entry-wrapper,
 .error-404:first-child .entry-wrapper {
     margin-top: -40px;
     padding-top: 80px;
@@ -156,8 +156,17 @@
     }
 }
 
+.page .entry-wrapper {
+    @include respond-to($md) {
+        padding-top: 120px;
+    }
+}
+
 .entry-header {
     margin-bottom: 1.875rem; // 30px
+}
+.page .entry-header {
+    margin-bottom: 1rem; // 30px
 }
 
 .entry-category {
