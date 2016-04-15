@@ -31,6 +31,7 @@
 
 .top-content,
 .entry-content iframe,
+.entry-content embed,
 .post figure,
 .entry-content a img {
     width: calc(100% + #{$gutter-width} * 2); // variable is interpolated in order to compile 
@@ -49,7 +50,11 @@
 
 .entry-content a img {
     margin-bottom: 1rem; // Old blog photos wrapped in a-tags need this because they are a part of the p-tag together with the paragraph text
-    height: auto; // Again, old blog photos in a-tags need this
+    height: auto;        // Again, old blog photos in a-tags need this
+}
+
+.entry-content .img-border a img {
+    margin-bottom: 0;    // Cancel above "hack" for images within img-border divs
 }
 
 figure {
@@ -60,6 +65,15 @@ figure {
     img {
         width: 100%;
         height: auto;
+    }
+}
+
+iframe[src*="mixcloud"] { // Styles specific to Mixcloud players
+    height: auto;
+    margin-top: 1rem;
+
+    & + div {
+        display: none;
     }
 }
 
