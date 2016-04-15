@@ -46,18 +46,18 @@
     margin-bottom: 40px;
 }
 
-.post p:last-of-type {
-    margin-bottom: 1.5rem;
+.entry-content p:last-of-type {
+    margin-bottom: 1.5rem; // Margin down to tags
 }
 
 .entry-wrapper {
     padding-top: 40px;
-    padding-bottom: 20px;
+    padding-bottom: calc(2rem - 10px);
     background-color: #fff;
 
     @include respond-to($md) {
         padding-top: 60px;
-        padding-bottom: 40px;
+        padding-bottom: calc(2rem - 10px);
     }
 }
 
