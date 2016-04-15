@@ -7,27 +7,20 @@
     @include border-after($border__gray-lightest);
 }
 
-.entry-actions-header {
-
-    @media(min-width: $md) {
-        text-align: left;
-    }
-}
-
 /*--------------------------------------------------------------
 ## Share post
 */
 
 .entry-share {
-    margin-bottom: 20px; // Skal være 30px, når det ikke er sociale embeddede knapper
+    margin-bottom: 1rem; // Skal være 30px, når det ikke er sociale embeddede knapper
 }
 
 .share-buttons {
     text-align: center;
 
-    @media(min-width: $md) {
-        text-align: left;
-    }
+    // @media(min-width: $md) {
+    //     text-align: left;
+    // }
 
     a {
         text-decoration: none;
@@ -46,9 +39,9 @@
             margin-right: 0;
         }
 
-        @media(min-width: $md) {
-            margin-bottom: 10px;
-        }
+        // @media(min-width: $md) {
+        //     margin-bottom: 10px;
+        // }
         
         // img {
         //     width: 20px;
@@ -83,23 +76,23 @@
 .comments-cta {
     text-align: center;
 
-    @media (min-width: $md) {
-        text-align: left;
-    }
+    // @media (min-width: $md) {
+    //     text-align: left;
+    // }
 
-    .cta {
-        @include respond-to($md) {
-            text-align: left;
-        }       
-    }
+    // .cta {
+    //     @include respond-to($md) {
+    //         text-align: left;
+    //     }       
+    // }
 }
 
 .comment-notes {
     @extend .h5;
 
-    @include respond-to($md) {
-        text-align: left;
-    }
+    // @include respond-to($md) {
+    //     text-align: left;
+    // }
 }
 
 .comments-area {
@@ -115,6 +108,10 @@
 
     p {
         margin-bottom: 1rem;
+    }
+
+    p:last-of-type {
+        margin-bottom: 0;
     }
 
     .comment-form-url {
@@ -182,9 +179,9 @@
     margin-bottom: 0;
     text-align: center;
 
-    @media (min-width: $md) {
-        text-align: left;
-    }
+    // @media (min-width: $md) {
+    //     text-align: left;
+    // }
 }
 
 
@@ -192,32 +189,88 @@
 ## Read related posts
 */
 
-.entry-related {
-    margin-bottom:20px;
+.related-posts {
+    @include border-after($border__white);
+
+    ul,
+    li {
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none;
+    }
+    ul {
+        margin-bottom: 0;
+    }
+
+    a,
+    .entry-meta a {
+        text-shadow: 1px 0 #fff, 2px 0 #fff, 3px 0 #fff, -1px 0 #fff, -2px 0 #fff, -3px 0 #fff;
+    }
+
+    h4 {
+        text-align: center;
+    }
+
 }
 
-.related-post,
-.small-post {
-    margin-bottom: 10px;
-    
-    p {
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-    span {
-        font-size: 0.75rem;
-    }
+.related-post {
+    margin-bottom: 3rem;
 
-    .small-post-meta,
-    .small-post-title {
+    .related-post_title {
         text-align: center;
+        margin-bottom: 1rem;
+    }
 
-        @media (min-width: $md) {
-            text-align: left;
+    .related-post_meta {
+        margin-bottom: 1rem;
+    }
+    
+    .related-post_category {
+        @extend .h4;
+
+        &:after {
+            content: ': ';
+            color: $color__gray-light;
+            font-family: $font__main;
         }
     }
+    
+    p {
+        display: inline;
+        font-size: 14px;
+
+        @include respond-to($md) {
+            font-size: 16px;
+        }
+    }
+
+    .excerpt-read-more {
+        font-style: italic;
+    }
 }
 
-.small-post-date {
-    display: block;
+// Color category
+.post-opdagelser {
+    .related-post_category,
+    .excerpt-read-more {
+        color: $color__1_0;
+    }
 }
+.post-livestemning {
+    .related-post_category,
+    .excerpt-read-more {
+        color: $color__2_0;
+    }
+}
+.post-feature {
+    .related-post_category {
+        color: $color__3_0;
+    }
+}
+.post-generelt {
+    .related-post_category,
+    .excerpt-read-more {
+        color: $color__4_0;
+    }
+}
+
