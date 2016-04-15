@@ -305,3 +305,16 @@ add_filter( 'get_the_archive_title', function ($title) {
 
     return $title;
 });
+
+
+/**
+ * Make an excerpt function to control the character limit, when function is called: <?php echo get_excerpt(200); ?>
+ */
+function get_excerpt($count) {
+    $permalink = get_permalink($post->ID);
+    $excerpt = get_the_content();
+    $excerpt = strip_tags($excerpt);
+    $excerpt = mb_substr($excerpt, 0, $count,'UTF-8');
+    $excerpt = $excerpt.'<span class="text-mute">&#8230; </span><a class="excerpt-read-more" href="'.$permalink.'">Læs indlæg</a>';
+    return $excerpt;
+}
