@@ -43,7 +43,8 @@
     @include border-after($border__base);
 }
 
-.footer-module {
+.footer-module,
+.module {
     margin-bottom: 40px;
 }
 
