@@ -36,14 +36,14 @@
 
     // Extend jQuery with animation function
     // NOT IN USE
-    $.fn.extend({
-        animateCss: function (animationName) {
-            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-            $(this).addClass('animated ' + animationName).one(animationEnd, function() {
-                $(this).removeClass('animated ' + animationName);
-            });
-        }
-    });
+    // $.fn.extend({
+    //     animateCss: function (animationName) {
+    //         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    //         $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+    //             $(this).removeClass('animated ' + animationName);
+    //         });
+    //     }
+    // });
 
     // Navigation: On small screen sizes, toggle body class when menu is active
     $('.menu-toggle').on("click", function() {
