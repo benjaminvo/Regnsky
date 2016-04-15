@@ -1,8 +1,12 @@
 .entry-footer {
     margin-bottom: 0;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     background-color: $color__gray-lightest;
+
+    @include respond-to($md) {
+        padding-top: 3rem;
+    }
 
     @include border-after($border__gray-lightest);
 }
@@ -102,16 +106,16 @@
         font-size: 16px;
     }
 
+    .comment {
+        margin-bottom: 1.5rem;
+    }
+
     .comment-reply-title {
         display: none; // Hide title "Skriv et svar"
     }
 
     p {
         margin-bottom: 1rem;
-    }
-
-    p:last-of-type {
-        margin-bottom: 0;
     }
 
     .comment-form-url {
@@ -175,7 +179,7 @@
     display: block;
 }
 
-.form-submit {
+p.form-submit {
     margin-bottom: 0;
     text-align: center;
 
@@ -263,7 +267,8 @@
     }
 }
 .post-feature {
-    .related-post_category {
+    .related-post_category,
+    .excerpt-read-more {
         color: $color__3_0;
     }
 }
