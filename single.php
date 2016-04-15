@@ -23,14 +23,22 @@ get_header(); ?>
 				<div class="container">
 
 					<div class="flex">
-				
-						<h4 class="col col-xs-12">Nu kunne du læse...</h4>
 
 						<?php 
+						$related_by_author = get_field('related_posts');
+						$related_by_tags = $tags;
 
-						$related_posts = get_field('related_posts'); // Sæt $posts lig med tags, hvis der ikke er nogle posts
+						// Define $related_posts according to the related posts - author's or from tags
+						if ($related_by_author) :
+							$related_posts = $related_by_author;
+						elseif($tags) :
+							$related_posts = $tags;
+						endif;
 
-						if ( $related_posts ): ?>
+						// If there are any related posts 
+						if ( $related_by_author || $related_by_tags ): ?>
+
+							<h4 class="col col-xs-12">Nu kunne du læse...</h4>
 
 						    <ul class="col col-xs-12">
 						    
@@ -40,11 +48,11 @@ get_header(); ?>
 								<?php 
                                 $category_array = get_the_category($post->post_ID);
                                 $category       = $category_array[0];
-                                $category_name  = $category->cat_name;
+                                $category_name  = $category->cat_name;                            
                                 ?>
 
 						        <li class="related-post <?php echo 'post-' . strtoLower($category_name) ?>">
-						            <h2 class="related-post_title col col-xs-12">
+						            <h2 class="related-post_title col col-xs-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
 						            	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						            </h2>
 									
@@ -53,7 +61,13 @@ get_header(); ?>
 									</div>
 
 									<div class="related-post_content col col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
-										<span class="related-post_category"><?php echo $category_name; ?></span>
+										<span class="related-post_category">
+											<?php 
+											if ($category_name == 'Opdagelser') :
+												$category_name = 'Opdagelse';
+                            				endif;
+                            				echo $category_name; ?>
+                            			</span>
 										<p><?php echo get_excerpt(120); ?></p>   
 									</div>
 						        </li>
