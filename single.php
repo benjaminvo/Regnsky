@@ -18,48 +18,57 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', get_post_format() ); ?>
 
 			<!-- Related articles -->
-			<div class="entry-actions entry-related small-post-wrapper container">
-			
-				<h4 class="entry-actions-header">Nu kunne du læse...</h4>
+			<div class="related-posts">
 
-				<div class="related-post small-post row">
-					<div class="small-post-meta col-sm-3">
-						<p><span class="small-post-category h4 text-brand-4">Livestemning</span> <span class="small-post-date text-sub text-mute">8. juli 2015</span></p>
-					</div>
-					<div class="small-post-title col-sm-9">
-						<h3><a href="<?php echo esc_url( home_url( '2015/07/susanne-sundfoer-den-norske-sejrsgang-fortsaetter/' ) ); ?>">Susanne Sundfør - Den norske sejrsgang fortsætter</a></h3>
-					</div>
-				</div>	
+				<div class="container">
 
-				<div class="related-post small-post row">
-					<div class="small-post-meta col-sm-3">
-						<p><span class="small-post-category h4 text-brand-2">Nyhed</span> <span class="small-post-date text-sub text-mute">15. december 2015</span></p>
-					</div>
-					<div class="small-post-title col-sm-9">
-						<h3><a href="<?php echo esc_url( home_url( '/2015/12/bliv-en-del-af-regnsky/' ) ); ?>">Bliv en del af Regnsky</a></h3>
-					</div>
-				</div>
-
-				<div class="related-post small-post row">
-					<div class="small-post-meta col-sm-3">
-						<p><span class="small-post-category h4 text-brand-1">Musik</span> <span class="small-post-date text-sub text-mute">25. december 2015</span></p>
-					</div>
-					<div class="small-post-title col-sm-9">
-						<h3><a href="<?php echo esc_url( home_url( '/2015/12/aaret-der-gik-del-1-aarets-bedste-koncerter/' ) ); ?>">Året der gik – del 1: Årets bedste koncerter</a></h3>
-					</div>
-				</div>
-			
-				<div class="related-post small-post row">
-					<div class="small-post-meta col-sm-3">
-						<p><span class="small-post-category h4 text-brand-3">Anmeldelse</span> <span class="small-post-date text-sub text-mute">15. maj 2015</span></p>
-					</div>
-					<div class="small-post-title col-sm-9">
-						<h3><a href="<?php echo esc_url( home_url( '2015/05/chienne-lucas/' ) ); ?>">Chienne Lucas - et frikvarter i Zoo</a></h3>
-					</div>
-				</div>
+					<div class="flex">
 				
-			</div> <!-- /.small-post-wrapper -->
+						<h4 class="col col-xs-12">Nu kunne du læse...</h4>
 
+						<?php 
+
+						$related_posts = get_field('related_posts'); // Sæt $posts lig med tags, hvis der ikke er nogle posts
+
+						if ( $related_posts ): ?>
+
+						    <ul class="col col-xs-12">
+						    
+						    <?php foreach( $related_posts as $post): ?>
+						        <?php setup_postdata($post); ?>
+
+								<?php 
+                                $category_array = get_the_category($post->post_ID);
+                                $category       = $category_array[0];
+                                $category_name  = $category->cat_name;
+                                ?>
+
+						        <li class="related-post <?php echo 'post-' . strtoLower($category_name) ?>">
+						            <h2 class="related-post_title col col-xs-12">
+						            	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						            </h2>
+									
+									<div class="related-post_meta entry-meta col col-xs-12">
+										<?php echo regnsky_posted_on(); ?>
+									</div>
+
+									<div class="related-post_content col col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+										<span class="related-post_category"><?php echo $category_name; ?></span>
+										<p><?php echo get_excerpt(120); ?></p>   
+									</div>
+						        </li>
+						    <?php endforeach; ?>
+
+						    </ul>
+						    <?php wp_reset_postdata(); ?>
+						
+						<?php endif; ?>
+
+					</div> <!-- /.flex -->
+
+				</div> <!-- /.container -->
+		
+			</div> <!-- /.related-posts -->
 
 		<?php
 		endwhile; // End of the loop.
