@@ -42,6 +42,8 @@ get_header(); ?>
                     </div> <!-- .flex -->
 
                     <div class="archive-categories flex">
+                        <?php $recent_posts = 10; ?>
+
                         <h2 class="col col-xs-12">Seneste indlæg</h2>
 
                         <div class="archive-category module col col-xs-12 col-sm-6 col-lg-3">
@@ -50,7 +52,7 @@ get_header(); ?>
                                 <?php 
                                 $post_args = array(
                                     'category_name'    => 'opdagelser',
-                                    'posts_per_page'   => '5',
+                                    'posts_per_page'   => $recent_posts,
                                     'offset'           => 0
                                 );
 
@@ -77,7 +79,7 @@ get_header(); ?>
                                 <?php 
                                 $post_args = array(
                                     'category_name'    => 'livestemning',
-                                    'posts_per_page'   => '5',
+                                    'posts_per_page'   => $recent_posts,
                                     'offset'           => 0
                                 );
 
@@ -104,7 +106,7 @@ get_header(); ?>
                                 <?php 
                                 $post_args = array(
                                     'category_name'    => 'feature',
-                                    'posts_per_page'   => '5',
+                                    'posts_per_page'   => $recent_posts,
                                     'offset'           => 0
                                 );
 
@@ -131,7 +133,7 @@ get_header(); ?>
                                 <?php 
                                 $post_args = array(
                                     'category_name'    => 'generelt',
-                                    'posts_per_page'   => '5',
+                                    'posts_per_page'   => $recent_posts,
                                     'offset'           => 0
                                 );
 
@@ -166,16 +168,17 @@ get_header(); ?>
                             // reverse array of posts
                             krsort($posts_this_year);
 
-                            // $category_array = get_the_category($post->post_ID);
-                            // $category       = $category_array[0];
-                            // $category_name  = $category->cat_name;
-
                             echo '<h2 class="year-title year-' . $year->year . ' col col-xs-12">' . $year->year . '</h2>';
                             echo '<span class="year-amount">' . count($posts_this_year) . ' indlæg' . '</span>';
                             echo '<div class="col col-xs-12 col"><ul>';
                             
                             foreach ( $posts_this_year as $post ) {
-                                echo '<li><a class="link" href="' . get_post_permalink($post->post_ID) . '">' . $post->post_title . '</a></li>';
+
+                                $category_array = get_the_category($post->post_ID);
+                                $category       = $category_array[0];
+                                $category_name  = $category->cat_name;
+                                
+                                echo '<li><a class="link link-' . strtoLower($category_name) . '" href="' . get_post_permalink($post->post_ID) . '">' . $post->post_title . '</a></li>';
                                 // echo '<span class="divider"> · </span>'; 
                             }
 
