@@ -83,10 +83,6 @@ h4,
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 3px;
-
-    @media (min-width: $lg) {
-        text-align: left;
-    } 
 }
 
 h5,
@@ -157,9 +153,10 @@ a {
     }
 }
 
+h2,
 .entry-title,
 .entry-meta,
-.entry-content p {
+p {
     a {
         text-decoration: none;
         transition: color .2s ease, background-image .2s ease;
