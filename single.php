@@ -25,18 +25,40 @@ get_header(); ?>
 					<div class="flex">
 
 						<?php 
-						$related_by_author = get_field('related_posts');
+						$tags = wp_get_post_tags($post->ID);
 						$related_by_tags = $tags;
+						$related_by_author = get_field('related_posts');
 
-						// Define $related_posts according to the related posts - author's or from tags
+						// Set $related_posts to posts chosen by author's
 						if ($related_by_author) :
+							
 							$related_posts = $related_by_author;
+
+							// print_r($related_posts);
+						
+						// Set $related_posts to posts based on tags
 						elseif($tags) :
-							$related_posts = $tags;
+							
+							$tag_ids = array();
+                        
+	                        foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+	                        
+	                        $tag_args=array(
+	                            'tag__in' => $tag_ids,
+	                            'post__not_in' => array($post->ID),
+	                            'posts_per_page'=>5, // Number of related posts to display.
+	                            'caller_get_posts'=>1
+	                        );
+	                         
+	                        $related_by_tags = get_posts($tag_args);
+
+							$related_posts = $related_by_tags;
+
+							// print_r($related_by_tags);
 						endif;
 
-						// If there are any related posts 
-						if ( $related_by_author || $related_by_tags ): ?>
+						// If there are any related posts ($related_by_author || $related_by_tags)
+						if ( $related_posts ): ?>
 
 							<h4 class="col col-xs-12">Nu kunne du læse...</h4>
 
