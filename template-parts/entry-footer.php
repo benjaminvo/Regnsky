@@ -16,18 +16,19 @@
                         data-layout="button">
                     </div>
 
-                    <!-- <a href="#" onclick="return false;">
-                        <img class="icon-fb" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-fb.svg" alt="Facebook share"><span class="h6">Del (12) <?php echo get_permalink(); ?></span>
+                    <!-- <a target="_blank" href="<?php //echo 'http://www.facebook.com/sharer/sharer.php?u=http:' . get_permalink(); ?>">
+                        <img class="icon-fb" src="<?php //echo get_stylesheet_directory_uri(); ?>/img/icon-fb.svg" alt="Facebook share"><span class="h6">Del</span>
                     </a> -->
                 </div>
                 
                 <div class="share-button twitter">
                     
                     <a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                    <!-- <a href="#" onclick="return false;">
-                        <img class="icon-twitter" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-twitter.svg" alt="Twitter share"><span class="h6">Tweet (1)</span>
-                    </a> -->
-                </div>
+
+                    <!-- <a href="https://twitter.com/share">
+                        <img class="icon-twitter" src="<?php //echo get_stylesheet_directory_uri(); ?>/img/icon-twitter.svg" alt="Twitter share"><span class="h6">Tweet</span>
+                    </a>
+ -->                </div>
             </div>
         </div>
 
