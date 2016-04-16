@@ -2,7 +2,7 @@
     <label>
         <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
         <input type="search" class="search-field"
-            placeholder="<?php echo esc_attr_x( 'Ny søgning?', 'placeholder' ) ?>"
+            placeholder="<?php echo esc_attr_x( 'Søg...', 'placeholder' ) ?>"
             title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
     </label>
     <span class="search-submit-wrap">
