@@ -314,8 +314,9 @@ function get_excerpt($count) {
     $permalink = get_permalink($post->ID);
     $excerpt = get_the_content();
     $excerpt = strip_tags($excerpt);
+    $excerpt = strip_shortcodes($excerpt);
     $excerpt = mb_substr($excerpt, 0, $count,'UTF-8');
-    $excerpt = $excerpt.'<span class="text-mute">&#8230; </span><a class="excerpt-read-more" href="'.$permalink.'">Læs indlæg</a>';
+    $excerpt = $excerpt . '<span class="text-mute">&#8230; </span><a class="excerpt-read-more" href="' . $permalink . '">Læs indlæg</a>';
     return $excerpt;
 }
 
