@@ -12,64 +12,65 @@ get_header(); ?>
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<div class="entry-wrapper">
+			<?php
+			if ( have_posts() ) : ?>
 
-				<div class="container">
-			
-					<div class="flex">
+				<header class="page-header search-header">
+					<div class="container">
+						<div class="flex">
+							<h1 class="page-title search-title col col-xs-12">
+								Søgeresultater for:<br>
+								<span class="search-query"><?php echo '&#8220;' . get_search_query() . '&#8221;'; ?></span>
+								<span class="search-total-results text-mute"><?php global $wp_query; $total_results = $wp_query->found_posts; echo '(' . $total_results . ' indlæg)' ?></span>
+							</h1>
 
-						<?php
-						if ( have_posts() ) : ?>
-
-							<header class="page-header col col-xs-12 col-sm-10 offset-sm-1">
-								<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'regnsky' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-							</header><!-- .page-header -->
-
-							<?php
-							/* Start the Loop */
-							while ( have_posts() ) : the_post();
-
-								/**
-								 * Run the loop for the search to output the results.
-								 * If you want to overload this in a child theme then include a file
-								 * called content-search.php and that will be used instead.
-								 */
-								get_template_part( 'template-parts/content', 'search' );
-
-							endwhile; ?>
-
-							<section class="pagination-wrapper container">
-								<div class="pagination flex">
-									<div class="col col-xs-12">
-										<?php
-										$paginate_args = array(
-											'show_all'           => false,
-											'end_size'           => 2,
-											'mid_size'           => 1,
-											'prev_next'          => false,
-											'prev_text'          => __('« Tilbage'),
-											'next_text'          => __('Videre »')
-										);
-
-										echo paginate_links($paginate_args);
-										?>					
-									</div>
-								</div>
-							</section>
-
-						<?php
-						else :
-
-							get_template_part( 'template-parts/content', 'none' );
-
-						endif; ?>
-
+							<?php get_search_form(); ?>
+						</div>
 					</div>
-				</div>
-			<!-- </div> -->
+				</header><!-- .page-header -->
+
+				<?php
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
+
+					/**
+					 * Run the loop for the search to output the results.
+					 * If you want to overload this in a child theme then include a file
+					 * called content-search.php and that will be used instead.
+					 */
+					get_template_part( 'template-parts/content', get_post_format() );
+
+				endwhile; ?>
+
+				<section class="pagination-wrapper container">
+					<div class="pagination flex">
+						<div class="col col-xs-12">
+							<?php
+							$paginate_args = array(
+								'show_all'           => false,
+								'end_size'           => 2,
+								'mid_size'           => 1,
+								'prev_next'          => false,
+								'prev_text'          => __('« Tilbage'),
+								'next_text'          => __('Videre »')
+							);
+
+							echo paginate_links($paginate_args);
+							?>					
+						</div>
+					</div>
+				</section>
+
+			<?php
+			else :
+
+				get_template_part( 'template-parts/content', 'none' );
+
+			endif; ?>
+
+
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
 <?php
-//get_sidebar();
 get_footer();

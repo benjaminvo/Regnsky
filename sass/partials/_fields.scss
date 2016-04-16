@@ -24,6 +24,19 @@ textarea {
 	}
 }
 
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: $color__base;
+
+    @extend .h6;
+}
+
 // Farve focus efter kategori
 // .category-opdagelser {
 //     input[type="text"],
@@ -73,19 +86,6 @@ textarea {
 //         }
 //     }
 // }
-
-textarea {
-    height: 100px;
-	resize: vertical;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: $color__base;
-
-    @extend .h6;
-}
 
 // /* Placeholder - browsers require these rules separate */
 // input::-webkit-input-placeholder {

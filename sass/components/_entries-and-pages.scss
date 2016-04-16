@@ -80,7 +80,8 @@
 }
 
 // Archive pages
-.archive {
+.archive,
+.search {
     .page-title {
         margin-bottom: 0;
     }
@@ -146,6 +147,7 @@
 // Add bg color behind header of the first article of a page
 .post:first-child .entry-wrapper,
 .page .entry-wrapper,
+.search:first-child .entry-wrapper,
 .error-404:first-child .entry-wrapper {
     margin-top: -40px;
     padding-top: 80px;
@@ -257,4 +259,3 @@ article.category-generelt {
 .category-generelt .read-more-link {
     color: $color__4_0;
 }
-
