@@ -1,12 +1,12 @@
 .entry-footer {
     margin-bottom: 0;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
     background-color: $color__gray-lightest;
 
-    @include respond-to($md) {
-        padding-top: 3rem;
-    }
+    // @include respond-to($md) {
+    //     padding-top: 3rem;
+    // }
 
     @include border-after($border__gray-lightest);
 }
@@ -194,6 +194,10 @@ p.form-submit {
 */
 
 .related-posts {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+
     @include border-after($border__white);
 
     ul,
@@ -220,6 +224,10 @@ p.form-submit {
 .related-post {
     margin-bottom: 3rem;
 
+    &:last-child {
+        margin-bottom: 0;
+    }
+
     .related-post_title {
         text-align: center;
         margin-bottom: 1rem;
@@ -236,6 +244,7 @@ p.form-submit {
             content: ': ';
             color: $color__gray-light;
             font-family: $font__main;
+            margin-left: -5px; // To get colon closer to category
         }
     }
     
