@@ -88,7 +88,7 @@ get_header(); ?>
 	                        				endif;
 	                        				echo $category_name; ?>
 	                        			</span>
-										<p><?php echo get_excerpt(120); ?></p>   
+										<p><?php echo get_excerpt(160); ?></p>   
 									</div>
 						        </li>
 						    <?php endforeach; ?>
