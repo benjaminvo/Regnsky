@@ -87,15 +87,15 @@
     }
 
     .page-header {
-        padding-top: 55px; // 15px + 40
-        padding-bottom: 20px;
-        margin-top: -40px;
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+        margin-top: -3rem;
         background-color: $color__gray-lightest;
         @include border-after($border__gray-lightest);
 
         @include respond-to($md) {
-            padding-top: 80px;
-            padding-bottom: 30px;
+            padding-top: 5rem;
+            padding-bottom: 2rem;
         }
     }
 }
