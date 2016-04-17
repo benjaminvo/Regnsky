@@ -33,6 +33,8 @@ get_header(); ?>
 				/* Start the Loop */
 				while ( have_posts() ) : the_post();
 
+					$withcomments = "1"; // "Hack" to display comments on home
+
 					/**
 					 * Run the loop for the search to output the results.
 					 * If you want to overload this in a child theme then include a file
