@@ -21,7 +21,7 @@ get_header(); ?>
 							<h1 class="page-title search-title col col-xs-12">
 								Søgeresultater for:<br>
 								<span class="search-query"><?php echo '&#8220;' . get_search_query() . '&#8221;'; ?></span>
-								<span class="search-total-results text-mute"><?php global $wp_query; $total_results = $wp_query->found_posts; echo '(' . $total_results . ' indlæg)' ?></span>
+								<span class="total-results text-mute"><?php global $wp_query; $total_results = $wp_query->found_posts; echo '(' . $total_results . ' indlæg)' ?></span>
 							</h1>
 
 							<?php get_search_form(); ?>
@@ -42,32 +42,54 @@ get_header(); ?>
 
 				endwhile; ?>
 
-				<section class="pagination-wrapper">
-					<div class="container">
-						<div class="pagination flex">
-							<div class="col col-xs-12">
-								<?php
-								$paginate_args = array(
-									'show_all'           => false,
-									'end_size'           => 2,
-									'mid_size'           => 1,
-									'prev_next'          => false,
-									'prev_text'          => __('« Tilbage'),
-									'next_text'          => __('Videre »')
-								);
+				<?php
+            	$posts_per_page = get_option('posts_per_page');
+            	if ($wp_query -> found_posts > $posts_per_page) : ?>
+					<section class="pagination-wrapper">
+						<div class="container">
+							<div class="pagination flex">
+								<div class="col col-xs-12">
+									<?php
+									$paginate_args = array(
+										'show_all'           => false,
+										'end_size'           => 2,
+										'mid_size'           => 1,
+										'prev_next'          => false,
+										'prev_text'          => __('« Tilbage'),
+										'next_text'          => __('Videre »')
+									);
 
-								echo paginate_links($paginate_args);
-								?>					
+									echo paginate_links($paginate_args);
+									?>					
+								</div>
 							</div>
 						</div>
-					</div>
-				</section>
+					</section>
+				<?php 
+				endif; ?>
+
 
 			<?php
-			else :
+			else : ?>
 
-				get_template_part( 'template-parts/content', 'none' );
+				<header class="page-header search-header">
+					<div class="container">
+						<div class="flex">
+							<h1 class="page-title search-title col col-xs-12">
+								Intet matcher:<br>
+								<span class="search-query"><?php echo '&#8220;' . get_search_query() . '&#8221;'; ?></span>
+							</h1>
 
+							<p class="col col-xs-12 text-center">Vil du ikke prøve en anden søgning?</p>
+
+							<?php get_search_form(); ?>
+						</div>
+					</div>
+				</header><!-- .page-header -->
+
+				<?php //get_template_part( 'template-parts/content', 'none' ); ?>
+
+			<?php 
 			endif; ?>
 
 
