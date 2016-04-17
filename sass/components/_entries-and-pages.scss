@@ -1,21 +1,13 @@
-.site-content {
-    margin-bottom: 0;
-
-    // @media (min-width: 500px) {
-    //     margin-bottom: 60px;
-    // }
+// Page-wrap is an element wrapping all of the website
+.page-wrap {
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
 }
 
-// .content-area {
-//     overflow: hidden;
-// }
-
-// .hentry {
-// 	margin-bottom: 3rem;
-// }
-// .single .hentry {
-//     margin-bottom: 40px;
-// }
+.site-content {
+    margin-bottom: 0;
+}
 
 .byline,
 .updated:not(.published){
@@ -26,11 +18,6 @@
 .group-blog .byline {
 	display: inline;
 }
-
-// .page-content,
-// .entry-summary {
-// 	margin: 1.5em 0 0;
-// }
 
 .page-links {
     clear: both;
@@ -57,7 +44,6 @@
 
     @include respond-to($md) {
         padding-top: 4rem;
-        // padding-bottom: 2rem;
     }
 }
 
@@ -191,13 +177,6 @@
         color: $color__base;
     }
 }
-
-// .archive .entry-category,
-// .archive .entry-title,
-// .home .entry-category,
-// .home .entry-title {
-//     margin-bottom: 1rem; // Mindre end standard margin på arkiv-side og home
-// }
 
 article.category-opdagelser {
     .entry-wrapper {
