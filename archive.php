@@ -16,10 +16,17 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
+				
+
+                <h1 class="page-title"> 
+                    <?php the_archive_title(); ?>
+                    
+                    <?php if ( !is_category() ) : // Show number of posts if not category ?>
+                        <span class="total-results text-mute"><?php global $wp_query; $total_results = $wp_query->found_posts; echo '(' . $total_results . ' indlæg)' ?></span>
+                    <?php endif; ?>
+                    
+                    <?php the_archive_description( '<div class="taxonomy-description">', '</div>' );  ?>
+                </h1>
 			</header><!-- .page-header -->
 
 			<?php
@@ -36,27 +43,35 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', get_post_format() );
 
 			endwhile; ?>
-				
-            <section class="pagination-wrapper">
-                <div class="container">
-                    <div class="pagination flex">
-                        <div class="col col-xs-12">
-                            <?php
-                            $paginate_args = array(
-                                'show_all'           => false,
-                                'end_size'           => 2,
-                                'mid_size'           => 1,
-                                'prev_next'          => false,
-                                'prev_text'          => __('« Tilbage'),
-                                'next_text'          => __('Videre »')
-                            );
+            
 
-                            echo paginate_links($paginate_args);
-                            ?>                  
+
+            <?php
+            $posts_per_page = get_option('posts_per_page');
+            if ($wp_query -> found_posts > $posts_per_page) : ?>			
+                <section class="pagination-wrapper">
+                    <div class="container">
+                        <div class="pagination flex">
+                            <div class="col col-xs-12">
+                                <?php
+                                $paginate_args = array(
+                                    'show_all'           => false,
+                                    'end_size'           => 2,
+                                    'mid_size'           => 1,
+                                    'prev_next'          => false,
+                                    'prev_text'          => __('« Tilbage'),
+                                    'next_text'          => __('Videre »')
+                                );
+
+                                echo paginate_links($paginate_args);
+                                ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+
+            <?php 
+            endif; ?>
 
 		<?php
 		else :
