@@ -373,3 +373,18 @@ function SearchFilter($query) {
 }
 
 add_filter('pre_get_posts','SearchFilter');
+
+
+/**
+ * Hide drafts from ACF Relationship field
+ * https://support.advancedcustomfields.com/forums/topic/exclude-drafts-from-post-object-field/
+ */
+
+function relationship_options_filter($options, $field, $the_post) {
+    
+    $options['post_status'] = array('publish');
+    
+    return $options;
+}
+
+add_filter('acf/fields/relationship/query/name=related_posts', 'relationship_options_filter', 10, 3);
