@@ -9,7 +9,7 @@
     }
     
     @include respond-to($md) {
-        margin-bottom: 130px;
+        margin-bottom: 120px;
     }
 
     @include respond-to($lg) {
