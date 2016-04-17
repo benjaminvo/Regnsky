@@ -169,8 +169,8 @@ get_header(); ?>
                             krsort($posts_this_year);
 
                             echo '<h2 class="year-title year-' . $year->year . ' col col-xs-12">' . $year->year . '</h2>';
-                            echo '<span class="year-amount">' . count($posts_this_year) . ' indlæg' . '</span>';
-                            echo '<div class="col col-xs-12 col"><ul>';
+                            echo '<span class="year-amount col col-xs-12">' . count($posts_this_year) . ' indlæg' . '</span>';
+                            echo '<div class="year-posts col col-xs-12"><ul>';
                             
                             foreach ( $posts_this_year as $post ) {
 
