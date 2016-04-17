@@ -1,7 +1,7 @@
 <?php
 /**
  * Template name: Archive page template
- * The template used for displaying the home page.
+ * The template used for displaying the archive pages.
  */
 
 get_header(); ?>
