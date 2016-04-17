@@ -66,3 +66,9 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 #__bs_notify__ {
     display: none !important;
 }
+
+.page-wrap {
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+}

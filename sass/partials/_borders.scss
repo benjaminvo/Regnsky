@@ -162,9 +162,9 @@ $border__white: (
       }
   }
 }
-figure .img-border {
+
+.img-border {
     position: relative;
-    overflow: hidden;
 
     &:before {
         content: '';
@@ -209,4 +209,10 @@ figure .img-border {
 }
 .category-generelt .img-border {
   @include border-frame($border__red);
+}
+
+.img-border-wrapper {
+  overflow: hidden;
+  margin: -1px;
+  padding: 1px;
 }

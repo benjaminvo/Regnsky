@@ -220,7 +220,7 @@ function my_img_caption_shortcode_filter($val, $attr, $content = null)
     }
 
     return '<figure ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >'
-    . '<div class="img-border">' . do_shortcode( $content ) . '</div>' . '<figcaption ' . $capid 
+    . '<div class="img-border-wrapper"><div class="img-border">' . do_shortcode( $content ) . '</div></div>' . '<figcaption ' . $capid 
     . 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
 }
 
@@ -232,7 +232,7 @@ function fb_unautop_4_img( $content )
 { 
     $content = preg_replace( 
         '/<p>\\s*?(<a rel=\"attachment.*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', 
-        '<figure><div class="img-border">$1</div></figure>', 
+        '<figure><div class="img-border-wrapper"><div class="img-border">$1</div></div></figure>', 
         $content 
     ); 
     return $content; 
