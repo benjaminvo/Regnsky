@@ -34,10 +34,11 @@
 }
 
 .archive-top {
-    margin-bottom: 40px;
+    margin-bottom: 2rem;
 }
 
 .archive-categories {
+    margin-bottom: 2rem; 
     .date {
         @extend .h5;
         text-align: left;
@@ -82,8 +83,21 @@
 }
 
 .archive-years {
+    .year-title {
+        margin-bottom: 0.5rem;
+    }
+
     .year-amount {
         @extend .h5;
+        margin-bottom: 1rem;
+    }
+
+    .year-posts {
+        margin-bottom: 3rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     li {
