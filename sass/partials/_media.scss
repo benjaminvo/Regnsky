@@ -66,11 +66,16 @@ figure {
     height: auto;
     margin-left: -$gutter-width;
     line-height: 0;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .content img {
-    width: 100%;
-    height: auto;
+    // width: 100% !important;
+    // height: auto !important;
 }
 
 .post figure figure { // Skal fx bruges på .../2016/03/jaerv-et-hav-af-vellyd/ da funktionen lige nu giver dette billede to gange figure-wraps
