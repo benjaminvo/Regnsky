@@ -341,3 +341,17 @@ function disable_embeds_init() {
 }
 
 add_action('init', 'disable_embeds_init', 9999);
+
+/**
+ * Exclude pages from search
+ * http://www.wpbeginner.com/wp-tutorials/how-to-exclude-pages-from-wordpress-search-results/
+ */
+function SearchFilter($query) {
+    if ($query->is_search) {
+        $query->set('post_type', 'post');
+    }
+
+    return $query;
+}
+
+add_filter('pre_get_posts','SearchFilter');
