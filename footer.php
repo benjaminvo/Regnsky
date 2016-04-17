@@ -92,7 +92,7 @@
 <div class="site-info">  
 
     <h5>
-        Copyright © Regnsky-skribenterne <?php echo date("Y"); ?><span class="hidden-md-up"><br></span><span class="hidden-sm-down"> · </span>Hjemmeside af <a href="ungtriumf.dk">Benjamin Vedel Ottensten</a><span class="hidden-md-up"><br></span><span class="hidden-sm-down"> · </span>Illustration af Nan Na Hvass
+        Copyright © Regnsky-skribenterne <?php echo date("Y"); ?><span class="hidden-md-up"><br></span><span class="hidden-sm-down"> · </span>Hjemmeside af <a href="ungtriumf.dk">Benjamin Vedel Ottensten</a><span class="hidden-md-up"><br></span><span class="hidden-sm-down"> · </span>Illustration af Nan Na Hvass<span class="hidden-lg-up"><br><br></span><span class="hidden-md-down"> · Og tak til </span><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/kunstfonden.svg">
     </h5>
 
 </div><!-- .site-info -->

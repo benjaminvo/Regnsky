@@ -2,10 +2,18 @@
     position: relative;
     padding: 3rem 0 .5rem;
     background-color: $color__base;
-    margin-bottom: 110px;
+    margin-bottom: 140px;
+
+    @include respond-to($sm) {
+        margin-bottom: 160px;
+    }
     
     @include respond-to($md) {
-        margin-bottom: 85px;
+        margin-bottom: 130px;
+    }
+
+    @include respond-to($lg) {
+        margin-bottom: 90px;
     }
 
     p, li, a, span, h4, h6 {
