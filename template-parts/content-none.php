@@ -9,29 +9,40 @@
 
 ?>
 
-<section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'regnsky' ); ?></h1>
-	</header><!-- .page-header -->
+<section id="post-<?php the_ID(); ?>" <?php post_class('archive-page entry-wrapper'); ?>>
 
-	<div class="page-content">
-		<?php
-		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+    <div class="container">
 
-			<p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'regnsky' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+        <div class="flex">
 
-		<?php elseif ( is_search() ) : ?>
+            <header class="entry-header col col-xs-12 col-sm-10 offset-sm-1">
+                <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+            </header><!-- .entry-header -->
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'regnsky' ); ?></p>
-			<?php
-				get_search_form();
+            <div class="entry-content col col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
 
-		else : ?>
+                <?php
+                while ( have_posts() ) : the_post();
+                    the_content();
+                endwhile;
+                
+                // Edit link
+                edit_post_link(
+                    sprintf(
+                        /* translators: %s: Name of current post */
+                        esc_html__( 'Edit %s', 'regnsky' ),
+                        the_title( '<span class="screen-reader-text">"', '"</span>', false )
+                    ),
+                    '<span class="edit-link">',
+                    '</span>'
+                );
+                ?>
+            </div> <!-- .entry-content -->
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'regnsky' ); ?></p>
-			<?php
-				get_search_form();
+            <?php get_search_form(); ?>
 
-		endif; ?>
-	</div><!-- .page-content -->
-</section><!-- .no-results -->
+        </div> <!-- .flex -->
+
+    </div> <!-- /.container -->
+
+</section>
