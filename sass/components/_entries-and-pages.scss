@@ -51,13 +51,13 @@
 }
 
 .entry-wrapper {
-    padding-top: 40px;
-    padding-bottom: calc(2rem - 10px);
+    padding-top: 3rem;
+    padding-bottom: 2rem;
     background-color: #fff;
 
     @include respond-to($md) {
-        padding-top: 60px;
-        padding-bottom: calc(2rem - 10px);
+        padding-top: 4rem;
+        // padding-bottom: 2rem;
     }
 }
 
@@ -149,12 +149,12 @@
 .page .entry-wrapper,
 .search:first-child .entry-wrapper,
 .error-404:first-child .entry-wrapper {
-    margin-top: -40px;
-    padding-top: 80px;
+    margin-top: -3rem;
+    padding-top: 6rem;
 
     @include respond-to($md) {
-        padding-top: 100px;
-        margin-top: -40px;
+        padding-top: 8rem;
+        margin-top: -3rem;
     }
 }
 
