@@ -79,7 +79,7 @@
     // Function is called when user clicks btn in entry-footer
     var postId, $comments_cta, $comments_form;
 
-    function displayComments(postId) {        
+    function displayComments(postId) {
         
         // Get post ID, use it to only target comment content relevant to that specific post
         $comments_cta  = $(postId + ' .comments-cta');
