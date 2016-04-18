@@ -3,34 +3,27 @@
     
     <div class="entry-actions col col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
 
-        <h4>Del og kommentér</h4>
+        <h4>Kommentér</h4>
 
         <!-- Share -->
-        <div class="entry-share">
+        
+        <!-- <div class="entry-share">
 
             <div class="share-buttons">
                 <div class="share-button fb">
                     
                     <div class="fb-share-button" 
-                        data-href="<?php echo the_permalink(); ?>" 
+                        data-href="<?php //echo the_permalink(); ?>" 
                         data-layout="button">
                     </div>
-
-                    <!-- <a target="_blank" href="<?php //echo 'http://www.facebook.com/sharer/sharer.php?u=http:' . get_permalink(); ?>">
-                        <img class="icon-fb" src="<?php //echo get_stylesheet_directory_uri(); ?>/img/icon-fb.svg" alt="Facebook share"><span class="h6">Del</span>
-                    </a> -->
                 </div>
                 
                 <div class="share-button twitter">
                     
                     <a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-                    <!-- <a href="https://twitter.com/share">
-                        <img class="icon-twitter" src="<?php //echo get_stylesheet_directory_uri(); ?>/img/icon-twitter.svg" alt="Twitter share"><span class="h6">Tweet</span>
-                    </a>
- -->                </div>
+                </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Comment -->
         <div id="comment-section" class="entry-comment">
