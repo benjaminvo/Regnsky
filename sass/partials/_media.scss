@@ -29,6 +29,10 @@
     }
 }
 
+.audioplayer_container object {
+    height: 30px;
+}
+
 .top-content,
 .entry-content iframe,
 .entry-content embed,
@@ -98,6 +102,11 @@ iframe[src*="mixcloud"] { // Styles specific to Mixcloud players
     & + div {
         display: none;
     }
+}
+
+iframe[src*="soundcloud"] {
+    height: auto;
+    // margin-bottom: 1rem;
 }
 
 /* Margin bottom for audio player */
