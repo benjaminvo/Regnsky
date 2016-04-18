@@ -11,80 +11,94 @@
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	
+	<head>
+		<meta charset="<?php bloginfo( 'charset' ); ?>">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+		<link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('sitename') ?> Feed" href="<?php echo get_bloginfo('rss2_url') ?>">
 
-<script type="application/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/fastClick.js"></script>
-<script>
-	// Remove 300ms delay on touch screens
-	if ('addEventListener' in document) {
-	    document.addEventListener('DOMContentLoaded', function() {
-	        FastClick.attach(document.body);
-	    }, false);
-	}
-</script>
+		<?php wp_head(); ?>
 
-<?php wp_head(); ?>
+		<!-- Open Graph tags to customize link previews -->
+		<!-- <meta property="og:url"           content="<?php //echo esc_url( home_url( '/' ) ); ?>" />
+		<meta property="og:type"          content="website" />
+		<meta property="og:title"         content="Regnsky" />
+		<meta property="og:description"   content="Danmarks sødeste musikblog siden 2008" />
+		<meta property="og:image"         content="<?php //echo get_stylesheet_directory_uri(); ?>/img/logo-regnsky_transparent.gif" />
+		 -->
+	</head>
 
-<!-- Open Graph tags to customize link previews -->
-<!-- <meta property="og:url"           content="<?php //echo esc_url( home_url( '/' ) ); ?>" />
-<meta property="og:type"          content="website" />
-<meta property="og:title"         content="Regnsky" />
-<meta property="og:description"   content="Danmarks sødeste musikblog siden 2008" />
-<meta property="og:image"         content="<?php //echo get_stylesheet_directory_uri(); ?>/img/logo-regnsky_transparent.gif" />
- -->
-</head>
+	<body <?php body_class(); ?>>
 
-<body <?php body_class(); ?>>
+	<div id="fb-root"></div>
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '137149236384098', // App ID
+	      // channelUrl : '//www.YOUR_DOMAIN.COM/channel.html', // Channel File
+	      status     : true, // check login status
+	      cookie     : true, // enable cookies to allow the server to access the session
+	      xfbml      : true  // parse XFBML
+	    });
+	  };
 
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=137149236384098";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+	  // Load the SDK Asynchronously
+	  (function(d){
+	     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement('script'); js.id = id; js.async = true;
+	     js.src = "//connect.facebook.net/en_US/all.js";
+	     ref.parentNode.insertBefore(js, ref);
+	   }(document));
+	</script>
 
-<div class="page-wrap">
+	<!-- Load Facebook SDK for JavaScript -->
+	<!-- <div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=137149236384098";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script> -->
 
-<div class="topbanner">
-	<!-- empty -->
-</div>
+	<div class="page-wrap">
 
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'regnsky' ); ?></a>
+	<div class="topbanner">
+		<!-- empty -->
+	</div>
 
-	<header id="masthead" class="site-header" role="banner">
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'regnsky' ); ?></a>
 
-		<div class="container">
+		<header id="masthead" class="site-header" role="banner">
 
-			<div class="site-branding">
+			<div class="container">
+
+				<div class="site-branding">
+					
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-regnsky_transparent.gif" alt="logo">
+					</a>
+					
+					<span class="tagline">Danmarks sødeste<br>musikblog siden 2008</span>
+
+				</div>
+
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+				</nav>
 				
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-regnsky_transparent.gif" alt="logo">
+				<a id="menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span class="bar-1"></span>
+					<span class="bar-2"></span>
+					<span class="bar-3"></span>
 				</a>
-				
-				<span class="tagline">Danmarks sødeste<br>musikblog siden 2008</span>
 
 			</div>
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav>
-			
-			<a id="menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-				<span class="bar-1"></span>
-				<span class="bar-2"></span>
-				<span class="bar-3"></span>
-			</a>
+		</header>
 
-		</div>
-
-	</header>
-
-	<div id="content" class="site-content">
+		<div id="content" class="site-content">
