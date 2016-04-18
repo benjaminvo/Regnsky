@@ -47,7 +47,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "partials/modules/accessibility";
 @import "partials/modules/alignments";
 @import "partials/modules/clearings";
-@import "partials/modules/infinite-scroll";
+// @import "partials/modules/infinite-scroll";
 
 /*--------------------------------------------------------------
 # Components
@@ -58,9 +58,9 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "components/entry-footer";
 @import "components/archive";
 @import "components/search";
-@import "components/sidebar";
 @import "components/asides";
-@import "components/widgets";
+// @import "components/sidebar";
+// @import "components/widgets";
 
 /* Dev */ 
 #__bs_notify__ {
