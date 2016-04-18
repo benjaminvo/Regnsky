@@ -16,38 +16,30 @@ if ( ! function_exists( 'regnsky_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function regnsky_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on regnsky, use a find and replace
-	 * to change 'regnsky' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'regnsky', get_template_directory() . '/languages' );
+
+    // Remove various actions from head
+    // http://cubiq.org/clean-up-and-optimize-wordpress-for-your-next-theme
+    remove_action('wp_head', 'wp_generator');                           //
+    remove_action('wp_head', 'wlwmanifest_link');                       //
+    remove_action('wp_head', 'rsd_link');                               //
+    remove_action('wp_head', 'wp_shortlink_wp_head');                   //
+    remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10);    //
+    remove_action('wp_head', 'print_emoji_detection_script', 7 );       //
+    remove_action('wp_print_styles', 'print_emoji_styles' );            //
+    remove_action('wp_head', 'feed_links', 2 );                         // Remove auto-generated feed links. Added manually
+    add_filter('the_generator', '__return_false');                      //
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
+    
+    // Let Wordpress manage doc title
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
+    // Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu().
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'regnsky' ),
-		'menu-pages' => esc_html__( 'Menu - Pages', 'regnsky' ),
-		'menu-categories' => esc_html__( 'Menu - Categories', 'regnsky' ),
-	) );
+	register_nav_menus( array( 'primary' => esc_html__( 'Primary', 'regnsky' )	) );
 
 	// Add "Home" as a page in the menu generator
 	function home_page_menu_args( $args ) {
@@ -68,103 +60,46 @@ function regnsky_setup() {
 		'caption',
 	) );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See https://developer.wordpress.org/themes/functionality/post-formats/
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
-	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'regnsky_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 }
-endif; // regnsky_setup
+endif;
 add_action( 'after_setup_theme', 'regnsky_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-// function regnsky_content_width() {
-// 	$GLOBALS['content_width'] = apply_filters( 'regnsky_content_width', 640 );
-// }
-// add_action( 'after_setup_theme', 'regnsky_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-// function regnsky_widgets_init() {
-// 	register_sidebar( array(
-// 		'name'          => esc_html__( 'Sidebar', 'regnsky' ),
-// 		'id'            => 'sidebar-1',
-// 		'description'   => '',
-// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-// 		'after_widget'  => '</section>',
-// 		'before_title'  => '<h4 class="widget-title">',
-// 		'after_title'   => '</h4>',
-// 	) );
-// }
-// add_action( 'widgets_init', 'regnsky_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
+
+// Function to add #asyncload to scripts in wp_enqueue_script
+function regnsky_async_scripts($url)
+{
+    if ( strpos( $url, '#asyncload') === false )
+        return $url;
+    else if ( is_admin() )
+        return str_replace( '#asyncload', '', $url );
+    else
+    return str_replace( '#asyncload', '', $url )."' async='async"; 
+    }
+add_filter( 'clean_url', 'regnsky_async_scripts', 11, 1 );
+
 function regnsky_scripts() {
 	
 	// deregister default jQuery included with Wordpress
 	wp_deregister_script( 'jquery' );
 	$jquery_cdn = '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js';
-	wp_enqueue_script( 'jquery', $jquery_cdn, array(), '20130115', true );
+	wp_enqueue_script( 'jquery', $jquery_cdn, array(), null, true );
 
-	wp_enqueue_script( 'regnsky-script', get_template_directory_uri() . '/js/main.js', array(), '20160401', true );
+	wp_enqueue_script( 'regnsky-script', get_template_directory_uri() . '/js/main.js#asyncload', array(), null, true );
 
 	wp_enqueue_style( 'regnsky-style', get_stylesheet_uri() );
 	
-	wp_enqueue_script( 'regnsky-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', false );
-
-	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-	// 	wp_enqueue_script( 'comment-reply' );
-	// }
 }
 add_action( 'wp_enqueue_scripts', 'regnsky_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
 
 /**
  * Excerpt
@@ -199,9 +134,8 @@ function add_category_to_single($classes, $class) {
  *
  * From: http://wordpress.stackexchange.com/questions/107358/make-wordpress-image-captions-responsive
  **/
-add_filter('img_caption_shortcode', 'my_img_caption_shortcode_filter',10,3);
-function my_img_caption_shortcode_filter($val, $attr, $content = null)
-{
+add_filter('img_caption_shortcode', 'regnsky_img_caption_shortcode_filter',10,3);
+function regnsky_img_caption_shortcode_filter($val, $attr, $content = null) {
     extract(shortcode_atts(array(
         'id'    => '',
         'align' => '',
@@ -223,9 +157,9 @@ function my_img_caption_shortcode_filter($val, $attr, $content = null)
     // . '<div class="img-border-wrapper"><div class="img-border">' . do_shortcode( $content ) . '</div></div>' . '<figcaption ' . $capid 
     // . 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
 
-    return '<figure ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >'
-    . do_shortcode( $content ) . '<figcaption ' . $capid 
-    . 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
+    // return '<figure ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >'
+    // . do_shortcode( $content ) . '<figcaption ' . $capid 
+    // . 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
 }
 
 /**
@@ -233,7 +167,8 @@ function my_img_caption_shortcode_filter($val, $attr, $content = null)
  * http://wordpress.stackexchange.com/questions/174582/always-use-figure-for-post-images
  */    
 function fb_unautop_4_img( $content ) { 
-    $pattern = '/(<img[^>]*class=\"([^>]*?)\"[^>]*>)/i';
+    // $pattern = '/(<img[^>]*class=\"([^>]*?)\"[^>]*>)/i';
+    $pattern = '/<p>\\s*?(<a rel=\"attachment.*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s';
     $replacement = '<figure><div class="img-border-wrapper"><div class="img-border">$1</div></div></figure>';
     $content = preg_replace($pattern, $replacement, $content);
     return $content;
