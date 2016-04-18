@@ -21,6 +21,16 @@
 
 		<?php wp_head(); ?>
 
+		<script type="application/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/fastClick.js"></script>
+		<script>
+		    // Remove 300ms delay on touch screens
+		    if ('addEventListener' in document) {
+		        document.addEventListener('DOMContentLoaded', function() {
+		            FastClick.attach(document.body);
+		        }, false);
+		    }
+		</script>
+
 		<!-- Open Graph tags to customize link previews -->
 		<!-- <meta property="og:url"           content="<?php //echo esc_url( home_url( '/' ) ); ?>" />
 		<meta property="og:type"          content="website" />
