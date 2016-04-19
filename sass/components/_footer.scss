@@ -110,7 +110,7 @@
     .fb-like > span {
         vertical-align: bottom !important;
 
-        @include respond-to($md) {
+        @include respond-to($lg) {
             vertical-align: text-bottom !important;
         }
     }
