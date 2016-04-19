@@ -153,13 +153,9 @@ function regnsky_img_caption_shortcode_filter($val, $attr, $content = null) {
         $id = 'id="' . $id . '" aria-labelledby="figcaption_' . $id . '" ';
     }
 
-    // return '<figure ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >'
-    // . '<div class="img-border-wrapper"><div class="img-border">' . do_shortcode( $content ) . '</div></div>' . '<figcaption ' . $capid 
-    // . 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
-
-    // return '<figure ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >'
-    // . do_shortcode( $content ) . '<figcaption ' . $capid 
-    // . 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
+    return '<figure ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >'
+    . '<div class="img-border-wrapper"><div class="img-border">' . do_shortcode( $content ) . '</div></div>' . '<figcaption ' . $capid 
+    . 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
 }
 
 /**
@@ -191,6 +187,21 @@ function attachment_image_link_remove_filter( $content ) {
     return $content;
 }
 add_filter( 'the_content', 'attachment_image_link_remove_filter' );
+
+/**
+ * Remove strong tags around images
+ */  
+function remove_strong( $content ) {
+    $content =
+        preg_replace(
+            array('{<strong><img}',
+                '{ wp-image-[0-9]*" /></strong>}'),
+            array('<img','" />'),
+            $content
+        );
+    return $content;
+}
+add_filter( 'the_content', 'remove_strong' );
 
 /**
  * Remove empty lines from posts
