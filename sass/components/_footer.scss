@@ -105,7 +105,14 @@
 
     .fb-follow-text {
         margin-right: 10px;
-        // color: $color__base;
+    }
+
+    .fb-like > span {
+        vertical-align: bottom !important;
+
+        @include respond-to($md) {
+            vertical-align: text-bottom !important;
+        }
     }
 }
 
