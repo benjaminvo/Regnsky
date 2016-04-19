@@ -166,6 +166,13 @@
         }(this, document));
     </script>
 
+    <!-- Lazy load -->
+    <script>
+        // $.extend($.lazyLoadXT, {
+        //   edgeY:  0
+        // });
+    </script>
+
     <!-- Facebook -->
     <div id="fb-root"></div>
     <script>
