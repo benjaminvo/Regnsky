@@ -160,10 +160,12 @@ function regnsky_img_caption_shortcode_filter($val, $attr, $content = null) {
 
 /**
  * Wrap images in figure tags
+ * Denne rammer billeder, der allerede har et link omkring sig
  * http://wordpress.stackexchange.com/questions/174582/always-use-figure-for-post-images
  */    
 function wrap_img_in_figure( $content ) { 
-    $pattern = '/(<img.*?>|<img[^>]*class=\"([^>]*?)\"[^>]*>)/i';
+    $patternn = '/(<img[^>]*>|<img[^>]*class=\"([^>]*?)\"[^>]*>)/i';
+    $pattern = '/(<img[^>]*>)/i'; // Umiddelbart behøves kun denne
     $replacement = '<figure><div class="img-border-wrapper"><div class="img-border">$1</div></div></figure>';
     $content = preg_replace($pattern, $replacement, $content);
 
@@ -175,14 +177,45 @@ add_filter( 'the_content', 'wrap_img_in_figure', 99 );
  * [1] Remove links around images
  * [2] Remove empty paragraphs containing same links. This was a problem on e.g. these posts: /category/opdagelser/page/109/
  */  
-function remove_link_around_img( $content ) { 
-    $pattern = '#<p>\s*(<a(.*?)(wp-att|wp-content\/uploads)[^>]*>)#';
-    $replacement = '';
+// function remove_link_around_img( $content ) { 
+//     $pattern = '#<p>\s*(<a(.*?)(wp-att|wp-content\/uploads)[^>]*>)#';
+//     $replacement = '';
+//     $content = preg_replace($pattern, $replacement, $content);
+
+//     return $content;
+// } 
+// add_filter( 'the_content', 'remove_link_around_img', 99 );
+
+/**
+ * Remove link around figure
+ */
+function remove_link_around_figure( $content ) {
+    // Fx: http://localhost:3000/2015/07/paul-mccartney-charmerende-og-selvsikker-tur-ned-af-memory-lane/ 
+    $pattern = '/<a[^>]*>s*(<figure[^>]*>)/i';
+    $replacement = '$1';
     $content = preg_replace($pattern, $replacement, $content);
 
     return $content;
 } 
-add_filter( 'the_content', 'remove_link_around_img', 99 );
+add_filter( 'the_content', 'remove_link_around_figure', 99 );
+
+function remove_empty_p_before_figure( $content ) {
+    // Fx: http://localhost:3000/2016/01/tidlige-solopgange-som-dagens-godnat/
+    // Der er stadig en tom paragraph EFTER figure 
+    $pattern = '/<p[^>]*>s*(<figure[^>]*>)/i';
+    $replacement = '$1';
+    $content = preg_replace($pattern, $replacement, $content);
+
+    return $content;
+} 
+add_filter( 'the_content', 'remove_empty_p_before_figure', 99 );
+
+// Til at teste, hav disse fire indlæg åbne:
+// http://localhost:3000/2015/07/paul-mccartney-charmerende-og-selvsikker-tur-ned-af-memory-lane/
+// http://localhost:3000/2015/06/kort-tid-til-aabningen-mortens-fem-roskilde-anbefalinger/
+// http://localhost:3000/2016/01/tidlige-solopgange-som-dagens-godnat/
+// http://localhost:3000/2008/07/80er-funkdisco/
+
 
 /**
  * Remove links around images
