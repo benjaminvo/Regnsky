@@ -163,7 +163,7 @@ function regnsky_img_caption_shortcode_filter($val, $attr, $content = null) {
  * http://wordpress.stackexchange.com/questions/174582/always-use-figure-for-post-images
  */    
 function wrap_img_in_figure( $content ) { 
-    $pattern = '/(<img[^>]*class=\"([^>]*?)\"[^>]*>)/i';
+    $pattern = '/(<img.*?>|<img[^>]*class=\"([^>]*?)\"[^>]*>)/i';
     $replacement = '<figure><div class="img-border-wrapper"><div class="img-border">$1</div></div></figure>';
     $content = preg_replace($pattern, $replacement, $content);
 
