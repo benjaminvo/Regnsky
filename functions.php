@@ -154,7 +154,7 @@ function regnsky_img_caption_shortcode_filter($val, $attr, $content = null) {
     }
 
     return '<figure ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >'
-    . '<div class="img-border-wrapper"><div class="img-border">' . do_shortcode( $content ) . '</div></div>' . '<figcaption ' . $capid 
+    . do_shortcode( $content ) . '<figcaption ' . $capid 
     . 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
 }
 
@@ -162,31 +162,44 @@ function regnsky_img_caption_shortcode_filter($val, $attr, $content = null) {
  * Wrap images in figure tags
  * http://wordpress.stackexchange.com/questions/174582/always-use-figure-for-post-images
  */    
-function fb_unautop_4_img( $content ) { 
-    // $pattern = '/(<img[^>]*class=\"([^>]*?)\"[^>]*>)/i';
-    $pattern = '/<p>\\s*?(<a rel=\"attachment.*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s';
+function wrap_img_in_figure( $content ) { 
+    $pattern = '/(<img[^>]*class=\"([^>]*?)\"[^>]*>)/i';
     $replacement = '<figure><div class="img-border-wrapper"><div class="img-border">$1</div></div></figure>';
     $content = preg_replace($pattern, $replacement, $content);
+
     return $content;
 } 
-add_filter( 'the_content', 'fb_unautop_4_img', 99 );
+add_filter( 'the_content', 'wrap_img_in_figure', 99 );
+
+/**
+ * [1] Remove links around images
+ * [2] Remove empty paragraphs containing same links. This was a problem on e.g. these posts: /category/opdagelser/page/109/
+ */  
+function remove_link_around_img( $content ) { 
+    $pattern = '#<p>\s*(<a(.*?)(wp-att|wp-content\/uploads)[^>]*>)#';
+    $replacement = '';
+    $content = preg_replace($pattern, $replacement, $content);
+
+    return $content;
+} 
+add_filter( 'the_content', 'remove_link_around_img', 99 );
 
 /**
  * Remove links around images
  * This function can maybe combined with the own before it
  * http://wordpress.stackexchange.com/questions/33724/remove-links-from-images-using-functions-php
  */  
-function attachment_image_link_remove_filter( $content ) {
-    $content =
-        preg_replace(
-            array('{<a(.*?)(wp-att|wp-content\/uploads)[^>]*><img}',
-                '{ wp-image-[0-9]*" /></a>}'),
-            array('<img','" />'),
-            $content
-        );
-    return $content;
-}
-add_filter( 'the_content', 'attachment_image_link_remove_filter' );
+// function attachment_image_link_remove_filter( $content ) {
+//     $content =
+//         preg_replace(
+//             array('{<a(.*?)(wp-att|wp-content\/uploads)[^>]*><img}'),
+//             array('<img','" />'),
+//             $content
+//         );
+//     return $content;
+// }
+// add_filter( 'the_content', 'attachment_image_link_remove_filter' );
+
 
 /**
  * Remove strong tags around images
