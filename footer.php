@@ -168,9 +168,9 @@
 
     <!-- Lazy load -->
     <script>
-        // $.extend($.lazyLoadXT, {
-        //   edgeY:  0
-        // });
+        $.extend($.lazyLoadXT, {
+          edgeY:  500
+        });
     </script>
 
     <!-- Facebook -->
