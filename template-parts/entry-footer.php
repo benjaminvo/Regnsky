@@ -3,17 +3,17 @@
     
     <div class="entry-actions col col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
 
-        <h4>Kommentér</h4>
+        <h4>Del og kommentér</h4>
 
         <!-- Share -->
         
-        <!-- <div class="entry-share">
+        <div class="entry-share">
 
             <div class="share-buttons">
                 <div class="share-button fb">
                     
                     <div class="fb-share-button" 
-                        data-href="<?php //echo the_permalink(); ?>" 
+                        data-href="<?php echo the_permalink(); ?>" 
                         data-layout="button">
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                     <a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <!-- Comment -->
         <div id="comment-section" class="entry-comment">
