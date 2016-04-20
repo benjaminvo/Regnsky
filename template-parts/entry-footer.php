@@ -12,9 +12,17 @@
             <div class="share-buttons">
                 <div class="share-button fb">
                     
-                    <div class="fb-share-button" 
-                        data-href="<?php echo the_permalink(); ?>" 
+                    <!-- <div class="fb-share-button" 
+                        data-href="<?php //echo the_permalink(); ?>" 
                         data-layout="button">
+                    </div> -->
+
+                    <div class="fb-like"
+                        data-href="<?php echo the_permalink(); ?>"
+                        data-layout="button"
+                        data-action="like"
+                        data-show-faces="false"
+                        data-share="false">
                     </div>
                 </div>
                 
