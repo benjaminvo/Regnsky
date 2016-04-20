@@ -99,7 +99,6 @@
 .category-opdagelser {
     .page-title {
         color: $color__1_0;
-        // color: $color__base;
     }
     .page-header {
         background-color: $color__1_3;
@@ -110,17 +109,16 @@
 .category-livestemning {
     .page-title {
         color: $color__2_0;
-        // color: $color__base;
     }
     .page-header {
         background-color: $color__2_3;
+        // background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,$color__2_3 10%);
         @include border-after($border__blue-light);
     }
 }
 .category-feature {
     .page-title {
         color: $color__3_0;
-        // color: $color__base;
     }
     .page-header {
         background-color: $color__3_3;
@@ -130,7 +128,6 @@
 .category-generelt {
     .page-title {
         color: $color__4_0;
-        // color: $color__base;
     }
     .page-header {
         background-color: $color__4_3;
@@ -148,10 +145,10 @@
     margin-top: -3rem;
     padding-top: 6rem;
 
-    @include respond-to($md) {
-        padding-top: 8rem;
-        margin-top: -3rem;
-    }
+    // @include respond-to($md) {
+    //     padding-top: 8rem;
+    //     margin-top: -3rem;
+    // }
 }
 
 .page .entry-wrapper {
