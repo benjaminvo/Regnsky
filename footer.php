@@ -34,7 +34,7 @@
                         </div>
                         <div class="col col-xs-12 col-sm-6 col-lg-3 footer-module about-regnsky">
                             <h4>Om Regnsky</h4>
-                            <p>Regnsky er en lille, dansk musikblog, der har eksisteret siden 2008. Her skriver unge skribenter om nyt dansk og international musik med nyheder, anmeldelser og livereportager. <a href="<?php echo esc_url( home_url( '/om-regnsky/' ) ); ?>">Læs mere</a>.</p>
+                            <p>Regnsky er en dansksproget musikblog, der har eksisteret siden 2008. Her skriver skribenterne af lyst og kærlighed til musikken om interessante og aktuelle kunstnere. <a href="<?php echo esc_url( home_url( '/om-regnsky/' ) ); ?>">Læs mere</a>.</p>
                         </div>
                         <div class="col col-xs-12 col-sm-6 col-lg-3 footer-module recent-comments">
                             <h4>Seneste kommentarer</h4>
