@@ -13,6 +13,7 @@
     height: 180px;
     margin-bottom: 0;
     overflow: hidden;
+    width: 100%;
 
     // contain: strict;
 
@@ -25,7 +26,7 @@
     }
 
     @include respond-to($xl) {
-        height: 360px;
+        height: 300px;
     }
 }
 
@@ -33,14 +34,16 @@
     height: 30px;
 }
 
-.top-content,
-.entry-content iframe,
-.entry-content embed,
+// Make images, iframes and embeds go to border of device on smallest screen
 .post figure,
-.entry-content a img {
+.entry-content iframe,
+.entry-content embed {
     width: calc(100% + #{$gutter-width} * 2); // variable is interpolated in order to compile 
     margin-left: -$gutter-width;
+}
 
+// Make images go off content border further on bigger screens
+.post figure {
     @include respond-to($sm) {
         width: calc(100% + (#{$gutter-width}*2) * 2);
         margin-left: -$gutter-width * 2;
@@ -57,41 +60,11 @@
     }
 }
 
-.entry-content a img {
-    margin-bottom: 1rem; // Old blog photos wrapped in a-tags need this because they are a part of the p-tag together with the paragraph text
-    height: auto;        // Again, old blog photos in a-tags need this
-}
-
-.entry-content .img-border a img {
-    margin-bottom: 0;    // Cancel above "hack" for images within img-border divs
-}
-
-figure {
-    height: auto;
-    margin-top: 0;
-    margin-left: -$gutter-width;
-    line-height: 0;
-
-    img {
+// Make iframes and embeds align to content on bigger screens
+.entry-content iframe,
+.entry-content embed {
+    @include respond-to($sm) {
         width: 100%;
-        height: auto;
-    }
-}
-
-.content img {
-    // width: 100% !important;
-    // height: auto !important;
-}
-
-.post figure figure { // Skal fx bruges på .../2016/03/jaerv-et-hav-af-vellyd/ da funktionen lige nu giver dette billede to gange figure-wraps
-    margin-left: 0;
-    width: 100%;
-
-    @include respond-to($md) {
-        margin-left: 0;
-    }
-
-    @include respond-to($xl) {
         margin-left: 0;
     }
 }
@@ -107,8 +80,43 @@ iframe[src*="mixcloud"] { // Styles specific to Mixcloud players
 
 iframe[src*="soundcloud"] {
     height: auto;
-    // margin-bottom: 1rem;
 }
+
+// .entry-content a img {
+//     margin-bottom: 1rem; // Old blog photos wrapped in a-tags need this because they are a part of the p-tag together with the paragraph text
+//     height: auto;        // Again, old blog photos in a-tags need this
+// }
+
+// .entry-content .img-border a img {
+//     margin-bottom: 0;    // Cancel above "hack" for images within img-border divs
+// }
+
+figure {
+    height: auto;
+    margin-top: 0;
+    margin-left: -$gutter-width;
+    line-height: 0;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.post figure figure { // Skal fx bruges på .../2016/03/jaerv-et-hav-af-vellyd/ da funktionen lige nu giver dette billede to gange figure-wraps
+    margin-left: 0;
+    width: 100%;
+
+    @include respond-to($md) {
+        margin-left: 0;
+    }
+
+    @include respond-to($xl) {
+        margin-left: 0;
+    }
+}
+
+
 
 /* Margin bottom for audio player */
 .wp-audio-shortcode {
