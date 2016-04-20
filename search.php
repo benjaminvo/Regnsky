@@ -54,7 +54,7 @@ get_header(); ?>
 									<?php
 									$paginate_args = array(
 										'show_all'           => false,
-										'end_size'           => 2,
+										'end_size'           => 1,
 										'mid_size'           => 1,
 										'prev_next'          => false,
 										'prev_text'          => __('« Tilbage'),
