@@ -169,7 +169,7 @@
     <!-- Lazy load -->
     <script>
         $.extend($.lazyLoadXT, {
-          edgeY:  500
+          edgeY:  200
         });
     </script>
 
