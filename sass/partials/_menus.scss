@@ -40,11 +40,8 @@
 }
 
 .main-navigation_mobile {
-	margin-top: 20px;
-
-	@include respond-to($md) {
-		margin-top: 0;
-	}
+	display: none;
+	margin-top: 10px;
 
 	@include respond-to($navigation-bp) {
 		display: none;
@@ -60,6 +57,7 @@
 		animation-duration: .2s;
 		transition: opacity .2s ease;
 	}
+
 }
 
 .main-navigation {
@@ -134,39 +132,32 @@
 	background: $color__4_0;
 }
 
-// Display menu on mobile
-body.nav-toggled {
+.site-header.active {
+	height: 440px;
 
-	.site-header {
-    	height: 440px;
-
-    	@include respond-to($md) {
-			height: 450px;
-    	}
+	@include respond-to($md) {
+		height: 450px;
 	}
 
-	// .main-navigation {
-	// 	display: block;
-	// 	display: absolute;
-	// 	top: 80px;
-	// }
+	.main-navigation_mobile {
+		display: block;
+	}
+}
+.menu-toggle.active {
+	background: $color__gray-lighter;
 
-	.menu-toggle {
-		background: $color__gray-lighter;
+	span {
+		background: $color__base;
+	}
 
-		span {
-			background: $color__base;
-		}
-
-		.bar-1 {
-			transform: translateY(6px) rotate(-45deg);
-		}
-		.bar-2 {
-			opacity: 0;
-		}
-		.bar-3 {
-			transform: translateY(-6px) rotate(45deg);
-		}
+	.bar-1 {
+		transform: translateY(6px) rotate(-45deg);
+	}
+	.bar-2 {
+		opacity: 0;
+	}
+	.bar-3 {
+		transform: translateY(-6px) rotate(45deg);
 	}
 }
 
