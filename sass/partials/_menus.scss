@@ -1,39 +1,13 @@
-.main-navigation {
+.main-navigation,
+.main-navigation_mobile {
 	font-family: $font__headers;
 	font-weight: bold;
 	font-size: 20px;
-	display: none;
-
-	@include respond-to(880px) {
-		display: flex;
-		justify-content: space-between;
-		padding-right: 10px;
-		font-size: 16px;
-	}
 
 	ul {
 		margin: 0;
 		padding-left: 0;
-		text-align: center;
 		list-style: none;
-	}
-	
-	li {
-		margin-bottom: 1rem;
-		opacity: 0;
-		animation-duration: .2s;
-		transition: opacity .2s ease;
-
-		@include respond-to($md) {
-			opacity: 1;
-			display: inline-block;
-			margin-left: 20px;
-			margin-bottom: 0;
-		}
-
-		@include respond-to($xl) {
-			margin-left: 30px;
-		}
 	}
 	
 	a {
@@ -45,25 +19,66 @@
     	}
 	}
 
-	#menu-item-16789 a,
-	#menu-item-17208 a, // regnsky.dk
-	#menu-item-17228 a { // Sidste menupunkt er til ungtriumf.dk/regnsky
+	.menu-item-16789 a,	 // localhost
+	.menu-item-17208 a,  // regnsky.dk
+	.menu-item-17228 a { // ungtriumf.dk/regnsky
 		color: $color__1_0; 
 	}
-	#menu-item-16791 a,
-	#menu-item-17210 a, // regnsky.dk
-	#menu-item-17230 a {
+	.menu-item-16791 a,	 // localhost
+	.menu-item-17210 a,  // regnsky.dk
+	.menu-item-17230 a { // ungtriumf.dk/regnsky
 		color: $color__2_0;
 	}
-	#menu-item-16790 a,
-	#menu-item-17209 a, // regnsky.dk
-	#menu-item-17229 a {
+	.menu-item-16790 a,  // localhost
+	.menu-item-17209 a,  // regnsky.dk
+	.menu-item-17229 a { // ungtriumf.dk/regnsky
 		color: $color__3_0;
 	}
-	#menu-item-16870 a {
+	.menu-item-16870 a { // localhost
 		color: $color__4_0;
 	}
 }
+
+.main-navigation_mobile {
+	margin-top: 20px;
+
+	@include respond-to($md) {
+		margin-top: 0;
+	}
+
+	ul {
+		text-align: center;
+	}
+
+	li {
+		margin-bottom: 1rem;
+		opacity: 0;
+		animation-duration: .2s;
+		transition: opacity .2s ease;
+	}
+}
+
+.main-navigation {
+	display: none;
+
+	@include respond-to(880px) {
+		display: flex;
+		justify-content: space-between;
+		padding-right: 10px;
+		font-size: 16px;
+	}
+
+	li {
+		display: inline-block;
+		margin-left: 20px;
+		margin-bottom: 0;
+
+		@include respond-to($xl) {
+			margin-left: 30px;
+		}
+	}
+}
+
 
 // Burger menu
 .menu-toggle {
@@ -119,14 +134,18 @@
 body.nav-toggled {
 
 	.site-header {
-    	height: 370px;
+    	height: 440px;
+
+    	@include respond-to($md) {
+
+    	}
 	}
 
-	.main-navigation {
-		// display: block;
-		display: absolute;
-		top: 80px;
-	}
+	// .main-navigation {
+	// 	display: block;
+	// 	display: absolute;
+	// 	top: 80px;
+	// }
 
 	.menu-toggle {
 		background: $color__gray-lighter;

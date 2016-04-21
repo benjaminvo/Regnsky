@@ -69,6 +69,10 @@
 
 					</div>
 
+					<nav id="site-navigation_mobile" class="main-navigation_mobile" role="navigation">
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu_mobile' ) ); ?>
+					</nav>
+
 				</header>
 
 				<div id="content" class="site-content">

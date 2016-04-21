@@ -1,6 +1,3 @@
-$topbanner-width: 1276px;
-$topbanner-height: 196px;
-
 .topbanner {
     position: fixed;
     top: 0;
@@ -31,13 +28,10 @@ $topbanner-height: 196px;
 
 .site-header,
 .site-header .container {
-    height: 80px;
+    height: $header-height;
 
     @include respond-to($md) {
-        height: 100px;
-    }
-    @include respond-to($xl) {
-        height: 120px;
+        height: $header-height + 20px;
     }
 }
 

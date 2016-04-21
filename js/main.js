@@ -7,10 +7,10 @@
 
     var $window = $(window);
     var windowWidth = $window.width();
-    var bp_md = 750; // Breakpoint: md
+    var bp_md = 880; // Breakpoint: md
     var $header = $('.site-header');
     var headerPos = $header.offset();
-    var $menuItems = $('.main-navigation li');
+    var $menuItems = $('.main-navigation_mobile li');
     var $content = $('#content');
 
     // Recalculate window width when window is resized
@@ -19,7 +19,7 @@
     });
 
     // Stick header
-    $window.on('scroll', function() {
+    $window.on('load scroll', function() {
         var windowPos = $window.scrollTop();
 
         if (windowPos >= 86 && windowWidth < bp_md) {             //  86 = banner height ((196 / 2) - header offset (-12)
