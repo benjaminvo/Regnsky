@@ -154,7 +154,7 @@ a {
 }
 
 h2,
-// .entry-title,
+.entry-title,
 .entry-meta,
 .site-content p {
     a {
@@ -182,7 +182,7 @@ h2,
 }
 
 .category-opdagelser {
-    // .entry-title,
+    .entry-title,
     .entry-meta,
     .entry-content p {
         a {
@@ -206,18 +206,18 @@ h2,
         }
     }
 
-    // .entry-title {
-    //     a {
-    //         background-image: linear-gradient(to bottom, transparent 50%, $color__base 50%);
+    .entry-title {
+        a {
+            background-image: linear-gradient(to bottom, transparent 50%, $color__base 50%);
 
-    //         @include respond-to($sm) {
-    //             background-image: linear-gradient(to bottom, transparent 0%, $color__base 0%);
-    //         }
-    //     }
-    // }
+            @include respond-to($sm) {
+                background-image: linear-gradient(to bottom, transparent 0%, $color__base 0%);
+            }
+        }
+    }
 }
 .category-livestemning {
-    // .entry-title,
+    .entry-title,
     .entry-meta,
     .entry-content p {
         a {
@@ -241,18 +241,18 @@ h2,
         }
     }
 
-    // .entry-title {
-    //     a {
-    //         background-image: linear-gradient(to bottom, transparent 50%, $color__base 50%);
+    .entry-title {
+        a {
+            background-image: linear-gradient(to bottom, transparent 50%, $color__base 50%);
 
-    //         @include respond-to($sm) {
-    //             background-image: linear-gradient(to bottom, transparent 0%, $color__base 0%);
-    //         }
-    //     }
-    // }
+            @include respond-to($sm) {
+                background-image: linear-gradient(to bottom, transparent 0%, $color__base 0%);
+            }
+        }
+    }
 }
 .category-feature {
-    // .entry-title,
+    .entry-title,
     .entry-meta,
     .entry-content p {
         a {
@@ -276,18 +276,18 @@ h2,
         }
     }
 
-    // .entry-title {
-    //     a {
-    //         background-image: linear-gradient(to bottom, transparent 50%, $color__base 50%);
+    .entry-title {
+        a {
+            background-image: linear-gradient(to bottom, transparent 50%, $color__base 50%);
 
-    //         @include respond-to($sm) {
-    //             background-image: linear-gradient(to bottom, transparent 0%, $color__base 0%);
-    //         }
-    //     }
-    // }
+            @include respond-to($sm) {
+                background-image: linear-gradient(to bottom, transparent 0%, $color__base 0%);
+            }
+        }
+    }
 }
 .category-generelt {
-    // .entry-title,
+    .entry-title,
     .entry-meta,
     .entry-content p {
         a {
@@ -311,13 +311,13 @@ h2,
         }
     }
 
-    // .entry-title {
-    //     a {
-    //         background-image: linear-gradient(to bottom, transparent 50%, $color__base 50%);
+    .entry-title {
+        a {
+            background-image: linear-gradient(to bottom, transparent 50%, $color__base 50%);
 
-    //         @include respond-to($sm) {
-    //             background-image: linear-gradient(to bottom, transparent 0%, $color__base 0%);
-    //         }
-    //     }
-    // }
+            @include respond-to($sm) {
+                background-image: linear-gradient(to bottom, transparent 0%, $color__base 0%);
+            }
+        }
+    }
 }
