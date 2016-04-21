@@ -10,6 +10,7 @@
     var bp_md = 880; // Breakpoint: md
     var $header = $('.site-header');
     var headerPos = $header.offset();
+    var $menuToggle = $('.menu-toggle');
     var $menuItems = $('.main-navigation_mobile li');
     var $content = $('#content');
 
@@ -45,35 +46,45 @@
     //     }
     // });
 
-    // Navigation: On small screen sizes, toggle body class when menu is active
-    $('.menu-toggle').on("click", function() {
+    // Navigation
+    $menuToggle.on("click", function(e) {
         
         if (windowWidth < bp_md) {
-        
-            $('body').toggleClass("nav-toggled");
+            toggleMenu();
+        }
+        // e.preventDefault();
+        // return false;
+    });
 
-            // Show/hide list elements
-            if (!$('body').hasClass('nav-toggled')) {
-                $menuItems.addClass('animated fadeOutUp');
-                $menuItems.removeClass('animated fadeOutUp');
-                // $(el).animateCss('fadeOut');
-            } else {
-                $.each($menuItems, function(i, el) { // Link: cl.ly/fajZ
+    function toggleMenu() {
 
-                    // Add animate class one element at a time
-                    setTimeout(function(){
-                       $(el).addClass('animated fadeInDown');
-                    }, 60 + ( i * 30 ));
+        if ($header.hasClass('active')) {
+            
+            $header.removeClass("active");
+            $menuToggle.removeClass("active");
+            
+            $menuItems.addClass('animated fadeOutUp');
+            $menuItems.removeClass('animated fadeOutUp');
+        } else {
+            $header.addClass("active");
+            $menuToggle.addClass("active");
+            
+            // Add fade in classes one by one
+            $menuItems.each(function(index, element) {
+                addClassYeah($(this),(index*40) + 40);
+            });
 
-                    // Remove animate class again
-                    $(el).removeClass('animated fadeInDown')
-
-                });
-            }
-
+            // Remove classes again
+            $menuItems.removeClass('animated fadeInDown');
         }
 
-    });
+    }
+
+    function addClassYeah(block,del) {
+      setTimeout(function() {
+        $(block).addClass("animated fadeInDown");
+      }, del);
+    }
 
     // Comments - Show hide comment form
     // Function is called when user clicks btn in entry-footer
