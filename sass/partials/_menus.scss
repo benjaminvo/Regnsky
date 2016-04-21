@@ -46,6 +46,10 @@
 		margin-top: 0;
 	}
 
+	@include respond-to($navigation-bp) {
+		display: none;
+	}
+
 	ul {
 		text-align: center;
 	}
@@ -61,7 +65,7 @@
 .main-navigation {
 	display: none;
 
-	@include respond-to(880px) {
+	@include respond-to($navigation-bp) {
 		display: flex;
 		justify-content: space-between;
 		padding-right: 10px;
@@ -112,7 +116,7 @@
 	}
 
 	// Hide on bigger screens
-	@include respond-to(880px) {
+	@include respond-to($navigation-bp) {
 		display: none;
 	}
 }
@@ -137,7 +141,7 @@ body.nav-toggled {
     	height: 440px;
 
     	@include respond-to($md) {
-
+			height: 450px;
     	}
 	}
 

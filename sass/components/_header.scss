@@ -76,7 +76,7 @@
         font-style: italic;
         @include font-size(0.75); // 12px
 
-        @include respond-to(880px) {
+        @include respond-to($navigation-bp) {
             display: none;
         }
 
