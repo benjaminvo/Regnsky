@@ -27,7 +27,7 @@
             $content.css({'margin-top':'166px'});          // 166 = header (80) + banner height (196/2) - header offset (-12)
         } else if (windowPos >= 172 && windowWidth >= bp_md) {    // 172 = banner (196) - header offset (-12)
             $header.addClass("stick");
-            $content.css({'margin-top':'292px'});          // 292 = header (120) + banner height (196) - header offset (-24)
+            $content.css({'margin-top':'272px'});          // 272 = header (120) + banner height (196) - header offset (-24)
         } else {
             $header.removeClass("stick");
             $content.css({'margin-top':'0px'});
