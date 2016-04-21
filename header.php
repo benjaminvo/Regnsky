@@ -26,8 +26,8 @@
 		<meta property="og:type"          content="website" />
 		<meta property="og:title"         content="Regnsky" />
 		<meta property="og:description"   content="Danmarks sødeste musikblog siden 2008" />
-		<meta property="og:image"         content="<?php //echo get_stylesheet_directory_uri(); ?>/img/logo-regnsky_transparent.gif" />
-		 -->
+		<meta property="og:image"         content="<?php //echo get_stylesheet_directory_uri(); ?>/img/logo-regnsky_transparent.gif" /> -->
+		
 	</head>
 
 	<body <?php body_class(); ?>>
@@ -60,9 +60,11 @@
 						</nav>
 						
 						<a id="menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-							<span class="bar-1"></span>
-							<span class="bar-2"></span>
-							<span class="bar-3"></span>
+							<div class="bar-wrap">
+								<span class="bar bar-1"></span>
+								<span class="bar bar-2"></span>
+								<span class="bar bar-3"></span>
+							</div>
 						</a>
 
 					</div>

@@ -29,6 +29,73 @@ $topbanner-height: 196px;
     }
 }
 
+.site-header,
+.site-header .container {
+    height: 80px;
+
+    @include respond-to($md) {
+        height: 100px;
+    }
+    @include respond-to($xl) {
+        height: 120px;
+    }
+}
+
+.site-header {
+    width: 100%;
+    background-color: #fff;
+    transform: translateZ(0);
+    z-index: 2000;
+    transition: height .2s ease-out;
+    will-change: transform;
+    // backdrop-filter: blur(20px); // En dag...
+
+    @include border-before($border__white);
+    @include border-after($border__white);
+}
+
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-branding {
+    display: flex;
+    align-items: center;
+    padding-left: $gutter-width / 2;
+
+    .logo {
+        width: 100px;
+        display: flex;
+        margin-right: 20px;
+        padding-left: 0;
+
+        @include respond-to($md) {
+            width: 120px;
+            margin-right: 30px;
+        }
+    }
+
+    .tagline {
+        display: flex;
+        font-style: italic;
+        @include font-size(0.75); // 12px
+
+        @include respond-to(880px) {
+            display: none;
+        }
+
+        @media (min-width: 990px) {
+            display: block;
+            margin-top: 0;
+        }
+        
+    }
+
+    @include clearfix();
+}
+
 .current-menu-item a {
     position: relative;
 
@@ -59,69 +126,4 @@ $topbanner-height: 196px;
     //     }        
     // }
 
-}
-
-.site-header {
-    position: relative;
-    height: 80px;
-    width: 100%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: #fff;
-    transform: translateZ(0); // Hack to stick header before scroll stops on mobile
-    z-index: 2000;
-    transition: height .2s ease-out;
-    will-change: transform;
-    // backdrop-filter: blur(20px); // En dag...
-
-    @include respond-to($md) {
-        height: 120px;
-        padding-top: 2rem;       
-        padding-bottom: 2rem;
-    }
-
-    @include border-before($border__white);
-    @include border-after($border__white);
-}
-
-.site-branding {
-    padding-left: $gutter-width / 2;
-
-    .logo {
-        width: 100px;
-        float: left;
-        margin-right: 20px;
-        padding-left: 0;
-
-        @include respond-to($md) {
-            width: 120px;
-            margin-right: 30px;
-            margin-top: -6px;
-        }
-
-        @include respond-to($lg) {
-            width: 140px;
-            margin-right: 30px;
-            margin-top: -15px;
-        }
-    }
-
-    .tagline {
-        float: left;
-        margin-top: 6px;
-        font-style: italic;
-        @include font-size(0.75); // 12px
-
-        @include respond-to($md) {
-            display: none;
-        }
-
-        @media (min-width: 900px) {
-            display: block;
-            margin-top: 0;
-        }
-        
-    }
-
-    @include clearfix();
 }
