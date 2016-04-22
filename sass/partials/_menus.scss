@@ -34,7 +34,9 @@
 	.menu-item-17229 a { // ungtriumf.dk/regnsky
 		color: $color__3_0;
 	}
-	.menu-item-16870 a { // localhost
+	.menu-item-16870 a,  // localhost
+	.menu-item-17238 a,  // ungtriumf.dk/regnsky
+	.menu-item-17239 a { // regnsky.dk
 		color: $color__4_0;
 	}
 }
@@ -137,10 +139,6 @@
 
 	@include respond-to($md) {
 		height: 450px;
-	}
-
-	.main-navigation_mobile {
-		display: block;
 	}
 }
 .menu-toggle.active {
