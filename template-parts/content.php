@@ -64,7 +64,13 @@
 								the_title( '<span class="screen-reader-text">"', '"</span>', false )
 							) );
 						} else {
-							the_content();
+							//the_excerpt(); // Excerpts breaker figure captions (fx følgende på en index-side: http://localhost:3000/2016/03/jaerv-et-hav-af-vellyd/)
+							the_content('Læs videre &raquo;'); ?>
+							
+							<!-- <div class="show-post-wrapper">
+								<button class="show-post read-more">Vis hele indlæg</button>								
+							</div> -->
+						<?php	
 						}
 
 						wp_link_pages( array(
