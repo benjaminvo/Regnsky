@@ -11,6 +11,7 @@
     var $header = $('.site-header');
     var headerPos = $header.offset();
     var $menuToggle = $('.menu-toggle');
+    var $menu = $('.main-navigation_mobile');
     var $menuItems = $('.main-navigation_mobile li');
     var $content = $('#content');
 
@@ -59,20 +60,24 @@
     function toggleMenu() {
 
         if ($header.hasClass('active')) {
-            
             $header.removeClass("active");
             $menuToggle.removeClass("active");
             
+            $menu.hide();
             $menuItems.addClass('animated fadeOutUp');
             $menuItems.removeClass('animated fadeOutUp');
         } else {
             $header.addClass("active");
             $menuToggle.addClass("active");
             
+            $menu.show();
+
             // Add fade in classes one by one
-            $menuItems.each(function(index, element) {
-                addClassYeah($(this),(index*40) + 40);
-            });
+            setTimeout(function () {
+                $menuItems.each(function(index, element) {
+                    addClassYeah($(this),(index*40) + 40);
+                });
+            }, 150);
 
             // Remove classes again
             $menuItems.removeClass('animated fadeInDown');
