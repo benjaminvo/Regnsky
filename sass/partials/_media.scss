@@ -82,6 +82,10 @@ iframe[src*="soundcloud"] {
     height: auto;
 }
 
+iframe[src*="spotify"] {
+    height: 80px;
+}
+
 // .entry-content a img {
 //     margin-bottom: 1rem; // Old blog photos wrapped in a-tags need this because they are a part of the p-tag together with the paragraph text
 //     height: auto;        // Again, old blog photos in a-tags need this
