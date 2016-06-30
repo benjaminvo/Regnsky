@@ -2,3 +2,7 @@
 .archive .format-aside .entry-title {
 	display: none;
 }
+
+.postlist-wrapper {
+    @include border-after($border__white);
+}
