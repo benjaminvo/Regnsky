@@ -44,9 +44,9 @@ get_header(); ?>
 
 				$related_posts = $related_by_tags;
 
-			endif;
+			endif; ?>
 
-			// If there are related posts
+			<?php // If there are related posts
 			if ( $related_posts ): ?>
 
 				<div class="related-posts">
