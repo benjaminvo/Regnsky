@@ -115,7 +115,7 @@ add_filter( 'excerpt_more', 'new_excerpt_more' );
  * Add category class to body
  */
 add_filter('body_class','add_category_to_single');
-function add_category_to_single($classes, $class) {
+function add_category_to_single($classes) {
 	if (is_single() ) {
 		global $post;
 		foreach((get_the_category($post->ID)) as $category) {
@@ -304,20 +304,6 @@ function regnsky_comment($comment, $args, $depth) {
 }
 
 /**
- * Remove "Category: " from category pages
- * http://wordpress.stackexchange.com/questions/179585/remove-category-tag-author-from-the-archive-title
- */
-add_filter( 'get_the_archive_title', function ($title) {
-
-    if ( is_category() ) {
-        $title = single_cat_title( '', false );
-    }
-
-    return $title;
-});
-
-
-/**
  * Make an excerpt function to control the character limit, when function is called: <?php echo get_excerpt(200); ?>
  */
 function get_excerpt($count) {
@@ -371,7 +357,6 @@ add_filter('pre_get_posts','SearchFilter');
  * Hide drafts from ACF Relationship field
  * https://support.advancedcustomfields.com/forums/topic/exclude-drafts-from-post-object-field/
  */
-
 function relationship_options_filter($options, $field, $the_post) {
     
     $options['post_status'] = array('publish');
@@ -380,3 +365,93 @@ function relationship_options_filter($options, $field, $the_post) {
 }
 
 add_filter('acf/fields/relationship/query/name=related_posts', 'relationship_options_filter', 10, 3);
+
+/**
+ * Remove "Category" and "Forfatter:" archive pages
+ * http://wordpress.stackexchange.com/questions/179585/remove-category-tag-author-from-the-archive-title
+ */
+add_filter( 'get_the_archive_title', function ($title) {
+
+    if ( is_category() ) {
+
+        $title = single_cat_title( '', false );
+
+    } elseif ( is_author() ) {
+
+        $title = get_the_author();
+        
+    }
+
+    return $title;
+
+});
+
+/**
+ * Register 'recentposts' custom post type
+ */
+function postlist_post_type() {
+   
+   // Labels
+    $postlist_labels = array(
+        'name' => _x("Mellemsektioner", "post type general name"),
+        'singular_name' => _x("Indlægsliste", "post type singular name"),
+        'menu_name' => 'Mellemsektioner',
+        'add_new' => _x("Lav ny sektion", "sektion"),
+        'add_new_item' => __("Lav ny sektion"),
+        'edit_item' => __("Ret sektion"),
+        'new_item' => __("Ny sektion"),
+        'view_item' => __("Se sektion"),
+        'search_items' => __("Søg i sektioner"),
+        'not_found' =>  __("Ingen sektioner fundet"),
+        'not_found_in_trash' => __("Ingen sektioner fundet i skraldespanden"),
+        'parent_item_colon' => ''
+    );
+    
+    // Register post type
+    register_post_type('postlist' , array(
+        'labels' => $postlist_labels,
+        'public' => true,
+        'has_archive' => false,
+        'show_in_admin_bar' => true,
+        'rewrite' => array('slug'=>'postlist'),
+        'exclude_from_search' => true,
+        'supports' => array('title'),
+        'menu_icon' => 'dashicons-exerpt-view'
+    ) );
+}
+add_action( 'init', 'postlist_post_type', 0 );
+
+
+/**
+ * Custom admin columns for 'postlist' custom post type
+ */
+
+function postlist_columns($columns) {
+    $columns = array(
+        'cb'        => '<input type="checkbox" />',
+        'title'     => 'Titel',
+        // 'postlist_boolean'  => 'Status',
+        'postlist_tag'  => 'Tag'
+    );
+    return $columns;
+}
+
+function postlist_column($column) {
+    global $post;
+    if($column == 'postlist_tag') {
+        $tag = get_field('postlist_tag');
+        echo $tag->name;
+    }
+    
+    // elseif($column == 'postlist_boolean') {
+    //     if (get_field('postlist_boolean') == 1) {
+    //         echo "Sektion er slået til";
+    //     } else {
+    //         echo "Sektion er slået fra";
+    //     }
+    // }
+}
+
+add_action("manage_postlist_posts_custom_column", "postlist_column");
+add_filter("manage_edit-postlist_columns", "postlist_columns");
+
