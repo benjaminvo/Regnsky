@@ -17,16 +17,34 @@ get_header(); ?>
 
 			<header class="page-header">
 				
+                <div class="container">
 
-                <h1 class="page-title"> 
-                    <?php the_archive_title(); ?>
+                    <h1 class="page-title"> 
+                        
+                        <?php the_archive_title(); ?>
+                        
+                        <?php if ( !is_category() ) : // Show number of posts if it isn't a category page ?>
+                            <span class="total-results text-mute"><?php global $wp_query; $total_results = $wp_query->found_posts; echo '(' . $total_results . ' indlæg)' ?></span>
+                        <?php endif; ?>
+
+                    </h1>
+                
+                    <!-- Author description – if there is one -->
+                    <?php $authorDesc = get_the_author_meta('description'); ?>
+
+                    <?php if ( is_author() && !empty($authorDesc) ) : ?>
+
+                        <div class="flex">
+                            <p class="archive-description col col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2">
+                                
+                                <?php echo $authorDesc; ?>
+                            </p>   
+                        </div>
                     
-                    <?php if ( !is_category() ) : // Show number of posts if not category ?>
-                        <span class="total-results text-mute"><?php global $wp_query; $total_results = $wp_query->found_posts; echo '(' . $total_results . ' indlæg)' ?></span>
                     <?php endif; ?>
-                    
-                    <?php the_archive_description( '<div class="taxonomy-description">', '</div>' );  ?>
-                </h1>
+
+                </div>
+
 			</header><!-- .page-header -->
 
 			<?php
