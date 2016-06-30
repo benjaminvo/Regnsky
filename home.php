@@ -1,8 +1,6 @@
 <?php
 /**
  * The home template file.
- *
- * For now it is just a copy of the index file
  */
 
 get_header(); ?>
@@ -21,10 +19,14 @@ get_header(); ?>
             <?php
             endif;
 
+            // Set up counter to determine current post
+            $current_post = 0;
+
             /* Start the Loop */
             while ( have_posts() ) : the_post();
                 
-                $withcomments = "1"; // "Hack" to display comments on home
+                // "Hack" to display comments on home
+                $withcomments = "1";
 
                 /*
                  * Include the Post-Format-specific template for the content.
@@ -33,9 +35,48 @@ get_header(); ?>
                  */
                 get_template_part( 'template-parts/content', get_post_format() );
 
-            endwhile; ?>
+                /* Post list */
+
+                // Add to current post counter
+                $current_post++;
+                
+                // Get current page. If not set we can assume we are on page 1
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                
+                // If first post on first page
+                if ($current_post == 1 && $paged == 1) :
+
+                    // Get 1 post from the 'recentposts' post type
+                    $postlist_args = array(
+                        'numberposts'   => 1,
+                        'post_type'        => 'postlist',
+                        'post_status'      => 'publish'
+                    );
+                    $postlist = get_posts( $postlist_args );
+
+                    // Add custom section with list of posts from custom post type "postlist" if one exists
+                    if ($postlist) : ?>
+                        
+                        <section class="postlist-wrapper">
+                            <div class="container">
+                                <div class="flex">
+                                    <div class="col col-xs-12">
+                                        <?php print_r($postlist); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                    <?php
+                    endif ?>
+
+                <?php
+                endif;
+
+            endwhile; // End of loop ?>
 
             <?php
+            // Pagination
             $posts_per_page = get_option('posts_per_page');
             if ($wp_query -> found_posts > $posts_per_page) : ?>
                 <section class="pagination-wrapper">
