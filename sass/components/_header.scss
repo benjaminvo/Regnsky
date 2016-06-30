@@ -8,6 +8,7 @@
     background-size: ($topbanner-width / 2) ($topbanner-height / 2);
     overflow: hidden;
     z-index: 10;
+    backface-visibility: hidden; // Repaint hack
 
     @include respond-to($md) {
         height: $topbanner-height;
@@ -41,7 +42,6 @@
     transform: translateZ(0);
     z-index: 2000;
     transition: height .2s ease;
-    // will-change: transform, height;
     // backdrop-filter: blur(20px); // En dag...
 
     @include border-before($border__white);

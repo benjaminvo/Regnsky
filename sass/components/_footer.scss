@@ -134,6 +134,7 @@
     padding: 1.5rem 0;
     background-color: black;
     text-align: center;
+    backface-visibility: hidden; // Repaint hack
     
     h5 {
         color: #9c9c9c;
