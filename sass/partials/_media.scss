@@ -7,8 +7,13 @@
 	padding: 0;
 }
 
+// Target all iframes independently so to NOT target Instagram iframes
 .entry-content embed,
-.entry-content iframe,
+.entry-content iframe[src*="soundcloud"],
+.entry-content iframe[src*="youtube"],
+.entry-content iframe[src*="vimeo"],
+.entry-content iframe[src*="spotify"],
+.entry-content iframe[src*="mixcloud"],
 .entry-content object {
     height: 180px;
     margin-bottom: 0;
@@ -36,7 +41,11 @@
 
 // Make images, iframes and embeds go to border of device on smallest screen
 .post figure,
-.entry-content iframe,
+.entry-content iframe[src*="soundcloud"],
+.entry-content iframe[src*="youtube"],
+.entry-content iframe[src*="vimeo"],
+.entry-content iframe[src*="spotify"],
+.entry-content iframe[src*="mixcloud"],
 .entry-content embed {
     width: calc(100% + #{$gutter-width} * 2); // variable is interpolated in order to compile 
     margin-left: -$gutter-width;
@@ -61,7 +70,11 @@
 }
 
 // Make iframes and embeds align to content on bigger screens
-.entry-content iframe,
+.entry-content iframe[src*="soundcloud"],
+.entry-content iframe[src*="youtube"],
+.entry-content iframe[src*="vimeo"],
+.entry-content iframe[src*="spotify"],
+.entry-content iframe[src*="mixcloud"],
 .entry-content embed {
     @include respond-to($sm) {
         width: 100%;
@@ -69,21 +82,21 @@
     }
 }
 
-iframe[src*="mixcloud"] { // Styles specific to Mixcloud players
+.entry-content iframe[src*="mixcloud"],
+.entry-content iframe[src*="soundcloud"] {
     height: auto;
+}
+
+.entry-content iframe[src*="spotify"] {
+    height: 80px;
+}
+
+.entry-content iframe[src*="mixcloud"] { // Styles specific to Mixcloud players
     margin-top: 1rem;
 
     & + div {
         display: none;
     }
-}
-
-iframe[src*="soundcloud"] {
-    height: auto;
-}
-
-iframe[src*="spotify"] {
-    height: 80px;
 }
 
 // .entry-content a img {
@@ -119,8 +132,6 @@ figure {
         margin-left: 0;
     }
 }
-
-
 
 /* Margin bottom for audio player */
 .wp-audio-shortcode {
