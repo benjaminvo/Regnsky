@@ -6,7 +6,6 @@
         <h4>Del og kommentér</h4>
 
         <!-- Share -->
-        
         <div class="entry-share">
 
             <div class="share-buttons">
@@ -28,7 +27,7 @@
                 
                 <div class="share-button twitter">
                     
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo the_permalink(); ?>" data-text="Sødt indlæg på Regnsky">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo the_permalink(); ?>" data-text="Se her">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                 </div>
             </div>
         </div>
