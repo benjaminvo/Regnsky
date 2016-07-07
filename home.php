@@ -35,7 +35,8 @@ get_header(); ?>
                  */
                 get_template_part( 'template-parts/content', get_post_format() );
 
-                /* Post list */
+
+                /* LIST OF POSTS SECTION */
 
                 // Add to current post counter
                 $current_post++;
@@ -46,7 +47,7 @@ get_header(); ?>
                 // If first post on first page
                 if ($current_post == 1 && $paged == 1) :
 
-                    // Get 1 post from the 'recentposts' post type
+                    // Get 1 post from the 'postlist' post type
                     $postlist_args = array(
                         'numberposts'   => 1,
                         'post_type'        => 'postlist',
@@ -54,24 +55,88 @@ get_header(); ?>
                     );
                     $postlist = get_posts( $postlist_args );
 
-                    // Add custom section with list of posts from custom post type "postlist" if one exists
-                    if ($postlist) : ?>
-                        
+                    if ($postlist) :
+
+                        // Loop through postlist array and store fields in variables for later use
+                        foreach( $postlist as $post ):
+
+                            setup_postdata( $post );
+
+                            $postlist_title  = get_the_title();
+                            $postlist_intro  = get_field('postlist_intro');
+                            $postlist_tag    = get_field('postlist_tag');
+                            $postlist_scroll = get_field('postlist_scroll');
+                            
+                        endforeach; wp_reset_postdata();
+
+                    endif; // End of $postlist
+
+                    // Get posts with the custom tag
+                    $posts_by_tag_args = array(
+                        'tag_id' => $postlist_tag->term_id,
+                        'numberposts' => -1,
+                        'post_status' => 'publish'
+                    );
+                    $posts_by_tag = get_posts($posts_by_tag_args);
+
+                    if ($posts_by_tag): ?>
+
                         <section class="postlist-wrapper">
                             <div class="container">
                                 <div class="flex">
-                                    <div class="col col-xs-12">
-                                        <?php print_r($postlist); ?>
+                                    
+                                    <h2 class="col col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3"><?php echo $postlist_title; ?></h2>
+
+                                    <p class="col col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3"><?php echo $postlist_intro; ?></p>
+                                    
+                                    <div class="archive-list <?php if($postlist_scroll == 'yes'): echo 'is-scrollable-wrapper'; endif; // Make list scrollable ?> col col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                                                
+                                        <ul>
+                                            <?php
+                                            // Loop through posts
+                                            foreach( $posts_by_tag as $post ):
+
+                                                setup_postdata( $post );
+
+                                                $category_array = get_the_category();
+                                                $category       = $category_array[0];
+                                                $category_name  = $category->cat_name;
+
+                                                if ($category_name == 'Opdagelser') :
+                                                    $category_name = 'Opdagelse';
+                                                endif; ?>
+                                                
+                                                <li class="h6">
+                                                    <div class="meta">
+                                                        <span class="h4 <?php echo 'cat-' . strtoLower($category_name); ?>">
+                                                            <?php echo $category_name; ?>
+                                                        </span>
+                                                        <span class="h5 text-left date">
+                                                            <?php echo(mysql2date('j. F Y', $post->post_date)); ?>
+                                                        </span>
+                                                    </div>
+
+                                                    <a class="link" href="<?php echo get_post_permalink( $post->post_ID); ?>">
+                                                        <?php echo($post->post_title); ?>
+                                                    </a>
+                                                </li>
+
+                                            <?php
+                                            endforeach; wp_reset_postdata(); ?>
+                                            
+                                        </ul>
+
                                     </div>
-                                </div>
+                                    
+                                </div> <!-- /.flex -->
                             </div>
                         </section>
-                        
+
                     <?php
-                    endif ?>
+                    endif; // End of $posts_by_tag ?>
 
                 <?php
-                endif;
+                endif; // End of first post on first page
 
             endwhile; // End of loop ?>
 
