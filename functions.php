@@ -439,8 +439,8 @@ function postlist_columns($columns) {
 function postlist_column($column) {
     global $post;
     if($column == 'postlist_tag') {
-        $tag = get_field('postlist_tag');
-        echo $tag->name;
+        $postlist_tag = get_field('postlist_tag');
+        echo $postlist_tag->name;
     }
     
     // elseif($column == 'postlist_boolean') {
