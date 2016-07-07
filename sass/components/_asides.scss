@@ -5,4 +5,56 @@
 
 .postlist-wrapper {
     @include border-after($border__white);
+
+    background-color: #fff;
+    padding-top: 3rem;
+    padding-bottom: 0;
+
+    ul {
+        margin-bottom: 1rem;
+    }
+}
+
+.is-scrollable-wrapper {
+    position: relative;
+    margin-top: -.5em;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+    }
+
+    &:before {          
+        top: 0;
+        height: 1.5em;
+        background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    } 
+
+    &:after {
+        bottom: 0;
+        height: 5em;
+        background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    }
+
+    ul {
+        margin-bottom: 0;
+        padding-top: 1em;
+        padding-bottom: 4em;
+        max-height: 250px;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+
+        @include respond-to($sm) {
+            max-height: 330px;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
 }
