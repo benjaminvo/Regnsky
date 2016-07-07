@@ -98,8 +98,10 @@
 
     </div> <!-- /.page-wrap -->
 
-    <?php wp_footer(); ?>
+    <!-- <script src="<?php //echo get_stylesheet_directory_uri(); ?>/js/lodash.throttle.min.js"></script> -->
 
+    <?php wp_footer(); ?>
+    
     <!-- FastClick -->
     <script>
         (function (window, document) {
