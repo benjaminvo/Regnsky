@@ -46,7 +46,7 @@ get_header(); ?>
 
                         <h2 class="col col-xs-12">Seneste indlæg</h2>
 
-                        <div class="archive-category module col col-xs-12 col-sm-6 col-lg-3">
+                        <div class="archive-list module col col-xs-12 col-sm-6 col-lg-3">
                             <h4 class="text-brand-1">Opdagelser</h4>
                             <ul>
                                 <?php 
@@ -60,10 +60,13 @@ get_header(); ?>
 
                                 foreach($posts as $post) : ?>
                                     
-                                    <li class="archive-post">
-                                        <span class="date">
-                                            <?php echo(mysql2date('j. F Y', $post->post_date)); ?>
-                                        </span>
+                                    <li class="h6">
+                                        <div class="meta">
+                                            <span class="h5 text-left">
+                                                <?php echo(mysql2date('j. F Y', $post->post_date)); ?>
+                                            </span>
+                                        </div>
+                                        
                                         <a class="link" href="<?php echo get_post_permalink( $post->post_ID); ?>">
                                             <?php echo($post->post_title); ?>
                                         </a>
@@ -73,7 +76,7 @@ get_header(); ?>
                             </ul>
                         </div>
                         
-                        <div class="archive-category module col col-xs-12 col-sm-6 col-lg-3">
+                        <div class="archive-list module col col-xs-12 col-sm-6 col-lg-3">
                             <h4 class="text-brand-2">Livestemning</h4>
                             <ul>
                                 <?php 
@@ -87,10 +90,12 @@ get_header(); ?>
 
                                 foreach($posts as $post) : ?>
                                     
-                                    <li class="archive-post">
-                                        <span class="date">
-                                            <?php echo(mysql2date('j. F Y', $post->post_date)); ?>
-                                        </span>
+                                    <li class="h6">
+                                        <div class="meta">
+                                            <span class="h5 text-left">
+                                                <?php echo(mysql2date('j. F Y', $post->post_date)); ?>
+                                            </span>
+                                        </div>
                                         <a class="link" href="<?php echo get_post_permalink( $post->post_ID); ?>">
                                             <?php echo($post->post_title); ?>
                                         </a>
@@ -100,7 +105,7 @@ get_header(); ?>
                             </ul>
                         </div>
                         
-                        <div class="archive-category module col col-xs-12 col-sm-6 col-lg-3">
+                        <div class="archive-list module col col-xs-12 col-sm-6 col-lg-3">
                             <h4 class="text-brand-3">Features</h4>
                             <ul>
                                 <?php 
@@ -114,10 +119,12 @@ get_header(); ?>
 
                                 foreach($posts as $post) : ?>
                                     
-                                    <li class="archive-post">
-                                        <span class="date">
-                                            <?php echo(mysql2date('j. F Y', $post->post_date)); ?>
-                                        </span>
+                                    <li class="h6">
+                                        <div class="meta">
+                                            <span class="h5 text-left">
+                                                <?php echo(mysql2date('j. F Y', $post->post_date)); ?>
+                                            </span>
+                                        </div>
                                         <a class="link" href="<?php echo get_post_permalink( $post->post_ID); ?>">
                                             <?php echo($post->post_title); ?>
                                         </a>
@@ -127,7 +134,7 @@ get_header(); ?>
                             </ul>
                         </div>
                         
-                        <div class="archive-category module col col-xs-12 col-sm-6 col-lg-3">
+                        <div class="archive-list module col col-xs-12 col-sm-6 col-lg-3">
                             <h4 class="text-brand-4">Generelt</h4>
                             <ul>
                                 <?php 
@@ -141,10 +148,12 @@ get_header(); ?>
 
                                 foreach($posts as $post) : ?>
                                     
-                                    <li class="archive-post">
-                                        <span class="date">
-                                            <?php echo(mysql2date('j. F Y', $post->post_date)); ?>
-                                        </span>
+                                    <li class="h6">
+                                        <div class="meta">
+                                            <span class="h5 text-left">
+                                                <?php echo(mysql2date('j. F Y', $post->post_date)); ?>
+                                            </span>
+                                        </div>
                                         <a class="link" href="<?php echo get_post_permalink( $post->post_ID); ?>">
                                             <?php echo($post->post_title); ?>
                                         </a>
@@ -178,8 +187,7 @@ get_header(); ?>
                                 $category       = $category_array[0];
                                 $category_name  = $category->cat_name;
                                 
-                                echo '<li><a class="link link-' . strtoLower($category_name) . '" href="' . get_post_permalink($post->post_ID) . '">' . $post->post_title . '</a></li>';
-                                // echo '<span class="divider"> · </span>'; 
+                                echo '<li><a class="link h6 cat-' . strtoLower($category_name) . '" href="' . get_post_permalink($post->post_ID) . '">' . $post->post_title . '</a></li>';
                             }
 
                             echo '</div></ul>';
