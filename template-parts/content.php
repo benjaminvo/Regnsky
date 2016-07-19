@@ -10,11 +10,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( ); ?>>
-	
+
 	<div class="entry-wrapper">
 
 		<div class="container">
-	
+
 			<div class="flex">
 
 				<!-- Entry header -->
@@ -31,15 +31,15 @@
 							$category_name = 'Opdagelse';
 						}
 						?>
-						
+
 						<h4 class="entry-category">
 							<!-- <a href="<?php //echo esc_url( $category_link ); ?>" title="<?php //echo $category_name; ?>"><?php //echo $category_name; ?></a> -->
 							<?php echo $category_name; ?>
 						</h4>
 
-						
-						<?php if ( is_single() ) { ?>				
-							<?php 
+
+						<?php if ( is_single() ) { ?>
+							<?php
 							the_title( '<h1 class="entry-title">', '</h1>' );
 						} else {
 							the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
@@ -56,7 +56,7 @@
 				<!-- Entry content -->
 				<div class="entry-content col col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
 					<?php
-						
+
 						if ( is_single() ) {
 							the_content( sprintf(
 								/* translators: %s: Name of current post. */
@@ -64,13 +64,7 @@
 								the_title( '<span class="screen-reader-text">"', '"</span>', false )
 							) );
 						} else {
-							//the_excerpt(); // Excerpts breaker figure captions (fx følgende på en index-side: http://localhost:3000/2016/03/jaerv-et-hav-af-vellyd/)
-							the_content('Læs videre &raquo;'); ?>
-							
-							<!-- <div class="show-post-wrapper">
-								<button class="show-post read-more">Vis hele indlæg</button>								
-							</div> -->
-						<?php	
+							the_content('Vis hele indlæg');
 						}
 
 						wp_link_pages( array(
@@ -90,7 +84,7 @@
 						}
 
 					?>
-				</div>		
+				</div>
 
 			</div>
 
