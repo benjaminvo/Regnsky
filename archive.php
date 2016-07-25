@@ -16,19 +16,19 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				
+
                 <div class="container">
 
-                    <h1 class="page-title"> 
-                        
+                    <h1 class="page-title">
+
                         <?php the_archive_title(); ?>
-                        
+
                         <?php if ( !is_category() ) : // Show number of posts if it isn't a category page ?>
                             <span class="total-results text-mute"><?php global $wp_query; $total_results = $wp_query->found_posts; echo '(' . $total_results . ' indlæg)' ?></span>
                         <?php endif; ?>
 
                     </h1>
-                
+
                     <!-- Author description – if there is one -->
                     <?php $authorDesc = get_the_author_meta('description'); ?>
 
@@ -36,11 +36,11 @@ get_header(); ?>
 
                         <div class="flex">
                             <p class="archive-description col col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2">
-                                
+
                                 <?php echo $authorDesc; ?>
-                            </p>   
+                            </p>
                         </div>
-                    
+
                     <?php endif; ?>
 
                 </div>
@@ -61,12 +61,12 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', get_post_format() );
 
 			endwhile; ?>
-            
+
 
 
             <?php
             $posts_per_page = get_option('posts_per_page');
-            if ($wp_query -> found_posts > $posts_per_page) : ?>			
+            if ($wp_query -> found_posts > $posts_per_page) : ?>
                 <section class="pagination-wrapper">
                     <div class="container">
                         <div class="pagination flex">
@@ -88,7 +88,7 @@ get_header(); ?>
                     </div>
                 </section>
 
-            <?php 
+            <?php
             endif; ?>
 
 		<?php
