@@ -47,7 +47,7 @@
 .entry-content iframe[src*="spotify"],
 .entry-content iframe[src*="mixcloud"],
 .entry-content embed {
-    width: calc(100% + #{$gutter-width} * 2) !important;  // variable is interpolated in order to compile 
+    width: calc(100% + #{$gutter-width} * 2);  // variable is interpolated in order to compile 
     margin-left: -$gutter-width;
 }
 
